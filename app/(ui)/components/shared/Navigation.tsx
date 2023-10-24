@@ -1,4 +1,4 @@
-import { EVENTS_PAGE, HOME_PAGE } from '@/app/constants/routes';
+import { HOME_PAGE, routes } from '@/app/constants/routes';
 import Link from 'next/link';
 import MobileNavigation from './MobileNavigation';
 import ThemeToggleButton from './ThemeToggleButton';
@@ -12,9 +12,11 @@ export default async function Navigation() {
 				</Link>
 
 				<ul className='flex justify-between w-full sm:w-auto sm:items-center'>
-					<li className='hidden mr-6 sm:flex'>
-						<Link href={EVENTS_PAGE}>Events</Link>
-					</li>
+					{routes.map((route) => (
+						<li key={route.path} className='hidden mr-6 sm:flex'>
+							<Link href={route.path}>{route.name}</Link>
+						</li>
+					))}
 
 					<li>
 						<ThemeToggleButton />

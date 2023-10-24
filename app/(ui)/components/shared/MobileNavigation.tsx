@@ -1,6 +1,6 @@
 'use client';
 
-import { routes } from '@/app/constants/routes';
+import { HOME_PAGE, routes } from '@/app/constants/routes';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
@@ -25,6 +25,12 @@ export default function MobileNavigation() {
 
 			<SheetContent className='pt-20'>
 				<ul className='flex flex-col items-end'>
+					<li className='mb-4'>
+						<Link href={HOME_PAGE} onClick={handleCloseMobileNav} className='text-xl'>
+							Home
+						</Link>
+					</li>
+
 					{routes.map((route) => (
 						<li key={route.path} className='mb-4'>
 							<Link href={route.path} onClick={handleCloseMobileNav} className='text-xl'>

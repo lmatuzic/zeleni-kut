@@ -1,6 +1,6 @@
 'use client';
 
-import Bubaras from './components/Bubaras';
+import Bubaras from './(ui)/components/Bubaras';
 import useTest from './hooks/useTest';
 
 export default function Home() {
