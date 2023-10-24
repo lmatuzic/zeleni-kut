@@ -2,7 +2,12 @@
 
 import { PropsWithChildren } from 'react';
 import ReactQueryClientProvider from './ReactQueryClientProvider';
+import { ThemeProvider } from './ThemeProvider';
 
 export default function Providers({ children }: PropsWithChildren<{}>) {
-	return <ReactQueryClientProvider>{children}</ReactQueryClientProvider>;
+	return (
+		<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+			<ReactQueryClientProvider>{children}</ReactQueryClientProvider>
+		</ThemeProvider>
+	);
 }
