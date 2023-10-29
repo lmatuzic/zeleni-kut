@@ -8,6 +8,7 @@ export const EVENTS_PAGE = '/events';
 export const MENU_PAGE = '/menu';
 export const ABOUT_PAGE = '/about';
 export const CONTACT_PAGE = '/contact';
+export const RESERVATIONS_PAGE = '/reservations';
 
 export const routes: Route[] = [
 	{
@@ -21,6 +22,10 @@ export const routes: Route[] = [
 	{
 		path: ABOUT_PAGE,
 		name: 'About us',
+	},
+	{
+		path: RESERVATIONS_PAGE,
+		name: 'Reservations',
 	},
 	{
 		path: CONTACT_PAGE,

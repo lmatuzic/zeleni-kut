@@ -1,7 +1,7 @@
 'use client';
 
 import { Button } from '@/app/(ui)/components/shadcn/Button';
-import { Card, CardContent, CardHeader, CardTitle } from '@/app/(ui)/components/shadcn/Card';
+import { Card, CardContent } from '@/app/(ui)/components/shadcn/Card';
 import {
 	Form,
 	FormControl,
@@ -17,34 +17,40 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { sendReservationEmail } from '../actions/sendEmail';
-import { reservationFormSchema } from '@/app/lib/zod/schemas/reservationSchema';
+import { roomReservationFormSchema } from '@/app/lib/zod/schemas/roomReservationFormSchema';
+import {
+	Select,
+	SelectContent,
+	SelectItem,
+	SelectTrigger,
+	SelectValue,
+} from '@/app/(ui)/components/shadcn/Select';
 
-export default function ReservationForm() {
-	const form = useForm<z.infer<typeof reservationFormSchema>>({
-		resolver: zodResolver(reservationFormSchema),
+export default function RoomReservationForm() {
+	const form = useForm<z.infer<typeof roomReservationFormSchema>>({
+		resolver: zodResolver(roomReservationFormSchema),
 		defaultValues: {
 			firstName: '',
 			lastName: '',
 			email: '',
+			typeOfRoom: '',
+			numberOfNights: 1,
 			numberOfPeople: 1,
+			checkInDate: new Date(),
+			checkOutDate: new Date(),
 			phone: '',
-			reservationDate: new Date(),
 			message: '',
 		},
 	});
 
-	const onSubmit = (values: z.infer<typeof reservationFormSchema>) => {
+	const onSubmit = (values: z.infer<typeof roomReservationFormSchema>) => {
 		sendReservationEmail();
 		console.log(values);
 	};
 
 	return (
 		<Card className='w-full col-span-1'>
-			<CardHeader>
-				<CardTitle className='mb-4 text-green-700'>Reservation</CardTitle>
-			</CardHeader>
-
-			<CardContent>
+			<CardContent className='mt-4'>
 				<Form {...form}>
 					<form onSubmit={form.handleSubmit(onSubmit)} className='space-y-8'>
 						<FormField
@@ -91,6 +97,30 @@ export default function ReservationForm() {
 
 						<FormField
 							control={form.control}
+							name='typeOfRoom'
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Type of room</FormLabel>
+									<FormControl>
+										<Select onValueChange={field.onChange} defaultValue={field.value}>
+											<SelectTrigger className='w-full'>
+												<SelectValue placeholder='Type of room' />
+											</SelectTrigger>
+
+											<SelectContent>
+												<SelectItem value='double-bed'>Double bed</SelectItem>
+												<SelectItem value='two-beds'>Two beds</SelectItem>
+												<SelectItem value='single-room'>Single room</SelectItem>
+											</SelectContent>
+										</Select>
+									</FormControl>
+									<FormMessage />
+								</FormItem>
+							)}
+						/>
+
+						<FormField
+							control={form.control}
 							name='phone'
 							render={({ field }) => (
 								<FormItem>
@@ -119,10 +149,25 @@ export default function ReservationForm() {
 
 						<FormField
 							control={form.control}
-							name='reservationDate'
+							name='checkInDate'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Date</FormLabel>
+									<FormLabel>Check in date</FormLabel>
+									<FormControl>
+										<div className='w-full'>
+											<DatePicker />
+										</div>
+									</FormControl>
+								</FormItem>
+							)}
+						/>
+
+						<FormField
+							control={form.control}
+							name='checkOutDate'
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>Check out date</FormLabel>
 									<FormControl>
 										<div className='w-full'>
 											<DatePicker />
@@ -145,7 +190,7 @@ export default function ReservationForm() {
 							)}
 						/>
 
-						<Button type='submit'>Submit</Button>
+						<Button type='submit'>Make a reservation</Button>
 					</form>
 				</Form>
 			</CardContent>

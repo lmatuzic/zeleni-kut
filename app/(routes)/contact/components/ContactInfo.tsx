@@ -1,11 +1,6 @@
 export default function ContactInfo() {
 	return (
 		<div className='h-full col-span-2'>
-			<p className='w-full mb-8 text-left sm:w-9/12'>
-				Book your place in time to experience the unique atmosphere and temperamental cuisine of
-				Restaurant Zeleni Kut.
-			</p>
-
 			<div className='mb-1 text-green-700'>Address</div>
 			<div className='mb-8'>Zvečaj 109, 47250 Duga Resa</div>
 
