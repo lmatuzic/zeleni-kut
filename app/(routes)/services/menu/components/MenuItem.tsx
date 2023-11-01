@@ -1,12 +1,12 @@
 import { Separator } from '@/app/(ui)/components/shadcn/Separator';
 
-type MenuItemProps = {
+export type MenuItem = {
 	name: string;
 	ingredients: string;
 	price: number;
 };
 
-export default function MenuItem({ name, ingredients, price }: MenuItemProps) {
+export default function MenuItem({ name, ingredients, price }: MenuItem) {
 	return (
 		<>
 			<div className='flex flex-col items-end justify-between my-4 md:flex-row first:mt-0'>
