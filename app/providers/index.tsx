@@ -6,7 +6,7 @@ import { ThemeProvider } from './ThemeProvider';
 
 export default function Providers({ children }: PropsWithChildren<{}>) {
 	return (
-		<ThemeProvider attribute='class' defaultTheme='system' enableSystem>
+		<ThemeProvider attribute='class' defaultTheme='light'>
 			<ReactQueryClientProvider>{children}</ReactQueryClientProvider>
 		</ThemeProvider>
 	);

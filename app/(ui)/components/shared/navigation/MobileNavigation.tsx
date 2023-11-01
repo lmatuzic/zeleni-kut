@@ -4,7 +4,7 @@ import { HOME_PAGE, routes } from '@/app/constants/routes';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
-import { Sheet, SheetContent, SheetTrigger } from '../shadcn/Sheet';
+import { Sheet, SheetContent, SheetTrigger } from '../../shadcn/Sheet';
 
 export default function MobileNavigation() {
 	const [isOpened, setIsOpened] = useState(false);
