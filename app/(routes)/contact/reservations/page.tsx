@@ -18,11 +18,11 @@ export default function Reservation() {
 					<TabsTrigger value='room'>Room</TabsTrigger>
 				</TabsList>
 
-				<TabsContent value='dinner'>
+				<TabsContent value='dinner' className='mt-4'>
 					<DinnerReservationForm />
 				</TabsContent>
 
-				<TabsContent value='room'>
+				<TabsContent value='room' className='mt-4'>
 					<RoomReservationForm />
 				</TabsContent>
 			</Tabs>

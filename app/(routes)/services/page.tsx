@@ -34,7 +34,7 @@ export default function Services() {
 
 					<CardContent>
 						<Link href={ACCOMMODATION_PAGE}>
-							<Button className='w-full text-white xs:w-fit'>Go here</Button>
+							<Button className='w-full text-white xs:w-fit'>Vidi više</Button>
 						</Link>
 					</CardContent>
 				</Card>
@@ -52,7 +52,7 @@ export default function Services() {
 
 					<CardContent>
 						<Link href={MENU_PAGE}>
-							<Button className='w-full text-white xs:w-fit'>Go here</Button>
+							<Button className='w-full text-white xs:w-fit'>Vidi više</Button>
 						</Link>
 					</CardContent>
 				</Card>
@@ -69,7 +69,7 @@ export default function Services() {
 
 					<CardContent>
 						<Link href={RECREATION_PAGE}>
-							<Button className='w-full text-white xs:w-fit'>Go here</Button>
+							<Button className='w-full text-white xs:w-fit'>Vidi više</Button>
 						</Link>
 					</CardContent>
 				</Card>
