@@ -1,10 +1,10 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/(ui)/components/shadcn/Tabs';
-import DinnerReservationForm from '../contact/components/DinnerReservationForm';
-import RoomReservationForm from '../contact/components/RoomReservationForm';
+import DinnerReservationForm from './components/DinnerReservationForm';
+import RoomReservationForm from './components/RoomReservationForm';
 
 export default function Reservation() {
 	return (
-		<div className='grid grid-cols-1 pb-12 md:grid-cols-2 place-items-center'>
+		<div className='grid grid-cols-1 pb-12 mt-6 place-items-center md:mt-0'>
 			<div className='h-full'>
 				<h1 className='w-full mb-8 text-left sm:w-9/12'>
 					Book your place in time to experience the unique atmosphere and temperamental cuisine of

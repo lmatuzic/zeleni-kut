@@ -16,7 +16,7 @@ import { DatePicker } from '@/app/(ui)/components/shared/DatePicker';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
-import { sendReservationEmail } from '../actions/sendEmail';
+import { sendReservationEmail } from '../../actions/sendEmail';
 import { roomReservationFormSchema } from '@/app/lib/zod/schemas/roomReservationFormSchema';
 import {
 	Select,
@@ -190,7 +190,9 @@ export default function RoomReservationForm() {
 							)}
 						/>
 
-						<Button type='submit'>Make a reservation</Button>
+						<Button type='submit' className='text-white'>
+							Make a reservation
+						</Button>
 					</form>
 				</Form>
 			</CardContent>

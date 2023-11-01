@@ -17,7 +17,7 @@ import { dinnerReservationFormSchema } from '@/app/lib/zod/schemas/dinnerReserva
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
-import { sendReservationEmail } from '../actions/sendEmail';
+import { sendReservationEmail } from '../../actions/sendEmail';
 
 export default function DinnerReservationForm() {
 	const form = useForm<z.infer<typeof dinnerReservationFormSchema>>({
@@ -141,7 +141,9 @@ export default function DinnerReservationForm() {
 							)}
 						/>
 
-						<Button type='submit'>Make a reservation</Button>
+						<Button type='submit' className='text-white'>
+							Make a reservation
+						</Button>
 					</form>
 				</Form>
 			</CardContent>

@@ -1,6 +1,6 @@
 export default function ContactInfo() {
 	return (
-		<div className='h-full col-span-2'>
+		<div>
 			<div className='mb-1 text-zk-green'>Address</div>
 			<div className='mb-8'>Zvečaj 109, 47250 Duga Resa</div>
 
