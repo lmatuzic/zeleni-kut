@@ -13,8 +13,10 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n\tquery allBubaras {\n\t\tbubaras {\n\t\t\tid\n\t\t\ttitle\n\t\t\tsubtitle\n\t\t}\n\t}\n": types.AllBubarasDocument,
-    "\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n": types.MenuCategoriesDocument,
+	'\n\tquery allBubaras {\n\t\tbubaras {\n\t\t\tid\n\t\t\ttitle\n\t\t\tsubtitle\n\t\t}\n\t}\n':
+		types.AllBubarasDocument,
+	'\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n':
+		types.MenuCategoriesDocument,
 };
 
 /**
@@ -34,14 +36,19 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n\tquery allBubaras {\n\t\tbubaras {\n\t\t\tid\n\t\t\ttitle\n\t\t\tsubtitle\n\t\t}\n\t}\n"): (typeof documents)["\n\tquery allBubaras {\n\t\tbubaras {\n\t\t\tid\n\t\t\ttitle\n\t\t\tsubtitle\n\t\t}\n\t}\n"];
+export function graphql(
+	source: '\n\tquery allBubaras {\n\t\tbubaras {\n\t\t\tid\n\t\t\ttitle\n\t\t\tsubtitle\n\t\t}\n\t}\n'
+): (typeof documents)['\n\tquery allBubaras {\n\t\tbubaras {\n\t\t\tid\n\t\t\ttitle\n\t\t\tsubtitle\n\t\t}\n\t}\n'];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n"): (typeof documents)["\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n"];
+export function graphql(
+	source: '\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n'
+): (typeof documents)['\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n'];
 
 export function graphql(source: string) {
-  return (documents as any)[source] ?? {};
+	return (documents as any)[source] ?? {};
 }
 
-export type DocumentType<TDocumentNode extends DocumentNode<any, any>> = TDocumentNode extends DocumentNode<  infer TType,  any>  ? TType  : never;
+export type DocumentType<TDocumentNode extends DocumentNode<any, any>> =
+	TDocumentNode extends DocumentNode<infer TType, any> ? TType : never;

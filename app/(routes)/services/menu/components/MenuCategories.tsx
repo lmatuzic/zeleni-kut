@@ -8,17 +8,11 @@ export default function MenuCategories() {
 
 	return (
 		<>
-			{data
-				? data.menuCategories.map((menuCategory) => (
-						<TabsTrigger
-							value='appetizer'
-							className='border cursor-pointer'
-							key={menuCategory.name}
-						>
-							Predjelo
-						</TabsTrigger>
-				  ))
-				: null}
+			{data?.menuCategories.map((menuCategory) => (
+				<TabsTrigger value='appetizer' className='border cursor-pointer' key={menuCategory.name}>
+					Predjelo
+				</TabsTrigger>
+			))}
 		</>
 	);
 }

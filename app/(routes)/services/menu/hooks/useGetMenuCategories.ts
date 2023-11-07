@@ -1,7 +1,6 @@
 'use client';
 
-import { MenuCategoriesDocument } from '@/app/lib/graphql/graphql';
-import { menuCategories } from '@/app/lib/hygraph/queries/getMenuCategories';
+import { MenuCategoriesDocument } from '@/app/lib/graphql-codegen/graphql';
 import { useQuery } from '@tanstack/react-query';
 import request from 'graphql-request';
 
