@@ -26,7 +26,7 @@ export default function MenuSelect({ menuItems }: MenuSelectProps) {
 
 			<SelectContent>
 				{menuItems.map((menuItem) => (
-					<SelectItem value={menuItem.name} className='w-full'>
+					<SelectItem value={menuItem.name} className='w-full' key={menuItem.name}>
 						<TabsTrigger
 							value={menuItem.name}
 							className='w-full dark:data-[state=active]:text-white data-[state=active]:text-black data-[state=active]:bg-transparent data-[state=active]:shadow-none'

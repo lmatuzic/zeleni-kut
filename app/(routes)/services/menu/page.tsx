@@ -1,10 +1,3 @@
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from '@/app/(ui)/components/shadcn/Select';
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/(ui)/components/shadcn/Tabs';
 import MenuItem from './components/MenuItem';
 import MenuSelect from './components/MenuSelect';
