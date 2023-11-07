@@ -13,8 +13,6 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-	'\n\tquery allBubaras {\n\t\tbubaras {\n\t\t\tid\n\t\t\ttitle\n\t\t\tsubtitle\n\t\t}\n\t}\n':
-		types.AllBubarasDocument,
 	'\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n':
 		types.MenuCategoriesDocument,
 };
@@ -33,12 +31,6 @@ const documents = {
  */
 export function graphql(source: string): unknown;
 
-/**
- * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
- */
-export function graphql(
-	source: '\n\tquery allBubaras {\n\t\tbubaras {\n\t\t\tid\n\t\t\ttitle\n\t\t\tsubtitle\n\t\t}\n\t}\n'
-): (typeof documents)['\n\tquery allBubaras {\n\t\tbubaras {\n\t\t\tid\n\t\t\ttitle\n\t\t\tsubtitle\n\t\t}\n\t}\n'];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

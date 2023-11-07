@@ -4234,13 +4234,6 @@ export enum _SystemDateTimeFieldVariation {
 	Localization = 'localization',
 }
 
-export type AllBubarasQueryVariables = Exact<{ [key: string]: never }>;
-
-export type AllBubarasQuery = {
-	__typename?: 'Query';
-	bubaras: Array<{ __typename?: 'Bubara'; id: string; title: string; subtitle?: string | null }>;
-};
-
 export type MenuCategoriesQueryVariables = Exact<{ [key: string]: never }>;
 
 export type MenuCategoriesQuery = {
@@ -4248,33 +4241,6 @@ export type MenuCategoriesQuery = {
 	menuCategories: Array<{ __typename?: 'MenuCategory'; name: string }>;
 };
 
-export const AllBubarasDocument = {
-	kind: 'Document',
-	definitions: [
-		{
-			kind: 'OperationDefinition',
-			operation: 'query',
-			name: { kind: 'Name', value: 'allBubaras' },
-			selectionSet: {
-				kind: 'SelectionSet',
-				selections: [
-					{
-						kind: 'Field',
-						name: { kind: 'Name', value: 'bubaras' },
-						selectionSet: {
-							kind: 'SelectionSet',
-							selections: [
-								{ kind: 'Field', name: { kind: 'Name', value: 'id' } },
-								{ kind: 'Field', name: { kind: 'Name', value: 'title' } },
-								{ kind: 'Field', name: { kind: 'Name', value: 'subtitle' } },
-							],
-						},
-					},
-				],
-			},
-		},
-	],
-} as unknown as DocumentNode<AllBubarasQuery, AllBubarasQueryVariables>;
 export const MenuCategoriesDocument = {
 	kind: 'Document',
 	definitions: [
