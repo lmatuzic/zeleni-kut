@@ -12,7 +12,12 @@ export default function NavLink({ route }: NavLinkProps) {
 	const currentPath = usePathname();
 
 	return (
-		<Link href={route.path} className={route.path === currentPath ? 'text-zk-green' : ''}>
+		<Link
+			href={route.path}
+			className={
+				route.path === currentPath ? 'text-zk-green' : 'hover:text-zk-green transition-colors'
+			}
+		>
 			{route.name}
 		</Link>
 	);

@@ -24,7 +24,7 @@ export default function Services() {
 			<div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
 				<Card className='flex flex-col justify-between'>
 					<CardHeader>
-						<CardTitle className='mb-2'>Smještaj</CardTitle>
+						<CardTitle className='mb-2 text-xl'>Smještaj</CardTitle>
 
 						<CardDescription>
 							14 moderno uređenih soba čeka na Vas. U ponudi imamo jednokrevetne i dvokrevetne sobe
@@ -34,14 +34,14 @@ export default function Services() {
 
 					<CardContent>
 						<Link href={ACCOMMODATION_PAGE}>
-							<Button className='w-full text-white xs:w-fit'>Vidi više</Button>
+							<Button className='w-full xs:w-fit'>Vidi više</Button>
 						</Link>
 					</CardContent>
 				</Card>
 
 				<Card className='flex flex-col justify-between'>
 					<CardHeader>
-						<CardTitle className='mb-2'>Gastro</CardTitle>
+						<CardTitle className='mb-2 text-xl'>Gastro</CardTitle>
 
 						<CardDescription>
 							Bogata ponuda hrvatskih specijaliteta, jela domaćeg kraja, riječnih riba, ali i
@@ -52,14 +52,14 @@ export default function Services() {
 
 					<CardContent>
 						<Link href={MENU_PAGE}>
-							<Button className='w-full text-white xs:w-fit'>Vidi više</Button>
+							<Button className='w-full xs:w-fit'>Vidi više</Button>
 						</Link>
 					</CardContent>
 				</Card>
 
 				<Card className='flex flex-col justify-between'>
 					<CardHeader>
-						<CardTitle className='mb-2'>Rekreacija</CardTitle>
+						<CardTitle className='mb-2 text-xl'>Rekreacija</CardTitle>
 
 						<CardDescription>
 							Uživajte u vožnji kanuom po rijeci ​Mrežnici, igrajući odbojku na pijesku, badminton,
@@ -69,7 +69,7 @@ export default function Services() {
 
 					<CardContent>
 						<Link href={RECREATION_PAGE}>
-							<Button className='w-full text-white xs:w-fit'>Vidi više</Button>
+							<Button className='w-full xs:w-fit'>Vidi više</Button>
 						</Link>
 					</CardContent>
 				</Card>

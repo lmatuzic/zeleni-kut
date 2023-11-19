@@ -15,6 +15,8 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
 const documents = {
 	'\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n':
 		types.MenuCategoriesDocument,
+	'\n\tquery menuItems {\n\t\tmenuItems {\n\t\t\tname\n\t\t\tdescription\n\t\t\tprice\n\t\t\tmenuCategory {\n\t\t\t\tname\n\t\t\t\tlocale\n\t\t\t}\n\t\t}\n\t}\n':
+		types.MenuItemsDocument,
 };
 
 /**
@@ -37,6 +39,12 @@ export function graphql(source: string): unknown;
 export function graphql(
 	source: '\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n'
 ): (typeof documents)['\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n'];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(
+	source: '\n\tquery menuItems {\n\t\tmenuItems {\n\t\t\tname\n\t\t\tdescription\n\t\t\tprice\n\t\t\tmenuCategory {\n\t\t\t\tname\n\t\t\t\tlocale\n\t\t\t}\n\t\t}\n\t}\n'
+): (typeof documents)['\n\tquery menuItems {\n\t\tmenuItems {\n\t\t\tname\n\t\t\tdescription\n\t\t\tprice\n\t\t\tmenuCategory {\n\t\t\t\tname\n\t\t\t\tlocale\n\t\t\t}\n\t\t}\n\t}\n'];
 
 export function graphql(source: string) {
 	return (documents as any)[source] ?? {};

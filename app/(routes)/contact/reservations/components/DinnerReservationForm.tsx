@@ -48,7 +48,7 @@ export default function DinnerReservationForm() {
 							name='firstName'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>First name</FormLabel>
+									<FormLabel>Ime</FormLabel>
 									<FormControl>
 										<Input type='text' placeholder='First name' {...field} />
 									</FormControl>
@@ -62,7 +62,7 @@ export default function DinnerReservationForm() {
 							name='lastName'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Last name</FormLabel>
+									<FormLabel>Prezime</FormLabel>
 									<FormControl>
 										<Input type='text' placeholder='Last name' {...field} />
 									</FormControl>
@@ -90,7 +90,7 @@ export default function DinnerReservationForm() {
 							name='phone'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Phone</FormLabel>
+									<FormLabel>Telefon / mobitel</FormLabel>
 									<FormControl>
 										<Input type='tel' placeholder='Phone' {...field} />
 									</FormControl>
@@ -104,7 +104,7 @@ export default function DinnerReservationForm() {
 							name='numberOfPeople'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Number of people</FormLabel>
+									<FormLabel>Broj ljudi</FormLabel>
 									<FormControl>
 										<Input min={1} placeholder='Number of people' {...field} />
 									</FormControl>
@@ -118,7 +118,7 @@ export default function DinnerReservationForm() {
 							name='reservationDate'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Date</FormLabel>
+									<FormLabel>Datum</FormLabel>
 									<FormControl>
 										<div className='w-full'>
 											<DatePicker />
@@ -133,7 +133,7 @@ export default function DinnerReservationForm() {
 							name='message'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Message</FormLabel>
+									<FormLabel>Poruka</FormLabel>
 									<FormControl>
 										<Textarea rows={7} />
 									</FormControl>
@@ -142,7 +142,7 @@ export default function DinnerReservationForm() {
 						/>
 
 						<Button type='submit' className='text-white'>
-							Make a reservation
+							Rezerviraj
 						</Button>
 					</form>
 				</Form>
