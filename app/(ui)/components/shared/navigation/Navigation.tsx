@@ -8,7 +8,8 @@ export default async function Navigation() {
 	return (
 		<nav className='w-full py-2 mb-8 border-b'>
 			<div className='container flex items-center justify-between'>
-				<NavLogo />
+				{/* <NavLogo /> */}
+				<div>Logo</div>
 
 				<ul className='flex justify-between w-full sm:w-auto sm:items-center'>
 					{routes.map((route) => (
