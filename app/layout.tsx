@@ -15,13 +15,11 @@ export const quicksand = Quicksand({ subsets: ['latin'] });
 export default function RootLayout({ children }: { children: React.ReactNode }) {
 	return (
 		<html lang='en' suppressHydrationWarning>
-			<body
-				className={`${quicksand.className} min-h-screen container items-center justify-between py-4`}
-			>
+			<body className={`${quicksand.className} min-h-screen`}>
 				<Providers>
 					<Navigation />
-					<main className='my-8'>{children}</main>
-					<Footer />
+					<main className='container items-center justify-between my-8'>{children}</main>
+					{/* <Footer /> */}
 				</Providers>
 			</body>
 		</html>

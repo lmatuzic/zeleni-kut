@@ -24,6 +24,9 @@ export const theme = {
 		..._screens,
 	},
 	extend: {
+		backgroundImage: {
+			'logo-bg': "url('/public/assets/images/main.jpg')",
+		},
 		colors: {
 			border: 'hsl(var(--border))',
 			input: 'hsl(var(--input))',

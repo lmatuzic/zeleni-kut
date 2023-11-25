@@ -14,12 +14,16 @@ export default function Services() {
 		<div className='pb-12'>
 			<h1 className='mb-4 text-2xl text-zk-green'>Ponuda</h1>
 
-			<p className='max-w-2xl mb-12'>
-				Na svom razvojnom putu uspjela se očuvati dominacija prirode o čemu svjedoči i bogata
-				gastronomska ponuda riječne ribe iz vlastitih bazena (šaran, som, pastrva), specijaliteti
-				suhomesnatih domaćih proizvoda (šunka, kobasica, slanina), ali i mesnih specijaliteta
-				hrvatske kuhinje potpomognuta raznim morskim specijalitetima.
-			</p>
+			<div className='flex items-center'>
+				<p className='max-w-2xl mb-12'>
+					Na svom razvojnom putu uspjela se očuvati dominacija prirode o čemu svjedoči i bogata
+					gastronomska ponuda riječne ribe iz vlastitih bazena (šaran, som, pastrva), specijaliteti
+					suhomesnatih domaćih proizvoda (šunka, kobasica, slanina), ali i mesnih specijaliteta
+					hrvatske kuhinje potpomognuta raznim morskim specijalitetima.
+				</p>
+
+				<div>TEST</div>
+			</div>
 
 			<div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
 				<Card className='flex flex-col justify-between'>

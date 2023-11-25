@@ -6,7 +6,7 @@ import NavLink from './NavLink';
 export default async function Navigation() {
 	return (
 		<nav className='w-full'>
-			<div className='container flex items-center justify-between py-2 border border-solid rounded-lg border-gray'>
+			<div className='container flex items-center justify-between py-4'>
 				{/* <NavLogo /> */}
 				<div>Logo</div>
 
