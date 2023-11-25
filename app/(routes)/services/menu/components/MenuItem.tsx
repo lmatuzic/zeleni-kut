@@ -8,7 +8,7 @@ export default function MenuItem({ name, description, price }: MenuItem) {
 	return (
 		<div className='flex flex-col items-end justify-between pb-2 my-4 border-b border-solid md:flex-row first:mt-0'>
 			<div className='w-full md:w-auto'>
-				<div className='mb-1 text-zk-green'>{name}</div>
+				<div className='mb-1 font-bold text-zk-green'>{name}</div>
 				<div className='text-sm'>{description}</div>
 			</div>
 

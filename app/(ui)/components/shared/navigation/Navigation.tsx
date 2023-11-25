@@ -2,12 +2,11 @@ import { routes } from '@/app/constants/routes';
 import MobileNavigation from './MobileNavigation';
 import ThemeToggleButton from '../ThemeToggleButton';
 import NavLink from './NavLink';
-import NavLogo from './NavLogo';
 
 export default async function Navigation() {
 	return (
-		<nav className='w-full py-2 mb-8 border-b'>
-			<div className='container flex items-center justify-between'>
+		<nav className='w-full'>
+			<div className='container flex items-center justify-between py-2 border border-solid rounded-lg border-gray'>
 				{/* <NavLogo /> */}
 				<div>Logo</div>
 
