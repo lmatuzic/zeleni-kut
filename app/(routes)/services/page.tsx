@@ -8,6 +8,8 @@ import {
 } from '@/app/(ui)/components/shadcn/Card';
 import { ACCOMMODATION_PAGE, MENU_PAGE, RECREATION_PAGE } from '@/app/constants/routes';
 import Link from 'next/link';
+import Image from 'next/image';
+import img from '../../assets/images/bridge.jpg';
 
 export default function Services() {
 	return (
@@ -22,7 +24,7 @@ export default function Services() {
 					hrvatske kuhinje potpomognuta raznim morskim specijalitetima.
 				</p>
 
-				<div>TEST</div>
+				{/* <Image src={img} alt='bridge nature' width={300} height={100} className='rounded-lg' /> */}
 			</div>
 
 			<div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
@@ -38,7 +40,7 @@ export default function Services() {
 
 					<CardContent>
 						<Link href={ACCOMMODATION_PAGE}>
-							<Button className='w-full xs:w-fit'>Vidi više</Button>
+							<Button className='w-full text-white xs:w-fit'>Vidi više</Button>
 						</Link>
 					</CardContent>
 				</Card>
@@ -56,7 +58,7 @@ export default function Services() {
 
 					<CardContent>
 						<Link href={MENU_PAGE}>
-							<Button className='w-full xs:w-fit'>Vidi više</Button>
+							<Button className='w-full text-white xs:w-fit'>Vidi više</Button>
 						</Link>
 					</CardContent>
 				</Card>
@@ -73,7 +75,7 @@ export default function Services() {
 
 					<CardContent>
 						<Link href={RECREATION_PAGE}>
-							<Button className='w-full xs:w-fit'>Vidi više</Button>
+							<Button className='w-full text-white xs:w-fit'>Vidi više</Button>
 						</Link>
 					</CardContent>
 				</Card>

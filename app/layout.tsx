@@ -1,6 +1,6 @@
 import { Quicksand } from '@next/font/google';
 import type { Metadata } from 'next';
-import Footer from './(ui)/components/shared/Footer';
+// import Footer from './(ui)/components/shared/Footer';
 import Navigation from './(ui)/components/shared/navigation/Navigation';
 import './globals.css';
 import Providers from './providers';
