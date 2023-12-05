@@ -6,6 +6,7 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/app/(ui)/components/shadcn/Card';
+import { format } from 'date-fns';
 import Link from 'next/link';
 
 interface EventProps {
@@ -17,15 +18,18 @@ interface EventProps {
 }
 
 export default function Event({ id, title, shortDescription, dateAndTime }: EventProps) {
+	const originalDate = new Date(dateAndTime);
+	const formattedDate = format(originalDate, 'dd.MM.yyyy');
+
 	return (
 		<Card className='flex flex-col justify-between max-w-sm' key={id}>
 			<CardHeader>
-				<CardTitle className='mb-2 text-xl'>{title}</CardTitle>
-				<CardDescription>{shortDescription}</CardDescription>
+				<CardTitle className='text-xl'>{title}</CardTitle>
+				<div className='text-sm'>{formattedDate}</div>
 			</CardHeader>
 
 			<CardContent>
-				<div>{dateAndTime}</div>
+				<CardDescription className='mb-6'>{shortDescription}</CardDescription>
 				<Link href={'#'}>
 					<Button className='w-full text-white xs:w-fit'>Vidi više</Button>
 				</Link>

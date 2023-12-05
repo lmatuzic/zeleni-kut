@@ -19,7 +19,7 @@ export default function Home() {
 					</Button>
 				</div>
 
-				<Image src={img} alt='bridge nature' width={600} className='rounded-lg' />
+				<Image src={img} alt='bridge nature' width={600} className='rounded-lg' priority />
 			</div>
 
 			<div className='w-full p-8 pb-12 mt-20 bg-sectionBg rounded-xl'>
