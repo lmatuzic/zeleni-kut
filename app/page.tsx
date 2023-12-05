@@ -39,9 +39,9 @@ export default function Home() {
 				</div>
 			</BackgroundImage> */}
 
-			<div className='flex items-center w-full justify-evenly'>
-				<div>
-					<h1 className='mb-4 text-8xl text-zk-green'>Zeleni kut</h1>
+			<div className='flex items-center w-full flex-col justify-center lg:flex-row gap-12'>
+				<div className='flex flex-col items-center lg:items-start'>
+					<h1 className='mb-4 text-6xl lg:text-7xl text-zk-green'>Zeleni kut</h1>
 					<h2 className='text-xl'>Mjesto gdje sva osjetila uživaju</h2>
 					<h3>Kuda krenete, kamo stanete, ljepota se reda do ljepote</h3>
 
@@ -50,13 +50,13 @@ export default function Home() {
 					</Button>
 				</div>
 
-				<Image src={img} alt='bridge nature' width={500} height={200} className='rounded-lg' />
+				<Image src={img} alt='bridge nature' width={600} className='rounded-lg' />
 			</div>
 
-			<div className='w-full p-4 pb-10 mt-20 bg-light-gray'>
+			<div className='w-full p-8 pb-12 mt-20 bg-sectionBg rounded-xl'>
 				<h2 className='text-2xl font-bold text-center'>Novosti</h2>
 
-				<div className='flex items-center justify-center gap-8 mt-8'>
+				<div className='flex flex-col lg:flex-row items-center justify-center gap-8 mt-8'>
 					<Card className='flex flex-col justify-between max-w-sm'>
 						<CardHeader>
 							<CardTitle className='mb-2 text-xl'>Dan zena</CardTitle>
