@@ -1,4 +1,4 @@
-export default async function Events() {
+export default async function EventsPage() {
 	return (
 		<>
 			<header className='flex items-center justify-between pb-4'>

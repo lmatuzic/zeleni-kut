@@ -37,7 +37,7 @@ export const theme = {
 			'zk-dark-green': '#0f2b2f',
 			'light-gray': '#f3f4f4',
 			sectionBg: {
-				DEFAULT: 'var(--section-bg)'
+				DEFAULT: 'var(--section-bg)',
 			},
 			primary: {
 				DEFAULT: 'hsl(var(--primary))',

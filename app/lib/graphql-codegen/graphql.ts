@@ -58,6 +58,7 @@ export type Asset = Entity &
 		history: Array<Version>;
 		/** The unique identifier */
 		id: Scalars['ID']['output'];
+		imageEvent: Array<Event>;
 		/** System Locale field */
 		locale: Locale;
 		/** Get the other localizations for this document */
@@ -106,6 +107,19 @@ export type AssetHistoryArgs = {
 	limit?: Scalars['Int']['input'];
 	skip?: Scalars['Int']['input'];
 	stageOverride?: InputMaybe<Stage>;
+};
+
+/** Asset system model */
+export type AssetImageEventArgs = {
+	after?: InputMaybe<Scalars['String']['input']>;
+	before?: InputMaybe<Scalars['String']['input']>;
+	first?: InputMaybe<Scalars['Int']['input']>;
+	forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+	last?: InputMaybe<Scalars['Int']['input']>;
+	locales?: InputMaybe<Array<Locale>>;
+	orderBy?: InputMaybe<EventOrderByInput>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+	where?: InputMaybe<EventWhereInput>;
 };
 
 /** Asset system model */
@@ -175,6 +189,7 @@ export type AssetCreateInput = {
 	fileName: Scalars['String']['input'];
 	handle: Scalars['String']['input'];
 	height?: InputMaybe<Scalars['Float']['input']>;
+	imageEvent?: InputMaybe<EventCreateManyInlineInput>;
 	/** Inline mutations for managing document localizations excluding the default locale */
 	localizations?: InputMaybe<AssetCreateLocalizationsInput>;
 	mimeType?: InputMaybe<Scalars['String']['input']>;
@@ -276,6 +291,9 @@ export type AssetManyWhereInput = {
 	id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
 	/** All values starting with the given string. */
 	id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+	imageEvent_every?: InputMaybe<EventWhereInput>;
+	imageEvent_none?: InputMaybe<EventWhereInput>;
+	imageEvent_some?: InputMaybe<EventWhereInput>;
 	publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
 	/** All values greater than the given value. */
 	publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
@@ -348,6 +366,7 @@ export type AssetUpdateInput = {
 	fileName?: InputMaybe<Scalars['String']['input']>;
 	handle?: InputMaybe<Scalars['String']['input']>;
 	height?: InputMaybe<Scalars['Float']['input']>;
+	imageEvent?: InputMaybe<EventUpdateManyInlineInput>;
 	/** Manage document localizations */
 	localizations?: InputMaybe<AssetUpdateLocalizationsInput>;
 	mimeType?: InputMaybe<Scalars['String']['input']>;
@@ -580,6 +599,9 @@ export type AssetWhereInput = {
 	id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
 	/** All values starting with the given string. */
 	id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+	imageEvent_every?: InputMaybe<EventWhereInput>;
+	imageEvent_none?: InputMaybe<EventWhereInput>;
+	imageEvent_some?: InputMaybe<EventWhereInput>;
 	mimeType?: InputMaybe<Scalars['String']['input']>;
 	/** All values containing the given string. */
 	mimeType_contains?: InputMaybe<Scalars['String']['input']>;
@@ -792,6 +814,8 @@ export type Entity = {
 export enum EntityTypeName {
 	/** Asset system model */
 	Asset = 'Asset',
+	/** Events related to Zeleni kut */
+	Event = 'Event',
 	/** Menu category names */
 	MenuCategory = 'MenuCategory',
 	MenuItem = 'MenuItem',
@@ -810,6 +834,645 @@ export type EntityWhereInput = {
 	stage: Stage;
 	/** The Type name of an object */
 	typename: EntityTypeName;
+};
+
+/** Events related to Zeleni kut */
+export type Event = Entity &
+	Node & {
+		__typename?: 'Event';
+		/** The time the document was created */
+		createdAt: Scalars['DateTime']['output'];
+		/** User that created this document */
+		createdBy?: Maybe<User>;
+		/** Date and time of event */
+		dateAndTime: Scalars['DateTime']['output'];
+		/** Detailed description of event. */
+		description: EventDescriptionRichText;
+		/** Get the document in other stages */
+		documentInStages: Array<Event>;
+		/** List of Event versions */
+		history: Array<Version>;
+		/** The unique identifier */
+		id: Scalars['ID']['output'];
+		image: Array<Asset>;
+		/** Determines whether it is displayed or not */
+		isDisplayed?: Maybe<Scalars['Boolean']['output']>;
+		/** System Locale field */
+		locale: Locale;
+		/** Get the other localizations for this document */
+		localizations: Array<Event>;
+		/** The time the document was published. Null on documents in draft stage. */
+		publishedAt?: Maybe<Scalars['DateTime']['output']>;
+		/** User that last published this document */
+		publishedBy?: Maybe<User>;
+		scheduledIn: Array<ScheduledOperation>;
+		/** Short description that is going to show user a short info on specific event. On the click of event card, they will be redirected to Event page with detailed description . */
+		shortDescription: Scalars['String']['output'];
+		/** System stage field */
+		stage: Stage;
+		title: Scalars['String']['output'];
+		/** The time the document was updated */
+		updatedAt: Scalars['DateTime']['output'];
+		/** User that last updated this document */
+		updatedBy?: Maybe<User>;
+	};
+
+/** Events related to Zeleni kut */
+export type EventCreatedAtArgs = {
+	variation?: SystemDateTimeFieldVariation;
+};
+
+/** Events related to Zeleni kut */
+export type EventCreatedByArgs = {
+	forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+	locales?: InputMaybe<Array<Locale>>;
+};
+
+/** Events related to Zeleni kut */
+export type EventDocumentInStagesArgs = {
+	includeCurrent?: Scalars['Boolean']['input'];
+	inheritLocale?: Scalars['Boolean']['input'];
+	stages?: Array<Stage>;
+};
+
+/** Events related to Zeleni kut */
+export type EventHistoryArgs = {
+	limit?: Scalars['Int']['input'];
+	skip?: Scalars['Int']['input'];
+	stageOverride?: InputMaybe<Stage>;
+};
+
+/** Events related to Zeleni kut */
+export type EventImageArgs = {
+	after?: InputMaybe<Scalars['String']['input']>;
+	before?: InputMaybe<Scalars['String']['input']>;
+	first?: InputMaybe<Scalars['Int']['input']>;
+	forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+	last?: InputMaybe<Scalars['Int']['input']>;
+	locales?: InputMaybe<Array<Locale>>;
+	orderBy?: InputMaybe<AssetOrderByInput>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+	where?: InputMaybe<AssetWhereInput>;
+};
+
+/** Events related to Zeleni kut */
+export type EventLocalizationsArgs = {
+	includeCurrent?: Scalars['Boolean']['input'];
+	locales?: Array<Locale>;
+};
+
+/** Events related to Zeleni kut */
+export type EventPublishedAtArgs = {
+	variation?: SystemDateTimeFieldVariation;
+};
+
+/** Events related to Zeleni kut */
+export type EventPublishedByArgs = {
+	forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+	locales?: InputMaybe<Array<Locale>>;
+};
+
+/** Events related to Zeleni kut */
+export type EventScheduledInArgs = {
+	after?: InputMaybe<Scalars['String']['input']>;
+	before?: InputMaybe<Scalars['String']['input']>;
+	first?: InputMaybe<Scalars['Int']['input']>;
+	forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+	last?: InputMaybe<Scalars['Int']['input']>;
+	locales?: InputMaybe<Array<Locale>>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+	where?: InputMaybe<ScheduledOperationWhereInput>;
+};
+
+/** Events related to Zeleni kut */
+export type EventUpdatedAtArgs = {
+	variation?: SystemDateTimeFieldVariation;
+};
+
+/** Events related to Zeleni kut */
+export type EventUpdatedByArgs = {
+	forceParentLocale?: InputMaybe<Scalars['Boolean']['input']>;
+	locales?: InputMaybe<Array<Locale>>;
+};
+
+export type EventConnectInput = {
+	/** Allow to specify document position in list of connected documents, will default to appending at end of list */
+	position?: InputMaybe<ConnectPositionInput>;
+	/** Document to connect */
+	where: EventWhereUniqueInput;
+};
+
+/** A connection to a list of items. */
+export type EventConnection = {
+	__typename?: 'EventConnection';
+	aggregate: Aggregate;
+	/** A list of edges. */
+	edges: Array<EventEdge>;
+	/** Information to aid in pagination. */
+	pageInfo: PageInfo;
+};
+
+export type EventCreateInput = {
+	createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+	dateAndTime: Scalars['DateTime']['input'];
+	/** description input for default locale (en) */
+	description: Scalars['RichTextAST']['input'];
+	image: AssetCreateManyInlineInput;
+	isDisplayed?: InputMaybe<Scalars['Boolean']['input']>;
+	/** Inline mutations for managing document localizations excluding the default locale */
+	localizations?: InputMaybe<EventCreateLocalizationsInput>;
+	/** shortDescription input for default locale (en) */
+	shortDescription: Scalars['String']['input'];
+	/** title input for default locale (en) */
+	title: Scalars['String']['input'];
+	updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type EventCreateLocalizationDataInput = {
+	createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+	description: Scalars['RichTextAST']['input'];
+	shortDescription: Scalars['String']['input'];
+	title: Scalars['String']['input'];
+	updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+};
+
+export type EventCreateLocalizationInput = {
+	/** Localization input */
+	data: EventCreateLocalizationDataInput;
+	locale: Locale;
+};
+
+export type EventCreateLocalizationsInput = {
+	/** Create localizations for the newly-created document */
+	create?: InputMaybe<Array<EventCreateLocalizationInput>>;
+};
+
+export type EventCreateManyInlineInput = {
+	/** Connect multiple existing Event documents */
+	connect?: InputMaybe<Array<EventWhereUniqueInput>>;
+	/** Create and connect multiple existing Event documents */
+	create?: InputMaybe<Array<EventCreateInput>>;
+};
+
+export type EventCreateOneInlineInput = {
+	/** Connect one existing Event document */
+	connect?: InputMaybe<EventWhereUniqueInput>;
+	/** Create and connect one Event document */
+	create?: InputMaybe<EventCreateInput>;
+};
+
+export type EventDescriptionRichText = {
+	__typename?: 'EventDescriptionRichText';
+	/** Returns HTMl representation */
+	html: Scalars['String']['output'];
+	json: Scalars['RichTextAST']['output'];
+	/** Returns Markdown representation */
+	markdown: Scalars['String']['output'];
+	/** @deprecated Please use the 'json' field */
+	raw: Scalars['RichTextAST']['output'];
+	references: Array<EventDescriptionRichTextEmbeddedTypes>;
+	/** Returns plain-text contents of RichText */
+	text: Scalars['String']['output'];
+};
+
+export type EventDescriptionRichTextReferencesArgs = {
+	after?: InputMaybe<Scalars['String']['input']>;
+	before?: InputMaybe<Scalars['String']['input']>;
+	first?: InputMaybe<Scalars['Int']['input']>;
+	last?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+};
+
+export type EventDescriptionRichTextEmbeddedTypes = Asset | Event;
+
+/** An edge in a connection. */
+export type EventEdge = {
+	__typename?: 'EventEdge';
+	/** A cursor for use in pagination. */
+	cursor: Scalars['String']['output'];
+	/** The item at the end of the edge. */
+	node: Event;
+};
+
+/** Identifies documents */
+export type EventManyWhereInput = {
+	/** Logical AND on all given filters. */
+	AND?: InputMaybe<Array<EventWhereInput>>;
+	/** Logical NOT on all given filters combined by AND. */
+	NOT?: InputMaybe<Array<EventWhereInput>>;
+	/** Logical OR on all given filters. */
+	OR?: InputMaybe<Array<EventWhereInput>>;
+	/** Contains search across all appropriate fields. */
+	_search?: InputMaybe<Scalars['String']['input']>;
+	createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than the given value. */
+	createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than or equal the given value. */
+	createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are contained in given list. */
+	createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	/** All values less than the given value. */
+	createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values less than or equal the given value. */
+	createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** Any other value that exists and is not equal to the given value. */
+	createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are not contained in given list. */
+	createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	createdBy?: InputMaybe<UserWhereInput>;
+	dateAndTime?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than the given value. */
+	dateAndTime_gt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than or equal the given value. */
+	dateAndTime_gte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are contained in given list. */
+	dateAndTime_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	/** All values less than the given value. */
+	dateAndTime_lt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values less than or equal the given value. */
+	dateAndTime_lte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** Any other value that exists and is not equal to the given value. */
+	dateAndTime_not?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are not contained in given list. */
+	dateAndTime_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	documentInStages_every?: InputMaybe<EventWhereStageInput>;
+	documentInStages_none?: InputMaybe<EventWhereStageInput>;
+	documentInStages_some?: InputMaybe<EventWhereStageInput>;
+	id?: InputMaybe<Scalars['ID']['input']>;
+	/** All values containing the given string. */
+	id_contains?: InputMaybe<Scalars['ID']['input']>;
+	/** All values ending with the given string. */
+	id_ends_with?: InputMaybe<Scalars['ID']['input']>;
+	/** All values that are contained in given list. */
+	id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+	/** Any other value that exists and is not equal to the given value. */
+	id_not?: InputMaybe<Scalars['ID']['input']>;
+	/** All values not containing the given string. */
+	id_not_contains?: InputMaybe<Scalars['ID']['input']>;
+	/** All values not ending with the given string */
+	id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
+	/** All values that are not contained in given list. */
+	id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+	/** All values not starting with the given string. */
+	id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
+	/** All values starting with the given string. */
+	id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+	image_every?: InputMaybe<AssetWhereInput>;
+	image_none?: InputMaybe<AssetWhereInput>;
+	image_some?: InputMaybe<AssetWhereInput>;
+	isDisplayed?: InputMaybe<Scalars['Boolean']['input']>;
+	/** Any other value that exists and is not equal to the given value. */
+	isDisplayed_not?: InputMaybe<Scalars['Boolean']['input']>;
+	publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than the given value. */
+	publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than or equal the given value. */
+	publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are contained in given list. */
+	publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	/** All values less than the given value. */
+	publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values less than or equal the given value. */
+	publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** Any other value that exists and is not equal to the given value. */
+	publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are not contained in given list. */
+	publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	publishedBy?: InputMaybe<UserWhereInput>;
+	scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
+	scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
+	scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+	updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than the given value. */
+	updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than or equal the given value. */
+	updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are contained in given list. */
+	updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	/** All values less than the given value. */
+	updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values less than or equal the given value. */
+	updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** Any other value that exists and is not equal to the given value. */
+	updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are not contained in given list. */
+	updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	updatedBy?: InputMaybe<UserWhereInput>;
+};
+
+export enum EventOrderByInput {
+	CreatedAtAsc = 'createdAt_ASC',
+	CreatedAtDesc = 'createdAt_DESC',
+	DateAndTimeAsc = 'dateAndTime_ASC',
+	DateAndTimeDesc = 'dateAndTime_DESC',
+	IdAsc = 'id_ASC',
+	IdDesc = 'id_DESC',
+	IsDisplayedAsc = 'isDisplayed_ASC',
+	IsDisplayedDesc = 'isDisplayed_DESC',
+	PublishedAtAsc = 'publishedAt_ASC',
+	PublishedAtDesc = 'publishedAt_DESC',
+	ShortDescriptionAsc = 'shortDescription_ASC',
+	ShortDescriptionDesc = 'shortDescription_DESC',
+	TitleAsc = 'title_ASC',
+	TitleDesc = 'title_DESC',
+	UpdatedAtAsc = 'updatedAt_ASC',
+	UpdatedAtDesc = 'updatedAt_DESC',
+}
+
+export type EventUpdateInput = {
+	dateAndTime?: InputMaybe<Scalars['DateTime']['input']>;
+	/** description input for default locale (en) */
+	description?: InputMaybe<Scalars['RichTextAST']['input']>;
+	image?: InputMaybe<AssetUpdateManyInlineInput>;
+	isDisplayed?: InputMaybe<Scalars['Boolean']['input']>;
+	/** Manage document localizations */
+	localizations?: InputMaybe<EventUpdateLocalizationsInput>;
+	/** shortDescription input for default locale (en) */
+	shortDescription?: InputMaybe<Scalars['String']['input']>;
+	/** title input for default locale (en) */
+	title?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type EventUpdateLocalizationDataInput = {
+	description?: InputMaybe<Scalars['RichTextAST']['input']>;
+	shortDescription?: InputMaybe<Scalars['String']['input']>;
+	title?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type EventUpdateLocalizationInput = {
+	data: EventUpdateLocalizationDataInput;
+	locale: Locale;
+};
+
+export type EventUpdateLocalizationsInput = {
+	/** Localizations to create */
+	create?: InputMaybe<Array<EventCreateLocalizationInput>>;
+	/** Localizations to delete */
+	delete?: InputMaybe<Array<Locale>>;
+	/** Localizations to update */
+	update?: InputMaybe<Array<EventUpdateLocalizationInput>>;
+	upsert?: InputMaybe<Array<EventUpsertLocalizationInput>>;
+};
+
+export type EventUpdateManyInlineInput = {
+	/** Connect multiple existing Event documents */
+	connect?: InputMaybe<Array<EventConnectInput>>;
+	/** Create and connect multiple Event documents */
+	create?: InputMaybe<Array<EventCreateInput>>;
+	/** Delete multiple Event documents */
+	delete?: InputMaybe<Array<EventWhereUniqueInput>>;
+	/** Disconnect multiple Event documents */
+	disconnect?: InputMaybe<Array<EventWhereUniqueInput>>;
+	/** Override currently-connected documents with multiple existing Event documents */
+	set?: InputMaybe<Array<EventWhereUniqueInput>>;
+	/** Update multiple Event documents */
+	update?: InputMaybe<Array<EventUpdateWithNestedWhereUniqueInput>>;
+	/** Upsert multiple Event documents */
+	upsert?: InputMaybe<Array<EventUpsertWithNestedWhereUniqueInput>>;
+};
+
+export type EventUpdateManyInput = {
+	dateAndTime?: InputMaybe<Scalars['DateTime']['input']>;
+	/** description input for default locale (en) */
+	description?: InputMaybe<Scalars['RichTextAST']['input']>;
+	isDisplayed?: InputMaybe<Scalars['Boolean']['input']>;
+	/** Optional updates to localizations */
+	localizations?: InputMaybe<EventUpdateManyLocalizationsInput>;
+	/** shortDescription input for default locale (en) */
+	shortDescription?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type EventUpdateManyLocalizationDataInput = {
+	description?: InputMaybe<Scalars['RichTextAST']['input']>;
+	shortDescription?: InputMaybe<Scalars['String']['input']>;
+};
+
+export type EventUpdateManyLocalizationInput = {
+	data: EventUpdateManyLocalizationDataInput;
+	locale: Locale;
+};
+
+export type EventUpdateManyLocalizationsInput = {
+	/** Localizations to update */
+	update?: InputMaybe<Array<EventUpdateManyLocalizationInput>>;
+};
+
+export type EventUpdateManyWithNestedWhereInput = {
+	/** Update many input */
+	data: EventUpdateManyInput;
+	/** Document search */
+	where: EventWhereInput;
+};
+
+export type EventUpdateOneInlineInput = {
+	/** Connect existing Event document */
+	connect?: InputMaybe<EventWhereUniqueInput>;
+	/** Create and connect one Event document */
+	create?: InputMaybe<EventCreateInput>;
+	/** Delete currently connected Event document */
+	delete?: InputMaybe<Scalars['Boolean']['input']>;
+	/** Disconnect currently connected Event document */
+	disconnect?: InputMaybe<Scalars['Boolean']['input']>;
+	/** Update single Event document */
+	update?: InputMaybe<EventUpdateWithNestedWhereUniqueInput>;
+	/** Upsert single Event document */
+	upsert?: InputMaybe<EventUpsertWithNestedWhereUniqueInput>;
+};
+
+export type EventUpdateWithNestedWhereUniqueInput = {
+	/** Document to update */
+	data: EventUpdateInput;
+	/** Unique document search */
+	where: EventWhereUniqueInput;
+};
+
+export type EventUpsertInput = {
+	/** Create document if it didn't exist */
+	create: EventCreateInput;
+	/** Update document if it exists */
+	update: EventUpdateInput;
+};
+
+export type EventUpsertLocalizationInput = {
+	create: EventCreateLocalizationDataInput;
+	locale: Locale;
+	update: EventUpdateLocalizationDataInput;
+};
+
+export type EventUpsertWithNestedWhereUniqueInput = {
+	/** Upsert data */
+	data: EventUpsertInput;
+	/** Unique document search */
+	where: EventWhereUniqueInput;
+};
+
+/** This contains a set of filters that can be used to compare values internally */
+export type EventWhereComparatorInput = {
+	/** This field can be used to request to check if the entry is outdated by internal comparison */
+	outdated_to?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+/** Identifies documents */
+export type EventWhereInput = {
+	/** Logical AND on all given filters. */
+	AND?: InputMaybe<Array<EventWhereInput>>;
+	/** Logical NOT on all given filters combined by AND. */
+	NOT?: InputMaybe<Array<EventWhereInput>>;
+	/** Logical OR on all given filters. */
+	OR?: InputMaybe<Array<EventWhereInput>>;
+	/** Contains search across all appropriate fields. */
+	_search?: InputMaybe<Scalars['String']['input']>;
+	createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than the given value. */
+	createdAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than or equal the given value. */
+	createdAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are contained in given list. */
+	createdAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	/** All values less than the given value. */
+	createdAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values less than or equal the given value. */
+	createdAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** Any other value that exists and is not equal to the given value. */
+	createdAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are not contained in given list. */
+	createdAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	createdBy?: InputMaybe<UserWhereInput>;
+	dateAndTime?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than the given value. */
+	dateAndTime_gt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than or equal the given value. */
+	dateAndTime_gte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are contained in given list. */
+	dateAndTime_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	/** All values less than the given value. */
+	dateAndTime_lt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values less than or equal the given value. */
+	dateAndTime_lte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** Any other value that exists and is not equal to the given value. */
+	dateAndTime_not?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are not contained in given list. */
+	dateAndTime_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	documentInStages_every?: InputMaybe<EventWhereStageInput>;
+	documentInStages_none?: InputMaybe<EventWhereStageInput>;
+	documentInStages_some?: InputMaybe<EventWhereStageInput>;
+	id?: InputMaybe<Scalars['ID']['input']>;
+	/** All values containing the given string. */
+	id_contains?: InputMaybe<Scalars['ID']['input']>;
+	/** All values ending with the given string. */
+	id_ends_with?: InputMaybe<Scalars['ID']['input']>;
+	/** All values that are contained in given list. */
+	id_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+	/** Any other value that exists and is not equal to the given value. */
+	id_not?: InputMaybe<Scalars['ID']['input']>;
+	/** All values not containing the given string. */
+	id_not_contains?: InputMaybe<Scalars['ID']['input']>;
+	/** All values not ending with the given string */
+	id_not_ends_with?: InputMaybe<Scalars['ID']['input']>;
+	/** All values that are not contained in given list. */
+	id_not_in?: InputMaybe<Array<InputMaybe<Scalars['ID']['input']>>>;
+	/** All values not starting with the given string. */
+	id_not_starts_with?: InputMaybe<Scalars['ID']['input']>;
+	/** All values starting with the given string. */
+	id_starts_with?: InputMaybe<Scalars['ID']['input']>;
+	image_every?: InputMaybe<AssetWhereInput>;
+	image_none?: InputMaybe<AssetWhereInput>;
+	image_some?: InputMaybe<AssetWhereInput>;
+	isDisplayed?: InputMaybe<Scalars['Boolean']['input']>;
+	/** Any other value that exists and is not equal to the given value. */
+	isDisplayed_not?: InputMaybe<Scalars['Boolean']['input']>;
+	publishedAt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than the given value. */
+	publishedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than or equal the given value. */
+	publishedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are contained in given list. */
+	publishedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	/** All values less than the given value. */
+	publishedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values less than or equal the given value. */
+	publishedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** Any other value that exists and is not equal to the given value. */
+	publishedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are not contained in given list. */
+	publishedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	publishedBy?: InputMaybe<UserWhereInput>;
+	scheduledIn_every?: InputMaybe<ScheduledOperationWhereInput>;
+	scheduledIn_none?: InputMaybe<ScheduledOperationWhereInput>;
+	scheduledIn_some?: InputMaybe<ScheduledOperationWhereInput>;
+	shortDescription?: InputMaybe<Scalars['String']['input']>;
+	/** All values containing the given string. */
+	shortDescription_contains?: InputMaybe<Scalars['String']['input']>;
+	/** All values ending with the given string. */
+	shortDescription_ends_with?: InputMaybe<Scalars['String']['input']>;
+	/** All values that are contained in given list. */
+	shortDescription_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+	/** Any other value that exists and is not equal to the given value. */
+	shortDescription_not?: InputMaybe<Scalars['String']['input']>;
+	/** All values not containing the given string. */
+	shortDescription_not_contains?: InputMaybe<Scalars['String']['input']>;
+	/** All values not ending with the given string */
+	shortDescription_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+	/** All values that are not contained in given list. */
+	shortDescription_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+	/** All values not starting with the given string. */
+	shortDescription_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+	/** All values starting with the given string. */
+	shortDescription_starts_with?: InputMaybe<Scalars['String']['input']>;
+	title?: InputMaybe<Scalars['String']['input']>;
+	/** All values containing the given string. */
+	title_contains?: InputMaybe<Scalars['String']['input']>;
+	/** All values ending with the given string. */
+	title_ends_with?: InputMaybe<Scalars['String']['input']>;
+	/** All values that are contained in given list. */
+	title_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+	/** Any other value that exists and is not equal to the given value. */
+	title_not?: InputMaybe<Scalars['String']['input']>;
+	/** All values not containing the given string. */
+	title_not_contains?: InputMaybe<Scalars['String']['input']>;
+	/** All values not ending with the given string */
+	title_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+	/** All values that are not contained in given list. */
+	title_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+	/** All values not starting with the given string. */
+	title_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+	/** All values starting with the given string. */
+	title_starts_with?: InputMaybe<Scalars['String']['input']>;
+	updatedAt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than the given value. */
+	updatedAt_gt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values greater than or equal the given value. */
+	updatedAt_gte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are contained in given list. */
+	updatedAt_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	/** All values less than the given value. */
+	updatedAt_lt?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values less than or equal the given value. */
+	updatedAt_lte?: InputMaybe<Scalars['DateTime']['input']>;
+	/** Any other value that exists and is not equal to the given value. */
+	updatedAt_not?: InputMaybe<Scalars['DateTime']['input']>;
+	/** All values that are not contained in given list. */
+	updatedAt_not_in?: InputMaybe<Array<InputMaybe<Scalars['DateTime']['input']>>>;
+	updatedBy?: InputMaybe<UserWhereInput>;
+};
+
+/** The document in stages filter allows specifying a stage entry to cross compare the same document between different stages */
+export type EventWhereStageInput = {
+	/** Logical AND on all given filters. */
+	AND?: InputMaybe<Array<EventWhereStageInput>>;
+	/** Logical NOT on all given filters combined by AND. */
+	NOT?: InputMaybe<Array<EventWhereStageInput>>;
+	/** Logical OR on all given filters. */
+	OR?: InputMaybe<Array<EventWhereStageInput>>;
+	/** This field contains fields which can be set as true or false to specify an internal comparison */
+	compareWithParent?: InputMaybe<EventWhereComparatorInput>;
+	/** Specify the stage to compare with */
+	stage?: InputMaybe<Stage>;
+};
+
+/** References Event record uniquely */
+export type EventWhereUniqueInput = {
+	id?: InputMaybe<Scalars['ID']['input']>;
 };
 
 export enum ImageFit {
@@ -2010,6 +2673,8 @@ export type Mutation = {
 	 * @deprecated Asset mutations will be overhauled soon
 	 */
 	createAsset?: Maybe<Asset>;
+	/** Create one event */
+	createEvent?: Maybe<Event>;
 	/** Create one menuCategory */
 	createMenuCategory?: Maybe<MenuCategory>;
 	/** Create one menuItem */
@@ -2018,6 +2683,8 @@ export type Mutation = {
 	createScheduledRelease?: Maybe<ScheduledRelease>;
 	/** Delete one asset from _all_ existing stages. Returns deleted document. */
 	deleteAsset?: Maybe<Asset>;
+	/** Delete one event from _all_ existing stages. Returns deleted document. */
+	deleteEvent?: Maybe<Event>;
 	/**
 	 * Delete many Asset documents
 	 * @deprecated Please use the new paginated many mutation (deleteManyAssetsConnection)
@@ -2025,6 +2692,13 @@ export type Mutation = {
 	deleteManyAssets: BatchPayload;
 	/** Delete many Asset documents, return deleted documents */
 	deleteManyAssetsConnection: AssetConnection;
+	/**
+	 * Delete many Event documents
+	 * @deprecated Please use the new paginated many mutation (deleteManyEventsConnection)
+	 */
+	deleteManyEvents: BatchPayload;
+	/** Delete many Event documents, return deleted documents */
+	deleteManyEventsConnection: EventConnection;
 	/**
 	 * Delete many MenuCategory documents
 	 * @deprecated Please use the new paginated many mutation (deleteManyMenuCategoriesConnection)
@@ -2049,6 +2723,8 @@ export type Mutation = {
 	deleteScheduledRelease?: Maybe<ScheduledRelease>;
 	/** Publish one asset */
 	publishAsset?: Maybe<Asset>;
+	/** Publish one event */
+	publishEvent?: Maybe<Event>;
 	/**
 	 * Publish many Asset documents
 	 * @deprecated Please use the new paginated many mutation (publishManyAssetsConnection)
@@ -2056,6 +2732,13 @@ export type Mutation = {
 	publishManyAssets: BatchPayload;
 	/** Publish many Asset documents */
 	publishManyAssetsConnection: AssetConnection;
+	/**
+	 * Publish many Event documents
+	 * @deprecated Please use the new paginated many mutation (publishManyEventsConnection)
+	 */
+	publishManyEvents: BatchPayload;
+	/** Publish many Event documents */
+	publishManyEventsConnection: EventConnection;
 	/**
 	 * Publish many MenuCategory documents
 	 * @deprecated Please use the new paginated many mutation (publishManyMenuCategoriesConnection)
@@ -2076,18 +2759,24 @@ export type Mutation = {
 	publishMenuItem?: Maybe<MenuItem>;
 	/** Schedule to publish one asset */
 	schedulePublishAsset?: Maybe<Asset>;
+	/** Schedule to publish one event */
+	schedulePublishEvent?: Maybe<Event>;
 	/** Schedule to publish one menuCategory */
 	schedulePublishMenuCategory?: Maybe<MenuCategory>;
 	/** Schedule to publish one menuItem */
 	schedulePublishMenuItem?: Maybe<MenuItem>;
 	/** Unpublish one asset from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
 	scheduleUnpublishAsset?: Maybe<Asset>;
+	/** Unpublish one event from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+	scheduleUnpublishEvent?: Maybe<Event>;
 	/** Unpublish one menuCategory from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
 	scheduleUnpublishMenuCategory?: Maybe<MenuCategory>;
 	/** Unpublish one menuItem from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
 	scheduleUnpublishMenuItem?: Maybe<MenuItem>;
 	/** Unpublish one asset from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
 	unpublishAsset?: Maybe<Asset>;
+	/** Unpublish one event from selected stages. Unpublish either the complete document with its relations, localizations and base data or specific localizations only. */
+	unpublishEvent?: Maybe<Event>;
 	/**
 	 * Unpublish many Asset documents
 	 * @deprecated Please use the new paginated many mutation (unpublishManyAssetsConnection)
@@ -2095,6 +2784,13 @@ export type Mutation = {
 	unpublishManyAssets: BatchPayload;
 	/** Find many Asset documents that match criteria in specified stage and unpublish from target stages */
 	unpublishManyAssetsConnection: AssetConnection;
+	/**
+	 * Unpublish many Event documents
+	 * @deprecated Please use the new paginated many mutation (unpublishManyEventsConnection)
+	 */
+	unpublishManyEvents: BatchPayload;
+	/** Find many Event documents that match criteria in specified stage and unpublish from target stages */
+	unpublishManyEventsConnection: EventConnection;
 	/**
 	 * Unpublish many MenuCategory documents
 	 * @deprecated Please use the new paginated many mutation (unpublishManyMenuCategoriesConnection)
@@ -2115,6 +2811,8 @@ export type Mutation = {
 	unpublishMenuItem?: Maybe<MenuItem>;
 	/** Update one asset */
 	updateAsset?: Maybe<Asset>;
+	/** Update one event */
+	updateEvent?: Maybe<Event>;
 	/**
 	 * Update many assets
 	 * @deprecated Please use the new paginated many mutation (updateManyAssetsConnection)
@@ -2122,6 +2820,13 @@ export type Mutation = {
 	updateManyAssets: BatchPayload;
 	/** Update many Asset documents */
 	updateManyAssetsConnection: AssetConnection;
+	/**
+	 * Update many events
+	 * @deprecated Please use the new paginated many mutation (updateManyEventsConnection)
+	 */
+	updateManyEvents: BatchPayload;
+	/** Update many Event documents */
+	updateManyEventsConnection: EventConnection;
 	/**
 	 * Update many menuCategories
 	 * @deprecated Please use the new paginated many mutation (updateManyMenuCategoriesConnection)
@@ -2144,6 +2849,8 @@ export type Mutation = {
 	updateScheduledRelease?: Maybe<ScheduledRelease>;
 	/** Upsert one asset */
 	upsertAsset?: Maybe<Asset>;
+	/** Upsert one event */
+	upsertEvent?: Maybe<Event>;
 	/** Upsert one menuCategory */
 	upsertMenuCategory?: Maybe<MenuCategory>;
 	/** Upsert one menuItem */
@@ -2152,6 +2859,10 @@ export type Mutation = {
 
 export type MutationCreateAssetArgs = {
 	data: AssetCreateInput;
+};
+
+export type MutationCreateEventArgs = {
+	data: EventCreateInput;
 };
 
 export type MutationCreateMenuCategoryArgs = {
@@ -2170,6 +2881,10 @@ export type MutationDeleteAssetArgs = {
 	where: AssetWhereUniqueInput;
 };
 
+export type MutationDeleteEventArgs = {
+	where: EventWhereUniqueInput;
+};
+
 export type MutationDeleteManyAssetsArgs = {
 	where?: InputMaybe<AssetManyWhereInput>;
 };
@@ -2181,6 +2896,19 @@ export type MutationDeleteManyAssetsConnectionArgs = {
 	last?: InputMaybe<Scalars['Int']['input']>;
 	skip?: InputMaybe<Scalars['Int']['input']>;
 	where?: InputMaybe<AssetManyWhereInput>;
+};
+
+export type MutationDeleteManyEventsArgs = {
+	where?: InputMaybe<EventManyWhereInput>;
+};
+
+export type MutationDeleteManyEventsConnectionArgs = {
+	after?: InputMaybe<Scalars['ID']['input']>;
+	before?: InputMaybe<Scalars['ID']['input']>;
+	first?: InputMaybe<Scalars['Int']['input']>;
+	last?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+	where?: InputMaybe<EventManyWhereInput>;
 };
 
 export type MutationDeleteManyMenuCategoriesArgs = {
@@ -2233,6 +2961,14 @@ export type MutationPublishAssetArgs = {
 	withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+export type MutationPublishEventArgs = {
+	locales?: InputMaybe<Array<Locale>>;
+	publishBase?: InputMaybe<Scalars['Boolean']['input']>;
+	to?: Array<Stage>;
+	where: EventWhereUniqueInput;
+	withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 export type MutationPublishManyAssetsArgs = {
 	locales?: InputMaybe<Array<Locale>>;
 	publishBase?: InputMaybe<Scalars['Boolean']['input']>;
@@ -2252,6 +2988,28 @@ export type MutationPublishManyAssetsConnectionArgs = {
 	skip?: InputMaybe<Scalars['Int']['input']>;
 	to?: Array<Stage>;
 	where?: InputMaybe<AssetManyWhereInput>;
+	withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type MutationPublishManyEventsArgs = {
+	locales?: InputMaybe<Array<Locale>>;
+	publishBase?: InputMaybe<Scalars['Boolean']['input']>;
+	to?: Array<Stage>;
+	where?: InputMaybe<EventManyWhereInput>;
+	withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
+export type MutationPublishManyEventsConnectionArgs = {
+	after?: InputMaybe<Scalars['ID']['input']>;
+	before?: InputMaybe<Scalars['ID']['input']>;
+	first?: InputMaybe<Scalars['Int']['input']>;
+	from?: InputMaybe<Stage>;
+	last?: InputMaybe<Scalars['Int']['input']>;
+	locales?: InputMaybe<Array<Locale>>;
+	publishBase?: InputMaybe<Scalars['Boolean']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+	to?: Array<Stage>;
+	where?: InputMaybe<EventManyWhereInput>;
 	withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
@@ -2325,6 +3083,16 @@ export type MutationSchedulePublishAssetArgs = {
 	withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
 };
 
+export type MutationSchedulePublishEventArgs = {
+	locales?: InputMaybe<Array<Locale>>;
+	publishBase?: InputMaybe<Scalars['Boolean']['input']>;
+	releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
+	releaseId?: InputMaybe<Scalars['String']['input']>;
+	to?: Array<Stage>;
+	where: EventWhereUniqueInput;
+	withDefaultLocale?: InputMaybe<Scalars['Boolean']['input']>;
+};
+
 export type MutationSchedulePublishMenuCategoryArgs = {
 	locales?: InputMaybe<Array<Locale>>;
 	publishBase?: InputMaybe<Scalars['Boolean']['input']>;
@@ -2354,6 +3122,15 @@ export type MutationScheduleUnpublishAssetArgs = {
 	where: AssetWhereUniqueInput;
 };
 
+export type MutationScheduleUnpublishEventArgs = {
+	from?: Array<Stage>;
+	locales?: InputMaybe<Array<Locale>>;
+	releaseAt?: InputMaybe<Scalars['DateTime']['input']>;
+	releaseId?: InputMaybe<Scalars['String']['input']>;
+	unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
+	where: EventWhereUniqueInput;
+};
+
 export type MutationScheduleUnpublishMenuCategoryArgs = {
 	from?: Array<Stage>;
 	locales?: InputMaybe<Array<Locale>>;
@@ -2379,6 +3156,13 @@ export type MutationUnpublishAssetArgs = {
 	where: AssetWhereUniqueInput;
 };
 
+export type MutationUnpublishEventArgs = {
+	from?: Array<Stage>;
+	locales?: InputMaybe<Array<Locale>>;
+	unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
+	where: EventWhereUniqueInput;
+};
+
 export type MutationUnpublishManyAssetsArgs = {
 	from?: Array<Stage>;
 	locales?: InputMaybe<Array<Locale>>;
@@ -2397,6 +3181,26 @@ export type MutationUnpublishManyAssetsConnectionArgs = {
 	stage?: InputMaybe<Stage>;
 	unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
 	where?: InputMaybe<AssetManyWhereInput>;
+};
+
+export type MutationUnpublishManyEventsArgs = {
+	from?: Array<Stage>;
+	locales?: InputMaybe<Array<Locale>>;
+	unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
+	where?: InputMaybe<EventManyWhereInput>;
+};
+
+export type MutationUnpublishManyEventsConnectionArgs = {
+	after?: InputMaybe<Scalars['ID']['input']>;
+	before?: InputMaybe<Scalars['ID']['input']>;
+	first?: InputMaybe<Scalars['Int']['input']>;
+	from?: Array<Stage>;
+	last?: InputMaybe<Scalars['Int']['input']>;
+	locales?: InputMaybe<Array<Locale>>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+	stage?: InputMaybe<Stage>;
+	unpublishBase?: InputMaybe<Scalars['Boolean']['input']>;
+	where?: InputMaybe<EventManyWhereInput>;
 };
 
 export type MutationUnpublishManyMenuCategoriesArgs = {
@@ -2458,6 +3262,11 @@ export type MutationUpdateAssetArgs = {
 	where: AssetWhereUniqueInput;
 };
 
+export type MutationUpdateEventArgs = {
+	data: EventUpdateInput;
+	where: EventWhereUniqueInput;
+};
+
 export type MutationUpdateManyAssetsArgs = {
 	data: AssetUpdateManyInput;
 	where?: InputMaybe<AssetManyWhereInput>;
@@ -2471,6 +3280,21 @@ export type MutationUpdateManyAssetsConnectionArgs = {
 	last?: InputMaybe<Scalars['Int']['input']>;
 	skip?: InputMaybe<Scalars['Int']['input']>;
 	where?: InputMaybe<AssetManyWhereInput>;
+};
+
+export type MutationUpdateManyEventsArgs = {
+	data: EventUpdateManyInput;
+	where?: InputMaybe<EventManyWhereInput>;
+};
+
+export type MutationUpdateManyEventsConnectionArgs = {
+	after?: InputMaybe<Scalars['ID']['input']>;
+	before?: InputMaybe<Scalars['ID']['input']>;
+	data: EventUpdateManyInput;
+	first?: InputMaybe<Scalars['Int']['input']>;
+	last?: InputMaybe<Scalars['Int']['input']>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+	where?: InputMaybe<EventManyWhereInput>;
 };
 
 export type MutationUpdateManyMenuCategoriesArgs = {
@@ -2521,6 +3345,11 @@ export type MutationUpdateScheduledReleaseArgs = {
 export type MutationUpsertAssetArgs = {
 	upsert: AssetUpsertInput;
 	where: AssetWhereUniqueInput;
+};
+
+export type MutationUpsertEventArgs = {
+	upsert: EventUpsertInput;
+	where: EventWhereUniqueInput;
 };
 
 export type MutationUpsertMenuCategoryArgs = {
@@ -2575,6 +3404,14 @@ export type Query = {
 	assetsConnection: AssetConnection;
 	/** Fetches an object given its ID */
 	entities?: Maybe<Array<Entity>>;
+	/** Retrieve a single event */
+	event?: Maybe<Event>;
+	/** Retrieve document version */
+	eventVersion?: Maybe<DocumentVersion>;
+	/** Retrieve multiple events */
+	events: Array<Event>;
+	/** Retrieve multiple events using the Relay connection interface */
+	eventsConnection: EventConnection;
 	/** Retrieve multiple menuCategories */
 	menuCategories: Array<MenuCategory>;
 	/** Retrieve multiple menuCategories using the Relay connection interface */
@@ -2649,6 +3486,40 @@ export type QueryAssetsConnectionArgs = {
 
 export type QueryEntitiesArgs = {
 	where: Array<EntityWhereInput>;
+};
+
+export type QueryEventArgs = {
+	locales?: Array<Locale>;
+	stage?: Stage;
+	where: EventWhereUniqueInput;
+};
+
+export type QueryEventVersionArgs = {
+	where: VersionWhereInput;
+};
+
+export type QueryEventsArgs = {
+	after?: InputMaybe<Scalars['String']['input']>;
+	before?: InputMaybe<Scalars['String']['input']>;
+	first?: InputMaybe<Scalars['Int']['input']>;
+	last?: InputMaybe<Scalars['Int']['input']>;
+	locales?: Array<Locale>;
+	orderBy?: InputMaybe<EventOrderByInput>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+	stage?: Stage;
+	where?: InputMaybe<EventWhereInput>;
+};
+
+export type QueryEventsConnectionArgs = {
+	after?: InputMaybe<Scalars['String']['input']>;
+	before?: InputMaybe<Scalars['String']['input']>;
+	first?: InputMaybe<Scalars['Int']['input']>;
+	last?: InputMaybe<Scalars['Int']['input']>;
+	locales?: Array<Locale>;
+	orderBy?: InputMaybe<EventOrderByInput>;
+	skip?: InputMaybe<Scalars['Int']['input']>;
+	stage?: Stage;
+	where?: InputMaybe<EventWhereInput>;
 };
 
 export type QueryMenuCategoriesArgs = {
@@ -2922,7 +3793,7 @@ export type ScheduledOperationUpdatedByArgs = {
 	locales?: InputMaybe<Array<Locale>>;
 };
 
-export type ScheduledOperationAffectedDocument = Asset | MenuCategory | MenuItem;
+export type ScheduledOperationAffectedDocument = Asset | Event | MenuCategory | MenuItem;
 
 export type ScheduledOperationConnectInput = {
 	/** Allow to specify document position in list of connected documents, will default to appending at end of list */
@@ -4363,6 +5234,22 @@ export enum _SystemDateTimeFieldVariation {
 	Localization = 'localization',
 }
 
+export type EventsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type EventsQuery = {
+	__typename?: 'Query';
+	events: Array<{
+		__typename?: 'Event';
+		id: string;
+		title: string;
+		shortDescription: string;
+		isDisplayed?: boolean | null;
+		dateAndTime: any;
+		locale: Locale;
+		description: { __typename?: 'EventDescriptionRichText'; html: string; text: string };
+	}>;
+};
+
 export type MenuCategoriesQueryVariables = Exact<{ [key: string]: never }>;
 
 export type MenuCategoriesQuery = {
@@ -4383,6 +5270,47 @@ export type MenuItemsQuery = {
 	}>;
 };
 
+export const EventsDocument = {
+	kind: 'Document',
+	definitions: [
+		{
+			kind: 'OperationDefinition',
+			operation: 'query',
+			name: { kind: 'Name', value: 'Events' },
+			selectionSet: {
+				kind: 'SelectionSet',
+				selections: [
+					{
+						kind: 'Field',
+						name: { kind: 'Name', value: 'events' },
+						selectionSet: {
+							kind: 'SelectionSet',
+							selections: [
+								{ kind: 'Field', name: { kind: 'Name', value: 'id' } },
+								{ kind: 'Field', name: { kind: 'Name', value: 'title' } },
+								{ kind: 'Field', name: { kind: 'Name', value: 'shortDescription' } },
+								{
+									kind: 'Field',
+									name: { kind: 'Name', value: 'description' },
+									selectionSet: {
+										kind: 'SelectionSet',
+										selections: [
+											{ kind: 'Field', name: { kind: 'Name', value: 'html' } },
+											{ kind: 'Field', name: { kind: 'Name', value: 'text' } },
+										],
+									},
+								},
+								{ kind: 'Field', name: { kind: 'Name', value: 'isDisplayed' } },
+								{ kind: 'Field', name: { kind: 'Name', value: 'dateAndTime' } },
+								{ kind: 'Field', name: { kind: 'Name', value: 'locale' } },
+							],
+						},
+					},
+				],
+			},
+		},
+	],
+} as unknown as DocumentNode<EventsQuery, EventsQueryVariables>;
 export const MenuCategoriesDocument = {
 	kind: 'Document',
 	definitions: [
