@@ -1,5 +1,5 @@
-import 'server-only';
 import type { Locale } from '@/i18.config';
+import 'server-only';
 
 const dictionaries = {
 	hr: () => import('@/app/dictionaries/hr.json').then((module) => module.default),

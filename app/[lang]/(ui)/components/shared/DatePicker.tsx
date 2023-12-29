@@ -8,7 +8,13 @@ import { Button } from '../shadcn/Button';
 import { Calendar } from '../shadcn/Calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '../shadcn/Popover';
 
-export function DatePicker() {
+type DatePickerProps = {
+	translation: {
+		pickDate: string;
+	};
+};
+
+export function DatePicker({ translation }: DatePickerProps) {
 	const [date, setDate] = useState<Date>();
 
 	return (
@@ -22,7 +28,7 @@ export function DatePicker() {
 					)}
 				>
 					<CalendarIcon className='w-4 h-4 mr-2' />
-					{date ? format(date, 'PPP') : <span>Pick a date</span>}
+					{date ? format(date, 'PPP') : <span>{translation.pickDate}</span>}
 				</Button>
 			</PopoverTrigger>
 

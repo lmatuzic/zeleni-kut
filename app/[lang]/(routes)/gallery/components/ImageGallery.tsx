@@ -1,14 +1,18 @@
 'use client';
 
 import LoadingSpinner from '@/app/[lang]/(ui)/components/shared/LoadingSpinner';
-import useGetGalleryImages from '../../services/menu/hooks/useGetGalleryImages';
+import useGQLQuery from '@/app/[lang]/hooks/useGQLQuery';
+import { GalleryImagesDocument, GalleryImagesQuery } from '@/app/lib/graphql-codegen/graphql';
 import Image from 'next/image';
 
 export default function ImageGallery() {
-	const { data, isLoading } = useGetGalleryImages();
+	const { data, isLoading } = useGQLQuery<GalleryImagesQuery>(
+		['galleryImages'],
+		GalleryImagesDocument
+	);
 
 	return (
-		<div className='grid grid-cols-4 gap-4'>
+		<div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
 			{isLoading ? (
 				<LoadingSpinner />
 			) : (

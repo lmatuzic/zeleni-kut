@@ -16,7 +16,7 @@ import { DatePicker } from '@/app/[lang]/(ui)/components/shared/DatePicker';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
-import { sendReservationEmail } from '../../actions/sendEmail';
+import { sendReservationEmail } from '../actions/sendEmail';
 import { roomReservationFormSchema } from '@/app/[lang]/lib/zod/schemas/roomReservationFormSchema';
 import {
 	Select,
@@ -26,7 +26,25 @@ import {
 	SelectValue,
 } from '@/app/[lang]/(ui)/components/shadcn/Select';
 
-export default function RoomReservationForm() {
+type RoomReservationFormProps = {
+	translation: {
+		firstName: string;
+		lastName: string;
+		email: string;
+		typeOfRoom: string;
+		phone: string;
+		numberOfPeople: string;
+		checkInDate: string;
+		checkOutDate: string;
+		message: string;
+		pickDate: string;
+		doubleBed: string;
+		twoBeds: string;
+		singleBed: string;
+	};
+};
+
+export default function RoomReservationForm({ translation }: RoomReservationFormProps) {
 	const form = useForm<z.infer<typeof roomReservationFormSchema>>({
 		resolver: zodResolver(roomReservationFormSchema),
 		defaultValues: {
@@ -58,9 +76,9 @@ export default function RoomReservationForm() {
 							name='firstName'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>First name</FormLabel>
+									<FormLabel>{translation.firstName}</FormLabel>
 									<FormControl>
-										<Input type='text' placeholder='First name' {...field} />
+										<Input type='text' placeholder={translation.firstName} {...field} />
 									</FormControl>
 									<FormMessage />
 								</FormItem>
@@ -72,9 +90,9 @@ export default function RoomReservationForm() {
 							name='lastName'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Last name</FormLabel>
+									<FormLabel>{translation.lastName}</FormLabel>
 									<FormControl>
-										<Input type='text' placeholder='Last name' {...field} />
+										<Input type='text' placeholder={translation.lastName} {...field} />
 									</FormControl>
 									<FormMessage />
 								</FormItem>
@@ -86,9 +104,9 @@ export default function RoomReservationForm() {
 							name='email'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Email</FormLabel>
+									<FormLabel>{translation.email}</FormLabel>
 									<FormControl>
-										<Input placeholder='Email' {...field} />
+										<Input placeholder={translation.email} {...field} />
 									</FormControl>
 									<FormMessage />
 								</FormItem>
@@ -100,17 +118,17 @@ export default function RoomReservationForm() {
 							name='typeOfRoom'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Type of room</FormLabel>
+									<FormLabel>{translation.typeOfRoom}</FormLabel>
 									<FormControl>
 										<Select onValueChange={field.onChange} defaultValue={field.value}>
 											<SelectTrigger className='w-full'>
-												<SelectValue placeholder='Type of room' />
+												<SelectValue placeholder={translation.typeOfRoom} />
 											</SelectTrigger>
 
 											<SelectContent>
-												<SelectItem value='double-bed'>Double bed</SelectItem>
-												<SelectItem value='two-beds'>Two beds</SelectItem>
-												<SelectItem value='single-room'>Single room</SelectItem>
+												<SelectItem value='double-bed'>{translation.doubleBed}</SelectItem>
+												<SelectItem value='two-beds'>{translation.twoBeds}</SelectItem>
+												<SelectItem value='single-bed'>{translation.singleBed}</SelectItem>
 											</SelectContent>
 										</Select>
 									</FormControl>
@@ -124,9 +142,9 @@ export default function RoomReservationForm() {
 							name='phone'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Phone</FormLabel>
+									<FormLabel>{translation.phone}</FormLabel>
 									<FormControl>
-										<Input type='tel' placeholder='Phone' {...field} />
+										<Input type='tel' placeholder={translation.phone} {...field} />
 									</FormControl>
 									<FormMessage />
 								</FormItem>
@@ -138,9 +156,9 @@ export default function RoomReservationForm() {
 							name='numberOfPeople'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Number of people</FormLabel>
+									<FormLabel>{translation.numberOfPeople}</FormLabel>
 									<FormControl>
-										<Input min={1} placeholder='Number of people' {...field} />
+										<Input min={1} placeholder={translation.numberOfPeople} {...field} />
 									</FormControl>
 									<FormMessage />
 								</FormItem>
@@ -152,10 +170,10 @@ export default function RoomReservationForm() {
 							name='checkInDate'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Check in date</FormLabel>
+									<FormLabel>{translation.checkInDate}</FormLabel>
 									<FormControl>
 										<div className='w-full'>
-											<DatePicker />
+											<DatePicker translation={translation} />
 										</div>
 									</FormControl>
 								</FormItem>
@@ -167,10 +185,10 @@ export default function RoomReservationForm() {
 							name='checkOutDate'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Check out date</FormLabel>
+									<FormLabel>{translation.checkOutDate}</FormLabel>
 									<FormControl>
 										<div className='w-full'>
-											<DatePicker />
+											<DatePicker translation={translation} />
 										</div>
 									</FormControl>
 								</FormItem>
@@ -182,7 +200,7 @@ export default function RoomReservationForm() {
 							name='message'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Message</FormLabel>
+									<FormLabel>{translation.message}</FormLabel>
 									<FormControl>
 										<Textarea rows={7} />
 									</FormControl>

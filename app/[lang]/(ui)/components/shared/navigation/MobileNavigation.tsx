@@ -1,45 +1,9 @@
-'use client';
+import { getDictionary } from '@/app/dictionaries/dictionary';
+import SideDrawer from './SideDrawer';
+import { Locale } from '@/i18.config';
 
-import { HOME_PAGE, routes } from '@/app/[lang]/constants/routes';
-import { Menu } from 'lucide-react';
-import Link from 'next/link';
-import { useState } from 'react';
-import { Sheet, SheetContent, SheetTrigger } from '../../shadcn/Sheet';
+export default async function MobileNavigation({ lang }: { lang: Locale }) {
+	const { navigation } = await getDictionary(lang);
 
-export default function MobileNavigation() {
-	const [isOpened, setIsOpened] = useState(false);
-
-	const handleOpenMobileNav = () => {
-		setIsOpened(true);
-	};
-
-	const handleCloseMobileNav = () => {
-		setIsOpened(false);
-	};
-
-	return (
-		<Sheet open={isOpened} onOpenChange={setIsOpened}>
-			<SheetTrigger onClick={handleOpenMobileNav}>
-				<Menu />
-			</SheetTrigger>
-
-			<SheetContent className='pt-20'>
-				<ul className='flex flex-col items-end'>
-					<li className='mb-4'>
-						<Link href={HOME_PAGE} onClick={handleCloseMobileNav} className='text-xl'>
-							Home
-						</Link>
-					</li>
-
-					{routes.map((route) => (
-						<li key={route.path} className='mb-4'>
-							<Link href={route.path} onClick={handleCloseMobileNav} className='text-xl'>
-								{route.name}
-							</Link>
-						</li>
-					))}
-				</ul>
-			</SheetContent>
-		</Sheet>
-	);
+	return <SideDrawer lang={lang} navigation={navigation} />;
 }

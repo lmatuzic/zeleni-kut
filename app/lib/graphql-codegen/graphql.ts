@@ -1506,7 +1506,7 @@ export type ImageTransformationInput = {
 export enum Locale {
 	/** System locale */
 	En = 'en',
-	HrHr = 'hr_HR',
+	Hr = 'hr',
 }
 
 /** Representing a geolocation point with latitude and longitude */
@@ -5235,7 +5235,9 @@ export enum _SystemDateTimeFieldVariation {
 	Localization = 'localization',
 }
 
-export type EventsQueryVariables = Exact<{ [key: string]: never }>;
+export type EventsQueryVariables = Exact<{
+	locales: Array<Locale> | Locale;
+}>;
 
 export type EventsQuery = {
 	__typename?: 'Query';
@@ -5265,7 +5267,9 @@ export type MenuCategoriesQuery = {
 	menuCategories: Array<{ __typename?: 'MenuCategory'; name: string }>;
 };
 
-export type MenuItemsQueryVariables = Exact<{ [key: string]: never }>;
+export type MenuItemsQueryVariables = Exact<{
+	locales: Array<Locale> | Locale;
+}>;
 
 export type MenuItemsQuery = {
 	__typename?: 'Query';
@@ -5274,6 +5278,7 @@ export type MenuItemsQuery = {
 		name: string;
 		description: string;
 		price: number;
+		locale: Locale;
 		menuCategory?: { __typename?: 'MenuCategory'; name: string; locale: Locale } | null;
 	}>;
 };
@@ -5285,12 +5290,35 @@ export const EventsDocument = {
 			kind: 'OperationDefinition',
 			operation: 'query',
 			name: { kind: 'Name', value: 'Events' },
+			variableDefinitions: [
+				{
+					kind: 'VariableDefinition',
+					variable: { kind: 'Variable', name: { kind: 'Name', value: 'locales' } },
+					type: {
+						kind: 'NonNullType',
+						type: {
+							kind: 'ListType',
+							type: {
+								kind: 'NonNullType',
+								type: { kind: 'NamedType', name: { kind: 'Name', value: 'Locale' } },
+							},
+						},
+					},
+				},
+			],
 			selectionSet: {
 				kind: 'SelectionSet',
 				selections: [
 					{
 						kind: 'Field',
 						name: { kind: 'Name', value: 'events' },
+						arguments: [
+							{
+								kind: 'Argument',
+								name: { kind: 'Name', value: 'locales' },
+								value: { kind: 'Variable', name: { kind: 'Name', value: 'locales' } },
+							},
+						],
 						selectionSet: {
 							kind: 'SelectionSet',
 							selections: [
@@ -5382,18 +5410,42 @@ export const MenuItemsDocument = {
 			kind: 'OperationDefinition',
 			operation: 'query',
 			name: { kind: 'Name', value: 'menuItems' },
+			variableDefinitions: [
+				{
+					kind: 'VariableDefinition',
+					variable: { kind: 'Variable', name: { kind: 'Name', value: 'locales' } },
+					type: {
+						kind: 'NonNullType',
+						type: {
+							kind: 'ListType',
+							type: {
+								kind: 'NonNullType',
+								type: { kind: 'NamedType', name: { kind: 'Name', value: 'Locale' } },
+							},
+						},
+					},
+				},
+			],
 			selectionSet: {
 				kind: 'SelectionSet',
 				selections: [
 					{
 						kind: 'Field',
 						name: { kind: 'Name', value: 'menuItems' },
+						arguments: [
+							{
+								kind: 'Argument',
+								name: { kind: 'Name', value: 'locales' },
+								value: { kind: 'Variable', name: { kind: 'Name', value: 'locales' } },
+							},
+						],
 						selectionSet: {
 							kind: 'SelectionSet',
 							selections: [
 								{ kind: 'Field', name: { kind: 'Name', value: 'name' } },
 								{ kind: 'Field', name: { kind: 'Name', value: 'description' } },
 								{ kind: 'Field', name: { kind: 'Name', value: 'price' } },
+								{ kind: 'Field', name: { kind: 'Name', value: 'locale' } },
 								{
 									kind: 'Field',
 									name: { kind: 'Name', value: 'menuCategory' },

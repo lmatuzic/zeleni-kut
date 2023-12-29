@@ -1,10 +1,24 @@
 'use client';
 
-import useGetMenuItems from '../hooks/useGetMenuItems';
+import useGQLQuery from '@/app/[lang]/hooks/useGQLQuery';
+import { MenuItemsDocument, MenuItemsQuery } from '@/app/lib/graphql-codegen/graphql';
+import { Locale } from '@/i18.config';
 import MenuItem from './MenuItem';
 
-export default function MenuList() {
-	const { appetizers, mainCourses } = useGetMenuItems();
+type MenuListProps = {
+	locale: Locale;
+};
+
+export default function MenuList({ locale }: MenuListProps) {
+	const { data } = useGQLQuery<MenuItemsQuery>(['menuItems', locale], MenuItemsDocument, locale);
+
+	const appetizers = data?.menuItems.filter(
+		(menuItem) => menuItem.menuCategory?.name === 'Appetizer' || 'Predjelo'
+	);
+
+	const mainCourses = data?.menuItems.filter(
+		(menuItem) => menuItem.menuCategory?.name === 'Main courses' || 'Glavna jela'
+	);
 
 	return (
 		<>

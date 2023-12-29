@@ -1,6 +1,6 @@
 import { Quicksand } from '@next/font/google';
 import type { Metadata } from 'next';
-// import Footer from './(ui)/components/shared/Footer';
+import Footer from './(ui)/components/shared/Footer';
 import Navigation from './(ui)/components/shared/navigation/Navigation';
 import Providers from './providers';
 import './globals.css';
@@ -30,7 +30,7 @@ export default function RootLayout({
 				<Providers>
 					<Navigation lang={params.lang} />
 					<main className='container items-center justify-between my-8'>{children}</main>
-					{/* <Footer /> */}
+					<Footer lang={params.lang} />
 				</Providers>
 			</body>
 		</html>
