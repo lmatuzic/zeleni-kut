@@ -10,7 +10,14 @@ import {
 	DropdownMenuTrigger,
 } from '../shadcn/DropdownMenu';
 
-export default function ThemeToggleButton() {
+type ThemeToggleProps = {
+	theme: {
+		light: string;
+		dark: string;
+	};
+};
+
+export default function ThemeToggle({ theme }: ThemeToggleProps) {
 	const { setTheme } = useTheme();
 
 	return (
@@ -24,8 +31,8 @@ export default function ThemeToggleButton() {
 			</DropdownMenuTrigger>
 
 			<DropdownMenuContent align='end'>
-				<DropdownMenuItem onClick={() => setTheme('light')}>Light</DropdownMenuItem>
-				<DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
+				<DropdownMenuItem onClick={() => setTheme('light')}>{theme.light}</DropdownMenuItem>
+				<DropdownMenuItem onClick={() => setTheme('dark')}>{theme.dark}</DropdownMenuItem>
 			</DropdownMenuContent>
 		</DropdownMenu>
 	);

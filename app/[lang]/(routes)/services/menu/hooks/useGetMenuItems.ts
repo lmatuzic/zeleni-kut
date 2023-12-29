@@ -18,7 +18,5 @@ export default function useGetMenuItems() {
 		(menuItem) => menuItem.menuCategory?.name === 'Main courses'
 	);
 
-	console.log(appetizers);
-
 	return { data, appetizers, mainCourses, isLoading };
 }

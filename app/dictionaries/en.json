@@ -3,7 +3,12 @@
 		"events": "Events",
 		"about": "About",
 		"services": "Services",
-		"contact": "Contact"
+		"contact": "Contact",
+		"gallery": "Galerija"
+	},
+	"theme": {
+		"light": "Light",
+		"dark": "Dark"
 	},
 	"page": {
 		"services": {

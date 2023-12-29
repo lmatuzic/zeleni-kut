@@ -11,8 +11,6 @@ type NavLinkProps = {
 export default function NavLink({ route }: NavLinkProps) {
 	const currentPath = usePathname();
 
-	console.log(currentPath);
-
 	return (
 		<Link
 			href={route.path}

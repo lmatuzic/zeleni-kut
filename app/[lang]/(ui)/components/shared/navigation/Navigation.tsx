@@ -1,16 +1,13 @@
 import { HOME_PAGE } from '@/app/[lang]/constants/routes';
-import MobileNavigation from './MobileNavigation';
-import ThemeToggleButton from '../ThemeToggleButton';
-// import NavLink from './NavLink';
-import Link from 'next/link';
-import { Locale } from '@/i18.config';
-import LanguageSwitch from '../LanguageSwitch';
 import { getDictionary } from '@/app/dictionaries/dictionary';
+import { Locale } from '@/i18.config';
+import Link from 'next/link';
+import LanguageSwitch from '../LanguageSwitch';
+import ThemeToggle from '../ThemeToggle';
+import MobileNavigation from './MobileNavigation';
 
 export default async function Navigation({ lang }: { lang: Locale }) {
-	const { navigation } = await getDictionary(lang);
-
-	console.log(lang);
+	const { navigation, theme } = await getDictionary(lang);
 
 	return (
 		<nav className='w-full'>
@@ -18,13 +15,7 @@ export default async function Navigation({ lang }: { lang: Locale }) {
 				{/* <NavLogo /> */}
 				<Link href={HOME_PAGE}>Logo</Link>
 
-				<ul className='flex justify-between gap-4 w-full sm:w-auto sm:items-center'>
-					{/* {routes.map((route) => (
-						<li key={route.path} className='hidden mr-6 sm:flex'>
-							<NavLink route={route} />
-						</li>
-					))} */}
-
+				<ul className='flex justify-between gap-6 w-full sm:w-auto sm:items-center'>
 					<li>
 						<Link href={`/${lang}/about`}>{navigation.about}</Link>
 					</li>
@@ -38,11 +29,15 @@ export default async function Navigation({ lang }: { lang: Locale }) {
 					</li>
 
 					<li>
+						<Link href={`/${lang}/gallery`}>{navigation.gallery}</Link>
+					</li>
+
+					<li>
 						<Link href={`/${lang}/contact`}>{navigation.contact}</Link>
 					</li>
 
 					<li>
-						<ThemeToggleButton />
+						<ThemeToggle theme={theme} />
 					</li>
 
 					<li>

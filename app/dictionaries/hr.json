@@ -3,7 +3,12 @@
 		"events": "Događaji",
 		"about": "O nama",
 		"services": "Ponuda",
-		"contact": "Kontakt"
+		"contact": "Kontakt",
+		"gallery": "Galerija"
+	},
+	"theme": {
+		"light": "Svjetla",
+		"dark": "Tamna"
 	},
 	"page": {
 		"services": {
