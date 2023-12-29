@@ -20,7 +20,7 @@ export default function About() {
 			<br />
 
 			<p>
-				Zeleni Kut ima trdiciju dugu 48 godina (1.svibnja 1967.g.). Obiteljsko je nasljeđe sa
+				Zeleni Kut ima trdiciju dugu 48 godina (1. svibnja 1967.). Obiteljsko je nasljeđe sa
 				ugođajem domaćeg i prirodnog ambijenta. Na svom razvojnom putu uspjela se očuvati dominacija
 				prirode o čemu svjedoči i bogata gastronomska ponuda riječne ribe iz vlastitih bazena,
 				specijaliteti suhomesnatih domaćih proizvoda ( šunka, kobasica, slanina ) i sl. Restoran je

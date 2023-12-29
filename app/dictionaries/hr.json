@@ -10,7 +10,14 @@
 		"light": "Svjetla",
 		"dark": "Tamna"
 	},
+	"button": {
+		"make-reservation": "Rezerviraj"
+	},
 	"page": {
+		"home": {
+			"subtitle": "Mjesto gdje sva osjetila uživaju",
+			"sub-subtitle": "Kuda krenete, kamo stanete, ljepota se reda do ljepote"
+		},
 		"services": {
 			"title": "Ponuda",
 			"description": "Na svom razvojnom putu uspjela se očuvati dominacija prirode o čemu svjedoči i bogata gastronomska ponuda riječne ribe iz vlastitih bazena (šaran, som, pastrva), specijaliteti suhomesnatih domaćih proizvoda (šunka, kobasica, slanina), ali i mesnih specijaliteta hrvatske kuhinje potpomognuta raznim morskim specijalitetima."
