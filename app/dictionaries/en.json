@@ -1,0 +1,26 @@
+{
+	"navigation": {
+		"events": "Events",
+		"about": "About",
+		"services": "Services",
+		"contact": "Contact",
+		"gallery": "Galerija"
+	},
+	"theme": {
+		"light": "Light",
+		"dark": "Dark"
+	},
+	"button": {
+		"make-reservation": "Make a reservation"
+	},
+	"page": {
+		"home": {
+			"subtitle": "A place where all the senses enjoy",
+			"sub-subtitle": "Wherever you go, wherever you stop, beauty follows beauty"
+		},
+		"services": {
+			"title": "Services",
+			"description": "During its development, it managed to preserve the dominance of nature, which is evidenced by the rich gastronomic offer of river fish from its own pools (carp, catfish, trout), specialties of cured meat products (ham, sausage, bacon), but also meat specialties of Croatian cuisine supported by various seafood specialties."
+		}
+	}
+}

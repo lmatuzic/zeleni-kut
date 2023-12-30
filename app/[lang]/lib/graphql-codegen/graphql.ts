@@ -831,7 +831,6 @@ export enum EntityTypeName {
 export type EntityWhereInput = {
 	/** The ID of an object */
 	id: Scalars['ID']['input'];
-	locale?: InputMaybe<Locale>;
 	stage: Stage;
 	/** The Type name of an object */
 	typename: EntityTypeName;
@@ -5251,13 +5250,6 @@ export type EventsQuery = {
 	}>;
 };
 
-export type GalleryImagesQueryVariables = Exact<{ [key: string]: never }>;
-
-export type GalleryImagesQuery = {
-	__typename?: 'Query';
-	assets: Array<{ __typename?: 'Asset'; url: string; fileName: string }>;
-};
-
 export type MenuCategoriesQueryVariables = Exact<{ [key: string]: never }>;
 
 export type MenuCategoriesQuery = {
@@ -5319,39 +5311,6 @@ export const EventsDocument = {
 		},
 	],
 } as unknown as DocumentNode<EventsQuery, EventsQueryVariables>;
-export const GalleryImagesDocument = {
-	kind: 'Document',
-	definitions: [
-		{
-			kind: 'OperationDefinition',
-			operation: 'query',
-			name: { kind: 'Name', value: 'GalleryImages' },
-			selectionSet: {
-				kind: 'SelectionSet',
-				selections: [
-					{
-						kind: 'Field',
-						name: { kind: 'Name', value: 'assets' },
-						arguments: [
-							{
-								kind: 'Argument',
-								name: { kind: 'Name', value: 'first' },
-								value: { kind: 'IntValue', value: '40' },
-							},
-						],
-						selectionSet: {
-							kind: 'SelectionSet',
-							selections: [
-								{ kind: 'Field', name: { kind: 'Name', value: 'url' } },
-								{ kind: 'Field', name: { kind: 'Name', value: 'fileName' } },
-							],
-						},
-					},
-				],
-			},
-		},
-	],
-} as unknown as DocumentNode<GalleryImagesQuery, GalleryImagesQueryVariables>;
 export const MenuCategoriesDocument = {
 	kind: 'Document',
 	definitions: [
