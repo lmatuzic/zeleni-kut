@@ -6,7 +6,7 @@ import Events from './(ui)/components/events/Events';
 import { Button } from './(ui)/components/shadcn/Button';
 // import ImageCarousel from './(ui)/components/shared/ImageCarousel';
 import img from './assets/images/main.jpg';
-import { RESERVATIONS_PAGE } from './constants/routes';
+import { CONTACT_PAGE } from './constants/routes';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
 	const { button, page } = await getDictionary(lang);
@@ -14,13 +14,13 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 	return (
 		<div className='relative flex flex-col items-start w-full'>
 			<div className='flex items-center w-full flex-col justify-center lg:flex-row gap-12'>
-				<div className='flex flex-col items-center lg:items-start'>
+				<div className='flex flex-col items-center lg:items-start text-center'>
 					<h1 className='mb-4 text-6xl lg:text-7xl text-zk-green'>Zeleni kut</h1>
 					<h2 className='text-xl'>{page.home.subtitle}</h2>
 					<h3>{page.home['sub-subtitle']}</h3>
 
 					<Button className='mt-8 text-white cursor-pointer'>
-						<Link href={RESERVATIONS_PAGE}>{button['make-reservation']}</Link>
+						<Link href={CONTACT_PAGE}>{button['make-reservation']}</Link>
 					</Button>
 				</div>
 
@@ -28,7 +28,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 			</div>
 
 			<div className='w-full p-8 pb-12 mt-20 bg-sectionBg rounded-xl'>
-				<h2 className='text-2xl font-bold text-center'>Dogadanja</h2>
+				<h2 className='text-2xl font-bold text-center'>{page.home.events}</h2>
 				<Events />
 			</div>
 

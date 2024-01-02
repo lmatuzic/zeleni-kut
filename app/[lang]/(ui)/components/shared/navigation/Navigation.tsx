@@ -15,7 +15,7 @@ export default async function Navigation({ lang }: { lang: Locale }) {
 				{/* <NavLogo /> */}
 				<Link href={HOME_PAGE}>Logo</Link>
 
-				<ul className='flex justify-between gap-6 w-full sm:w-auto sm:items-center'>
+				<ul className='hidden md:flex justify-between gap-6 w-full md:w-auto items-center'>
 					<li>
 						<Link href={`/${lang}/about`}>{navigation.about}</Link>
 					</li>
@@ -43,11 +43,9 @@ export default async function Navigation({ lang }: { lang: Locale }) {
 					<li>
 						<LanguageSwitch />
 					</li>
-
-					<li className='flex sm:hidden'>
-						<MobileNavigation />
-					</li>
 				</ul>
+
+				<MobileNavigation lang={lang} />
 			</div>
 		</nav>
 	);
