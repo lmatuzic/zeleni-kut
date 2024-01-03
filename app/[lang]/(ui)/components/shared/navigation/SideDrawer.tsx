@@ -1,12 +1,12 @@
 'use client';
 
-import { HOME_PAGE, routes } from '@/app/[lang]/constants/routes';
+import { HOME_PAGE } from '@/app/[lang]/constants/routes';
+import { Locale } from '@/i18.config';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Sheet, SheetContent, SheetTrigger } from '../../shadcn/Sheet';
 import LanguageSwitch from '../LanguageSwitch';
-import { Locale } from '@/i18.config';
 
 type SideDrawerProps = {
 	lang: Locale;

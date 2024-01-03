@@ -8,6 +8,7 @@ export type Route = {
 export const HOME_PAGE = '/';
 export const EVENTS_PAGE = '/events';
 export const ABOUT_PAGE = '/about';
+export const GALLERY_PAGE = '/gallery';
 export const CONTACT_PAGE = '/contact';
 export const RESERVATIONS_PAGE = '/contact/reservations';
 export const SERVICES_PAGE = '/services';

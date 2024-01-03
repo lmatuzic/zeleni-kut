@@ -1,6 +1,7 @@
 'use client';
 
-import useGetGalleryImages from '@/app/[lang]/(routes)/services/menu/hooks/useGetGalleryImages';
+import useGQLQuery from '@/app/[lang]/hooks/useGQLQuery';
+import { GalleryImagesDocument, GalleryImagesQuery } from '@/app/lib/graphql-codegen/graphql';
 import Image from 'next/image';
 import { Card, CardContent } from '../shadcn/Card';
 import {
@@ -12,7 +13,7 @@ import {
 } from '../shadcn/Carousel';
 
 export default function ImageCarousel() {
-	const { data, isLoading } = useGetGalleryImages();
+	const { data } = useGQLQuery<GalleryImagesQuery>(['galleryImages'], GalleryImagesDocument);
 
 	return (
 		<Carousel className='w-full max-w-lg'>

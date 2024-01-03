@@ -1,8 +1,8 @@
 import { gql } from 'graphql-request';
 
 export const events = gql`
-	query Events {
-		events {
+	query Events($locales: [Locale!]!) {
+		events(locales: $locales) {
 			id
 			title
 			shortDescription

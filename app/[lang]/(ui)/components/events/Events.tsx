@@ -1,11 +1,17 @@
 'use client';
 
-import useGetEvents from '@/app/[lang]/(routes)/services/menu/hooks/useGetEvents';
 import Event from '@/app/[lang]/(ui)/components/events/Event';
+import useGQLQuery from '@/app/[lang]/hooks/useGQLQuery';
+import { EventsDocument, EventsQuery } from '@/app/lib/graphql-codegen/graphql';
+import { Locale } from '@/i18.config';
 import LoadingSpinner from '../shared/LoadingSpinner';
 
-export default function Events() {
-	const { data, isLoading } = useGetEvents();
+type EventsProps = {
+	locale: Locale;
+};
+
+export default function Events({ locale }: EventsProps) {
+	const { data, isLoading } = useGQLQuery<EventsQuery>(['events', locale], EventsDocument, locale);
 
 	return (
 		<div className='flex flex-col lg:flex-row items-center justify-center gap-8 mt-8'>

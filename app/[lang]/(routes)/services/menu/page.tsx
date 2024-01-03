@@ -1,11 +1,10 @@
-import MenuItem from './components/MenuItem';
 import MenuList from './components/MenuList';
 
-export default function Menu() {
+export default function Menu({ params: { lang } }: { params: { lang: Locale } }) {
 	return (
 		<div>
 			<h1 className='mb-8 text-2xl font-bold text-zk-green'>Jelovnik</h1>
-			<MenuList />
+			<MenuList locale={lang} />
 		</div>
 	);
 }
