@@ -11,5 +11,5 @@ export const roomReservationFormSchema = zod.object({
 	phone: zod.string().regex(phoneRegex, 'Invalid phone format!'),
 	checkInDate: zod.date(),
 	checkOutDate: zod.date(),
-	message: zod.string().min(5),
+	message: zod.string(),
 });

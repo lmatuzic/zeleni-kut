@@ -7,6 +7,7 @@ import { useState } from 'react';
 import { Button } from '../shadcn/Button';
 import { Calendar } from '../shadcn/Calendar';
 import { Popover, PopoverContent, PopoverTrigger } from '../shadcn/Popover';
+import { PopoverClose } from '@radix-ui/react-popover';
 
 type DatePickerProps = {
 	translation: {
@@ -33,7 +34,9 @@ export function DatePicker({ translation }: DatePickerProps) {
 			</PopoverTrigger>
 
 			<PopoverContent className='w-auto p-0' align='start'>
-				<Calendar mode='single' selected={date} onSelect={setDate} initialFocus />
+				<PopoverClose>
+					<Calendar mode='single' selected={date} onSelect={setDate} initialFocus />
+				</PopoverClose>
 			</PopoverContent>
 		</Popover>
 	);

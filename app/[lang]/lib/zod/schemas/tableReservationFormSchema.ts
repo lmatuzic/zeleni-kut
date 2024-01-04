@@ -8,5 +8,5 @@ export const tableReservationFormSchema = zod.object({
 	numberOfPeople: zod.number().nonnegative(),
 	phone: zod.string().regex(phoneRegex, 'Invalid phone format!'),
 	reservationDate: zod.date(),
-	message: zod.string().min(5),
+	message: zod.string(),
 });
