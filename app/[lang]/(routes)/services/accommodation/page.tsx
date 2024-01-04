@@ -1,5 +1,5 @@
 import { Button } from '@/app/[lang]/(ui)/components/shadcn/Button';
-import { RESERVATIONS_PAGE } from '@/app/[lang]/constants/routes';
+import { CONTACT_PAGE } from '@/app/[lang]/constants/routes';
 import Link from 'next/link';
 
 export default function Accommodation() {
@@ -14,7 +14,7 @@ export default function Accommodation() {
 				access, air condition and river side rooms have balconies over the river.
 			</p>
 
-			<Link href={RESERVATIONS_PAGE}>
+			<Link href={CONTACT_PAGE}>
 				<Button>Reserve</Button>
 			</Link>
 		</div>
