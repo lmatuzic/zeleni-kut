@@ -11,7 +11,7 @@ export default function useGQLQuery<QueryResultType>(
 	const { data, isLoading, error } = useQuery<QueryResultType>({
 		queryKey: queryKey,
 		queryFn: async () =>
-			request(`${process.env.HYGRAPH_CONTENT_API}`, queryDocument, {
+			request(`${process.env.NEXT_PUBLIC_HYGRAPH_CONTENT_API}`, queryDocument, {
 				locales: [locale],
 			}),
 	});
