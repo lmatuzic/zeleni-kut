@@ -831,7 +831,6 @@ export enum EntityTypeName {
 export type EntityWhereInput = {
 	/** The ID of an object */
 	id: Scalars['ID']['input'];
-	locale?: InputMaybe<Locale>;
 	stage: Stage;
 	/** The Type name of an object */
 	typename: EntityTypeName;
@@ -1506,7 +1505,7 @@ export type ImageTransformationInput = {
 export enum Locale {
 	/** System locale */
 	En = 'en',
-	Hr = 'hr',
+	HrHr = 'hr_HR',
 }
 
 /** Representing a geolocation point with latitude and longitude */
@@ -5235,9 +5234,7 @@ export enum _SystemDateTimeFieldVariation {
 	Localization = 'localization',
 }
 
-export type EventsQueryVariables = Exact<{
-	locales: Array<Locale> | Locale;
-}>;
+export type EventsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type EventsQuery = {
 	__typename?: 'Query';
@@ -5253,13 +5250,6 @@ export type EventsQuery = {
 	}>;
 };
 
-export type GalleryImagesQueryVariables = Exact<{ [key: string]: never }>;
-
-export type GalleryImagesQuery = {
-	__typename?: 'Query';
-	assets: Array<{ __typename?: 'Asset'; url: string; fileName: string }>;
-};
-
 export type MenuCategoriesQueryVariables = Exact<{ [key: string]: never }>;
 
 export type MenuCategoriesQuery = {
@@ -5267,9 +5257,7 @@ export type MenuCategoriesQuery = {
 	menuCategories: Array<{ __typename?: 'MenuCategory'; name: string }>;
 };
 
-export type MenuItemsQueryVariables = Exact<{
-	locales: Array<Locale> | Locale;
-}>;
+export type MenuItemsQueryVariables = Exact<{ [key: string]: never }>;
 
 export type MenuItemsQuery = {
 	__typename?: 'Query';
@@ -5278,7 +5266,6 @@ export type MenuItemsQuery = {
 		name: string;
 		description: string;
 		price: number;
-		locale: Locale;
 		menuCategory?: { __typename?: 'MenuCategory'; name: string; locale: Locale } | null;
 	}>;
 };
@@ -5290,35 +5277,12 @@ export const EventsDocument = {
 			kind: 'OperationDefinition',
 			operation: 'query',
 			name: { kind: 'Name', value: 'Events' },
-			variableDefinitions: [
-				{
-					kind: 'VariableDefinition',
-					variable: { kind: 'Variable', name: { kind: 'Name', value: 'locales' } },
-					type: {
-						kind: 'NonNullType',
-						type: {
-							kind: 'ListType',
-							type: {
-								kind: 'NonNullType',
-								type: { kind: 'NamedType', name: { kind: 'Name', value: 'Locale' } },
-							},
-						},
-					},
-				},
-			],
 			selectionSet: {
 				kind: 'SelectionSet',
 				selections: [
 					{
 						kind: 'Field',
 						name: { kind: 'Name', value: 'events' },
-						arguments: [
-							{
-								kind: 'Argument',
-								name: { kind: 'Name', value: 'locales' },
-								value: { kind: 'Variable', name: { kind: 'Name', value: 'locales' } },
-							},
-						],
 						selectionSet: {
 							kind: 'SelectionSet',
 							selections: [
@@ -5347,39 +5311,6 @@ export const EventsDocument = {
 		},
 	],
 } as unknown as DocumentNode<EventsQuery, EventsQueryVariables>;
-export const GalleryImagesDocument = {
-	kind: 'Document',
-	definitions: [
-		{
-			kind: 'OperationDefinition',
-			operation: 'query',
-			name: { kind: 'Name', value: 'GalleryImages' },
-			selectionSet: {
-				kind: 'SelectionSet',
-				selections: [
-					{
-						kind: 'Field',
-						name: { kind: 'Name', value: 'assets' },
-						arguments: [
-							{
-								kind: 'Argument',
-								name: { kind: 'Name', value: 'first' },
-								value: { kind: 'IntValue', value: '40' },
-							},
-						],
-						selectionSet: {
-							kind: 'SelectionSet',
-							selections: [
-								{ kind: 'Field', name: { kind: 'Name', value: 'url' } },
-								{ kind: 'Field', name: { kind: 'Name', value: 'fileName' } },
-							],
-						},
-					},
-				],
-			},
-		},
-	],
-} as unknown as DocumentNode<GalleryImagesQuery, GalleryImagesQueryVariables>;
 export const MenuCategoriesDocument = {
 	kind: 'Document',
 	definitions: [
@@ -5410,42 +5341,18 @@ export const MenuItemsDocument = {
 			kind: 'OperationDefinition',
 			operation: 'query',
 			name: { kind: 'Name', value: 'menuItems' },
-			variableDefinitions: [
-				{
-					kind: 'VariableDefinition',
-					variable: { kind: 'Variable', name: { kind: 'Name', value: 'locales' } },
-					type: {
-						kind: 'NonNullType',
-						type: {
-							kind: 'ListType',
-							type: {
-								kind: 'NonNullType',
-								type: { kind: 'NamedType', name: { kind: 'Name', value: 'Locale' } },
-							},
-						},
-					},
-				},
-			],
 			selectionSet: {
 				kind: 'SelectionSet',
 				selections: [
 					{
 						kind: 'Field',
 						name: { kind: 'Name', value: 'menuItems' },
-						arguments: [
-							{
-								kind: 'Argument',
-								name: { kind: 'Name', value: 'locales' },
-								value: { kind: 'Variable', name: { kind: 'Name', value: 'locales' } },
-							},
-						],
 						selectionSet: {
 							kind: 'SelectionSet',
 							selections: [
 								{ kind: 'Field', name: { kind: 'Name', value: 'name' } },
 								{ kind: 'Field', name: { kind: 'Name', value: 'description' } },
 								{ kind: 'Field', name: { kind: 'Name', value: 'price' } },
-								{ kind: 'Field', name: { kind: 'Name', value: 'locale' } },
 								{
 									kind: 'Field',
 									name: { kind: 'Name', value: 'menuCategory' },

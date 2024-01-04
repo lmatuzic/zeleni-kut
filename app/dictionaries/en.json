@@ -1,0 +1,85 @@
+{
+	"navigation": {
+		"home": "Home",
+		"events": "Events",
+		"about": "About",
+		"services": "Services",
+		"contact": "Contact",
+		"gallery": "Gallery"
+	},
+	"theme": {
+		"light": "Light",
+		"dark": "Dark"
+	},
+	"button": {
+		"make-reservation": "Make a reservation",
+		"see-more": "See more"
+	},
+	"page": {
+		"home": {
+			"subtitle": "A place where all the senses enjoy",
+			"sub-subtitle": "Wherever you go, wherever you stop, beauty follows beauty",
+			"events": "Events"
+		},
+		"services": {
+			"title": "Services",
+			"description": "During its development, it managed to preserve the dominance of nature, which is evidenced by the rich gastronomic offer of river fish from its own pools (carp, catfish, trout), specialties of cured meat products (ham, sausage, bacon), but also meat specialties of Croatian cuisine supported by various seafood specialties.",
+			"accomodation-card-title": "Accomodation",
+			"accomodation-card-content": "14 modern rooms are waiting for you. We offer single and double rooms with the possibility of additional beds.",
+			"gastro-card-title": "Gastro",
+			"gastro-card-content": "A wide range of Croatian specialties, local dishes, river fish, but also seafood and squid. In a special offer, we also offer vegetarian dishes, and dishes under the oven or from the spit, as well as pizzas from the bread oven.",
+			"recreation-card-title": "Recreation",
+			"recreation-card-content": "Enjoy canoeing on the ​Mrežnica river, playing beach volleyball, badminton, swimming, and there is also fun for the youngest at the children's playground."
+		},
+		"about": {
+			"title": "About us",
+			"text-1": "Because of its flora and fauna, it is a favorite destination for rafting, canoeing, walkers, hunters, fishermen, various collectors, but also for those seeking peace and tranquility (writers, painters, etc. artists).",
+			"text-2": "It is located at the 22nd kilometer from the entrance to Karlovac in the direction of Ogulin on the Senj road. The restaurant is located on the left bank of the Mrežnica river and a beautiful waterfall, which is divided into 2 parts by a river island. It is surrounded by nature: river canyons, beech and hornbeam forests (rich in mushrooms and other forest fruits).",
+			"text-3": "Zeleni Kut has a tradition of 48 years (May 1, 1967). It is a family heritage with the atmosphere of a domestic and natural environment. During its development, it managed to preserve the dominance of nature, which is evidenced by the rich gastronomic offer of river fish from its own pools, specialties of cured meat products (ham, sausage, bacon), etc. The restaurant has a capacity of 150 closed spaces (divided into 2 rooms suitable for organized gatherings, seminars, etc.) and a terrace with a capacity of 100 seats. Since May 2004, it has had 14 modern rooms, of which 2 are single and 12 are double (with the possibility of 10 extra beds). Each room has its own bathroom, cable TV, telephone, mini-bar, internet line.",
+			"text-4": "The restaurant also has a children's playground, volleyball court, swimming pool, canoe rental, stay on a river island (with the possibility of camping), marked bicycle paths, a promenade along the river and a parking lot. Of special historical importance is the hydroelectric power plant, built in 1939, which is still working today."
+		},
+		"contact": {
+			"title": "Contact",
+			"reservationDescription": "Book your place in time to experience the unique atmosphere and temperamental cuisine of Restaurant Zeleni Kut.",
+			"address": "Address",
+			"owner": "Owner",
+			"phone": "Phone",
+			"mobilePhone": "Mobile phone",
+			"email": "Email",
+			"table": "Table",
+			"room": "Room",
+			"tableReservationForm": {
+				"firstName": "Name",
+				"lastName": "Last name",
+				"email": "Email",
+				"phone": "Phone",
+				"numberOfPeople": "Number of people",
+				"date": "Date",
+				"message": "Message",
+				"pickDate": "Pick a date"
+			},
+			"roomReservationForm": {
+				"firstName": "Name",
+				"lastName": "Last name",
+				"email": "Email",
+				"typeOfRoom": "Type of room",
+				"phone": "Phone",
+				"numberOfPeople": "Number of people",
+				"checkInDate": "Check in date",
+				"checkOutDate": "Check out date",
+				"pickDate": "Pick a date",
+				"message": "Message",
+				"doubleBed": "Double room",
+				"twoBeds": "Two beds",
+				"singleBed": "Single bed"
+			}
+		}
+	},
+	"footer": {
+		"working-hours": "Working hours",
+		"contact": "Contact",
+		"monday": "Monday",
+		"sunday": "Sunday",
+		"non-working-days": "Non-working days"
+	}
+}

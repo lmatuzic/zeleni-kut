@@ -35,7 +35,11 @@ export const theme = {
 			foreground: 'hsl(var(--foreground))',
 			'zk-green': '#669933',
 			'zk-dark-green': '#0f2b2f',
+			'purple-primary': '#663399',
 			'light-gray': '#f3f4f4',
+			sectionBg: {
+				DEFAULT: 'var(--section-bg)',
+			},
 			primary: {
 				DEFAULT: 'hsl(var(--primary))',
 				foreground: 'hsl(var(--primary-foreground))',
