@@ -8,16 +8,8 @@ import {
 	FormField,
 	FormItem,
 	FormLabel,
-	FormMessage,
 } from '@/app/[lang]/(ui)/components/shadcn/Form';
 import { Input } from '@/app/[lang]/(ui)/components/shadcn/Input';
-import { Textarea } from '@/app/[lang]/(ui)/components/shadcn/Textarea';
-import { DatePicker } from '@/app/[lang]/(ui)/components/shared/DatePicker';
-import { zodResolver } from '@hookform/resolvers/zod';
-import { useForm } from 'react-hook-form';
-import * as z from 'zod';
-import { sendReservationEmail } from '../actions/sendEmail';
-import { roomReservationFormSchema } from '@/app/[lang]/lib/zod/schemas/roomReservationFormSchema';
 import {
 	Select,
 	SelectContent,
@@ -25,6 +17,13 @@ import {
 	SelectTrigger,
 	SelectValue,
 } from '@/app/[lang]/(ui)/components/shadcn/Select';
+import { Textarea } from '@/app/[lang]/(ui)/components/shadcn/Textarea';
+import { DatePicker } from '@/app/[lang]/(ui)/components/shared/DatePicker';
+import { roomReservationFormSchema } from '@/app/[lang]/lib/zod/schemas/roomReservationFormSchema';
+import { zodResolver } from '@hookform/resolvers/zod';
+import { useForm } from 'react-hook-form';
+import * as z from 'zod';
+import { sendReservationEmail } from '../actions/sendEmail';
 
 type RoomReservationFormProps = {
 	translation: {
@@ -80,7 +79,6 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 									<FormControl>
 										<Input type='text' placeholder={translation.firstName} {...field} />
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -94,7 +92,6 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 									<FormControl>
 										<Input type='text' placeholder={translation.lastName} {...field} />
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -108,7 +105,6 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 									<FormControl>
 										<Input placeholder={translation.email} {...field} />
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -132,7 +128,6 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 											</SelectContent>
 										</Select>
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -146,7 +141,6 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 									<FormControl>
 										<Input type='tel' placeholder={translation.phone} {...field} />
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -158,9 +152,13 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 								<FormItem>
 									<FormLabel>{translation.numberOfPeople}</FormLabel>
 									<FormControl>
-										<Input min={1} placeholder={translation.numberOfPeople} {...field} />
+										<Input
+											min={1}
+											type='number'
+											placeholder={translation.numberOfPeople}
+											{...field}
+										/>
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>

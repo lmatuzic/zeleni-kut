@@ -65,7 +65,6 @@ export default function TableReservationForm({ translation }: TableReservationFo
 									<FormControl>
 										<Input type='text' placeholder={translation.firstName} {...field} />
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -79,7 +78,6 @@ export default function TableReservationForm({ translation }: TableReservationFo
 									<FormControl>
 										<Input type='text' placeholder={translation.lastName} {...field} />
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -93,7 +91,6 @@ export default function TableReservationForm({ translation }: TableReservationFo
 									<FormControl>
 										<Input placeholder={translation.email} {...field} />
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -107,7 +104,6 @@ export default function TableReservationForm({ translation }: TableReservationFo
 									<FormControl>
 										<Input type='tel' placeholder={translation.phone} {...field} />
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
@@ -119,9 +115,13 @@ export default function TableReservationForm({ translation }: TableReservationFo
 								<FormItem>
 									<FormLabel>{translation.numberOfPeople}</FormLabel>
 									<FormControl>
-										<Input min={1} placeholder={translation.numberOfPeople} {...field} />
+										<Input
+											min={1}
+											type='number'
+											placeholder={translation.numberOfPeople}
+											{...field}
+										/>
 									</FormControl>
-									<FormMessage />
 								</FormItem>
 							)}
 						/>
