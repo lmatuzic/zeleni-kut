@@ -1,6 +1,6 @@
 import { gql } from 'graphql-request';
 
-export const events = gql`
+export const galleryImages = gql`
 	query GalleryImages {
 		assets(first: 40) {
 			url
