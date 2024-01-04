@@ -1,5 +1,5 @@
 import ContactInfo from './components/ContactInfo';
-import Reservation from './reservations/page';
+import Reservation from './components/Reservation';
 
 export default function Contact() {
 	return (

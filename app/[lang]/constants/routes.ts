@@ -10,7 +10,6 @@ export const EVENTS_PAGE = '/events';
 export const ABOUT_PAGE = '/about';
 export const GALLERY_PAGE = '/gallery';
 export const CONTACT_PAGE = '/contact';
-export const RESERVATIONS_PAGE = '/contact/reservations';
 export const SERVICES_PAGE = '/services';
 export const ACCOMMODATION_PAGE = '/services/accommodation';
 export const MENU_PAGE = '/services/menu';

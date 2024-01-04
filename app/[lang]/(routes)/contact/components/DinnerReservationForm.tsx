@@ -13,37 +13,27 @@ import {
 import { Input } from '@/app/[lang]/(ui)/components/shadcn/Input';
 import { Textarea } from '@/app/[lang]/(ui)/components/shadcn/Textarea';
 import { DatePicker } from '@/app/[lang]/(ui)/components/shared/DatePicker';
+import { dinnerReservationFormSchema } from '@/app/[lang]/lib/zod/schemas/dinnerReservationFormSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
-import { sendReservationEmail } from '../../actions/sendEmail';
-import { roomReservationFormSchema } from '@/app/[lang]/lib/zod/schemas/roomReservationFormSchema';
-import {
-	Select,
-	SelectContent,
-	SelectItem,
-	SelectTrigger,
-	SelectValue,
-} from '@/app/[lang]/(ui)/components/shadcn/Select';
+import { sendReservationEmail } from '../actions/sendEmail';
 
-export default function RoomReservationForm() {
-	const form = useForm<z.infer<typeof roomReservationFormSchema>>({
-		resolver: zodResolver(roomReservationFormSchema),
+export default function DinnerReservationForm() {
+	const form = useForm<z.infer<typeof dinnerReservationFormSchema>>({
+		resolver: zodResolver(dinnerReservationFormSchema),
 		defaultValues: {
 			firstName: '',
 			lastName: '',
 			email: '',
-			typeOfRoom: '',
-			numberOfNights: 1,
 			numberOfPeople: 1,
-			checkInDate: new Date(),
-			checkOutDate: new Date(),
 			phone: '',
+			reservationDate: new Date(),
 			message: '',
 		},
 	});
 
-	const onSubmit = (values: z.infer<typeof roomReservationFormSchema>) => {
+	const onSubmit = (values: z.infer<typeof dinnerReservationFormSchema>) => {
 		sendReservationEmail();
 		console.log(values);
 	};
@@ -58,7 +48,7 @@ export default function RoomReservationForm() {
 							name='firstName'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>First name</FormLabel>
+									<FormLabel>Ime</FormLabel>
 									<FormControl>
 										<Input type='text' placeholder='First name' {...field} />
 									</FormControl>
@@ -72,7 +62,7 @@ export default function RoomReservationForm() {
 							name='lastName'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Last name</FormLabel>
+									<FormLabel>Prezime</FormLabel>
 									<FormControl>
 										<Input type='text' placeholder='Last name' {...field} />
 									</FormControl>
@@ -97,34 +87,10 @@ export default function RoomReservationForm() {
 
 						<FormField
 							control={form.control}
-							name='typeOfRoom'
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Type of room</FormLabel>
-									<FormControl>
-										<Select onValueChange={field.onChange} defaultValue={field.value}>
-											<SelectTrigger className='w-full'>
-												<SelectValue placeholder='Type of room' />
-											</SelectTrigger>
-
-											<SelectContent>
-												<SelectItem value='double-bed'>Double bed</SelectItem>
-												<SelectItem value='two-beds'>Two beds</SelectItem>
-												<SelectItem value='single-room'>Single room</SelectItem>
-											</SelectContent>
-										</Select>
-									</FormControl>
-									<FormMessage />
-								</FormItem>
-							)}
-						/>
-
-						<FormField
-							control={form.control}
 							name='phone'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Phone</FormLabel>
+									<FormLabel>Telefon / mobitel</FormLabel>
 									<FormControl>
 										<Input type='tel' placeholder='Phone' {...field} />
 									</FormControl>
@@ -138,7 +104,7 @@ export default function RoomReservationForm() {
 							name='numberOfPeople'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Number of people</FormLabel>
+									<FormLabel>Broj ljudi</FormLabel>
 									<FormControl>
 										<Input min={1} placeholder='Number of people' {...field} />
 									</FormControl>
@@ -149,25 +115,10 @@ export default function RoomReservationForm() {
 
 						<FormField
 							control={form.control}
-							name='checkInDate'
+							name='reservationDate'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Check in date</FormLabel>
-									<FormControl>
-										<div className='w-full'>
-											<DatePicker />
-										</div>
-									</FormControl>
-								</FormItem>
-							)}
-						/>
-
-						<FormField
-							control={form.control}
-							name='checkOutDate'
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>Check out date</FormLabel>
+									<FormLabel>Datum</FormLabel>
 									<FormControl>
 										<div className='w-full'>
 											<DatePicker />
@@ -182,7 +133,7 @@ export default function RoomReservationForm() {
 							name='message'
 							render={({ field }) => (
 								<FormItem>
-									<FormLabel>Message</FormLabel>
+									<FormLabel>Poruka</FormLabel>
 									<FormControl>
 										<Textarea rows={7} />
 									</FormControl>
@@ -191,7 +142,7 @@ export default function RoomReservationForm() {
 						/>
 
 						<Button type='submit' className='text-white'>
-							Make a reservation
+							Rezerviraj
 						</Button>
 					</form>
 				</Form>

@@ -1,6 +1,7 @@
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/app/[lang]/(ui)/components/shadcn/Tabs';
-import DinnerReservationForm from './components/DinnerReservationForm';
-import RoomReservationForm from './components/RoomReservationForm';
+import React from 'react';
+import DinnerReservationForm from './DinnerReservationForm';
+import RoomReservationForm from './RoomReservationForm';
 
 export default function Reservation() {
 	return (
