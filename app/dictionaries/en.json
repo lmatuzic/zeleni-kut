@@ -56,7 +56,8 @@
 				"numberOfPeople": "Number of people",
 				"date": "Date",
 				"message": "Message",
-				"pickDate": "Pick a date"
+				"pickDate": "Pick a date",
+				"reserve": "Make a reservation"
 			},
 			"roomReservationForm": {
 				"firstName": "Name",
@@ -71,7 +72,8 @@
 				"message": "Message",
 				"doubleBed": "Double room",
 				"twoBeds": "Two beds",
-				"singleBed": "Single bed"
+				"singleBed": "Single bed",
+				"reserve": "Make a reservation"
 			}
 		}
 	},

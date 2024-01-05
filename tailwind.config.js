@@ -27,6 +27,9 @@ export const theme = {
 		backgroundImage: {
 			'logo-bg': "url('/public/assets/images/main.jpg')",
 		},
+		scale: {
+			77: '0.77',
+		},
 		colors: {
 			border: 'hsl(var(--border))',
 			input: 'hsl(var(--input))',

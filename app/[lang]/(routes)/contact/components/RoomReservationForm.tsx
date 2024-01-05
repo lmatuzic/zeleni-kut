@@ -21,6 +21,7 @@ import { Textarea } from '@/app/[lang]/(ui)/components/shadcn/Textarea';
 import { DatePicker } from '@/app/[lang]/(ui)/components/shared/DatePicker';
 import { roomReservationFormSchema } from '@/app/[lang]/lib/zod/schemas/roomReservationFormSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { sendReservationEmail } from '../actions/sendEmail';
@@ -40,6 +41,7 @@ type RoomReservationFormProps = {
 		doubleBed: string;
 		twoBeds: string;
 		singleBed: string;
+		reserve: string;
 	};
 };
 
@@ -50,7 +52,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 			firstName: '',
 			lastName: '',
 			email: '',
-			typeOfRoom: '',
+			typeOfRoom: translation.doubleBed,
 			numberOfNights: 1,
 			numberOfPeople: 1,
 			checkInDate: new Date(),
@@ -76,6 +78,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.firstName}</FormLabel>
+
 									<FormControl>
 										<Input type='text' placeholder={translation.firstName} {...field} />
 									</FormControl>
@@ -89,6 +92,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.lastName}</FormLabel>
+
 									<FormControl>
 										<Input type='text' placeholder={translation.lastName} {...field} />
 									</FormControl>
@@ -102,8 +106,9 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.email}</FormLabel>
+
 									<FormControl>
-										<Input placeholder={translation.email} {...field} />
+										<Input type='email' placeholder={translation.email} {...field} />
 									</FormControl>
 								</FormItem>
 							)}
@@ -115,16 +120,21 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.typeOfRoom}</FormLabel>
+
 									<FormControl>
-										<Select onValueChange={field.onChange} defaultValue={field.value}>
+										<Select onValueChange={field.onChange} defaultValue={translation.doubleBed}>
 											<SelectTrigger className='w-full'>
 												<SelectValue placeholder={translation.typeOfRoom} />
 											</SelectTrigger>
 
 											<SelectContent>
-												<SelectItem value='double-bed'>{translation.doubleBed}</SelectItem>
-												<SelectItem value='two-beds'>{translation.twoBeds}</SelectItem>
-												<SelectItem value='single-bed'>{translation.singleBed}</SelectItem>
+												<SelectItem value={translation.doubleBed}>
+													{translation.doubleBed}
+												</SelectItem>
+												<SelectItem value={translation.twoBeds}>{translation.twoBeds}</SelectItem>
+												<SelectItem value={translation.singleBed}>
+													{translation.singleBed}
+												</SelectItem>
 											</SelectContent>
 										</Select>
 									</FormControl>
@@ -138,6 +148,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.phone}</FormLabel>
+
 									<FormControl>
 										<Input type='tel' placeholder={translation.phone} {...field} />
 									</FormControl>
@@ -151,6 +162,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.numberOfPeople}</FormLabel>
+
 									<FormControl>
 										<Input
 											min={1}
@@ -169,6 +181,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.checkInDate}</FormLabel>
+
 									<FormControl>
 										<div className='w-full'>
 											<DatePicker translation={translation} />
@@ -184,6 +197,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.checkOutDate}</FormLabel>
+
 									<FormControl>
 										<div className='w-full'>
 											<DatePicker translation={translation} />
@@ -199,6 +213,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.message}</FormLabel>
+
 									<FormControl>
 										<Textarea rows={7} />
 									</FormControl>
@@ -206,8 +221,13 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 							)}
 						/>
 
+						<ReCAPTCHA
+							sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+							className='scale-77 xs:scale-100 origin-left'
+						/>
+
 						<Button type='submit' className='text-white'>
-							Make a reservation
+							{translation.reserve}
 						</Button>
 					</form>
 				</Form>

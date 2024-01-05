@@ -8,13 +8,13 @@ import {
 	FormField,
 	FormItem,
 	FormLabel,
-	FormMessage,
 } from '@/app/[lang]/(ui)/components/shadcn/Form';
 import { Input } from '@/app/[lang]/(ui)/components/shadcn/Input';
 import { Textarea } from '@/app/[lang]/(ui)/components/shadcn/Textarea';
 import { DatePicker } from '@/app/[lang]/(ui)/components/shared/DatePicker';
 import { tableReservationFormSchema } from '@/app/[lang]/lib/zod/schemas/tableReservationFormSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
+import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { sendReservationEmail } from '../actions/sendEmail';
@@ -29,6 +29,7 @@ type TableReservationFormProps = {
 		date: string;
 		message: string;
 		pickDate: string;
+		reserve: string;
 	};
 };
 
@@ -62,6 +63,7 @@ export default function TableReservationForm({ translation }: TableReservationFo
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.firstName}</FormLabel>
+
 									<FormControl>
 										<Input type='text' placeholder={translation.firstName} {...field} />
 									</FormControl>
@@ -75,6 +77,7 @@ export default function TableReservationForm({ translation }: TableReservationFo
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.lastName}</FormLabel>
+
 									<FormControl>
 										<Input type='text' placeholder={translation.lastName} {...field} />
 									</FormControl>
@@ -88,8 +91,9 @@ export default function TableReservationForm({ translation }: TableReservationFo
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.email}</FormLabel>
+
 									<FormControl>
-										<Input placeholder={translation.email} {...field} />
+										<Input type='email' placeholder={translation.email} {...field} />
 									</FormControl>
 								</FormItem>
 							)}
@@ -101,6 +105,7 @@ export default function TableReservationForm({ translation }: TableReservationFo
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.phone}</FormLabel>
+
 									<FormControl>
 										<Input type='tel' placeholder={translation.phone} {...field} />
 									</FormControl>
@@ -111,19 +116,22 @@ export default function TableReservationForm({ translation }: TableReservationFo
 						<FormField
 							control={form.control}
 							name='numberOfPeople'
-							render={({ field }) => (
-								<FormItem>
-									<FormLabel>{translation.numberOfPeople}</FormLabel>
-									<FormControl>
-										<Input
-											min={1}
-											type='number'
-											placeholder={translation.numberOfPeople}
-											{...field}
-										/>
-									</FormControl>
-								</FormItem>
-							)}
+							render={({ field }) => {
+								return (
+									<FormItem>
+										<FormLabel>{translation.numberOfPeople}</FormLabel>
+
+										<FormControl>
+											<Input
+												min={1}
+												type='number'
+												placeholder={translation.numberOfPeople}
+												{...field}
+											/>
+										</FormControl>
+									</FormItem>
+								);
+							}}
 						/>
 
 						<FormField
@@ -132,6 +140,7 @@ export default function TableReservationForm({ translation }: TableReservationFo
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.date}</FormLabel>
+
 									<FormControl>
 										<div className='w-full'>
 											<DatePicker translation={translation} />
@@ -147,6 +156,7 @@ export default function TableReservationForm({ translation }: TableReservationFo
 							render={({ field }) => (
 								<FormItem>
 									<FormLabel>{translation.message}</FormLabel>
+
 									<FormControl>
 										<Textarea rows={7} />
 									</FormControl>
@@ -154,8 +164,15 @@ export default function TableReservationForm({ translation }: TableReservationFo
 							)}
 						/>
 
+						<div className='overflow-hidden'>
+							<ReCAPTCHA
+								sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+								className='scale-77 xs:scale-100 origin-left'
+							/>
+						</div>
+
 						<Button type='submit' className='text-white'>
-							Rezerviraj
+							{translation.reserve}
 						</Button>
 					</form>
 				</Form>

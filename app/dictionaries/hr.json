@@ -56,7 +56,8 @@
 				"numberOfPeople": "Broj osoba",
 				"date": "Datum",
 				"message": "Poruka",
-				"pickDate": "Odaberi datum"
+				"pickDate": "Odaberi datum",
+				"reserve": "Rezerviraj"
 			},
 			"roomReservationForm": {
 				"firstName": "Ime",
@@ -71,7 +72,8 @@
 				"message": "Poruka",
 				"doubleBed": "Soba s bračnim krevetom",
 				"twoBeds": "Dvokrevetna soba",
-				"singleBed": "Jednokrevetna soba"
+				"singleBed": "Jednokrevetna soba",
+				"reserve": "Rezerviraj"
 			}
 		}
 	},
