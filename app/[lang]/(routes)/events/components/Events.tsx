@@ -14,7 +14,7 @@ export default function Events({ locale }: EventsProps) {
 	const { data, isLoading } = useGQLQuery<EventsQuery>(['events', locale], EventsDocument, locale);
 
 	return (
-		<div className='flex flex-col lg:flex-row items-center justify-center gap-8 mt-8'>
+		<>
 			{isLoading ? (
 				<LoadingSpinner />
 			) : (
@@ -31,6 +31,6 @@ export default function Events({ locale }: EventsProps) {
 					))}
 				</>
 			)}
-		</div>
+		</>
 	);
 }

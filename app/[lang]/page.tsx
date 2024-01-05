@@ -29,7 +29,10 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 
 			<div className='w-full p-8 pb-12 mt-20 bg-sectionBg rounded-xl'>
 				<h2 className='text-2xl font-bold text-center'>{page.home.events}</h2>
-				<Events locale={lang} />
+
+				<div className='flex flex-col lg:flex-row items-center justify-center gap-8 mt-8'>
+					<Events locale={lang} />
+				</div>
 			</div>
 
 			{/* 

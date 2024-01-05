@@ -1,8 +1,15 @@
-export default async function EventsPage() {
+import { Locale } from '@/i18.config';
+import Events from './components/Events';
+import { getDictionary } from '@/app/dictionaries/dictionary';
+
+export default async function EventsPage({ params: { lang } }: { params: { lang: Locale } }) {
+	const { page } = await getDictionary(lang);
+
 	return (
 		<>
-			<header className='flex items-center justify-between pb-4'>
-				<h1>Events</h1>
+			<header>
+				<h1 className='mb-4 text-2xl text-zk-green'>{page.events.title}</h1>
+				<Events locale={lang} />
 			</header>
 		</>
 	);

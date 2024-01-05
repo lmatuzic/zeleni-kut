@@ -17,7 +17,7 @@ interface EventProps {
 	locale: string;
 }
 
-export default function Event({ id, title, shortDescription, dateAndTime }: EventProps) {
+export default function Event({ id, title, shortDescription, dateAndTime, locale }: EventProps) {
 	const originalDate = new Date(dateAndTime);
 	const formattedDate = format(originalDate, 'dd.MM.yyyy');
 
@@ -30,7 +30,8 @@ export default function Event({ id, title, shortDescription, dateAndTime }: Even
 
 			<CardContent>
 				<CardDescription className='mb-6'>{shortDescription}</CardDescription>
-				<Link href={'#'}>
+
+				<Link href={`/${locale}/events/${id}`}>
 					<Button className='w-full text-white xs:w-fit'>Vidi više</Button>
 				</Link>
 			</CardContent>
