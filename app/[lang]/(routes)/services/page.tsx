@@ -25,42 +25,42 @@ export default async function Services({ params: { lang } }: { params: { lang: L
 			<div className='grid grid-cols-1 gap-8 sm:grid-cols-2 md:grid-cols-3'>
 				<Card className='flex flex-col justify-between'>
 					<CardHeader>
-						<CardTitle className='mb-2 text-xl'>
-							{page.services['accomodation-card-title']}
-						</CardTitle>
+						<CardTitle className='mb-2 text-xl'>{page.services.accomodationCardTitle}</CardTitle>
 
-						<CardDescription>{page.services['accomodation-card-content']}</CardDescription>
+						<CardDescription>{page.services.accomodationCardContent}</CardDescription>
 					</CardHeader>
 
 					<CardContent>
 						<Link href={ACCOMMODATION_PAGE}>
-							<Button className='w-full text-white xs:w-fit'>{button['see-more']}</Button>
+							<Button className='w-full text-white xs:w-fit'>{button.seeMore}</Button>
 						</Link>
 					</CardContent>
 				</Card>
 
 				<Card className='flex flex-col justify-between'>
 					<CardHeader>
-						<CardTitle className='mb-2 text-xl'>{page.services['gastro-card-title']}</CardTitle>
-						<CardDescription>{page.services['gastro-card-content']}</CardDescription>
+						<CardTitle className='mb-2 text-xl'>{page.services.gastroCardTitle}</CardTitle>
+						<CardDescription>{page.services['gastroCardContent']}</CardDescription>
 					</CardHeader>
 
 					<CardContent>
 						<Link href={MENU_PAGE}>
-							<Button className='w-full text-white xs:w-fit'>{button['see-more']}</Button>
+							<Button className='w-fu.recreationCardTitle.recre.recreationCardTitlell text-white xs:w-fit'>
+								{button.seeMore}
+							</Button>
 						</Link>
 					</CardContent>
 				</Card>
 
 				<Card className='flex flex-col justify-between'>
 					<CardHeader>
-						<CardTitle className='mb-2 text-xl'>{page.services['recreation-card-title']}</CardTitle>
-						<CardDescription>{page.services['recreation-card-content']}</CardDescription>
+						<CardTitle className='mb-2 text-xl'>{page.services.recreationCardTitle}</CardTitle>
+						<CardDescription>{page.services.recreationCardContent}</CardDescription>
 					</CardHeader>
 
 					<CardContent>
 						<Link href={RECREATION_PAGE}>
-							<Button className='w-full text-white xs:w-fit'>{button['see-more']}</Button>
+							<Button className='w-full text-white xs:w-fit'>{button.seeMore}</Button>
 						</Link>
 					</CardContent>
 				</Card>

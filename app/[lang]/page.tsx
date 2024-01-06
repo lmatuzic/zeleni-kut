@@ -17,10 +17,10 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 				<div className='flex flex-col items-center lg:items-start text-center'>
 					<h1 className='mb-4 text-6xl lg:text-7xl text-zk-green'>Zeleni kut</h1>
 					<h2 className='text-xl'>{page.home.subtitle}</h2>
-					<h3>{page.home['sub-subtitle']}</h3>
+					<h3>{page.home.subSubtitle}</h3>
 
 					<Button className='mt-8 text-white cursor-pointer'>
-						<Link href={CONTACT_PAGE}>{button['make-reservation']}</Link>
+						<Link href={CONTACT_PAGE}>{button.makeReservation}</Link>
 					</Button>
 				</div>
 

@@ -12,13 +12,13 @@
 		"dark": "Tamna"
 	},
 	"button": {
-		"make-reservation": "Rezerviraj",
-		"see-more": "Vidi više"
+		"makeReservation": "Rezerviraj",
+		"seeMore": "Vidi više"
 	},
 	"page": {
 		"home": {
 			"subtitle": "Mjesto gdje sva osjetila uživaju",
-			"sub-subtitle": "Kuda krenete, kamo stanete, ljepota se reda do ljepote",
+			"subSubtitle": "Kuda krenete, kamo stanete, ljepota se reda do ljepote",
 			"events": "Događaji"
 		},
 		"events": {
@@ -27,19 +27,19 @@
 		"services": {
 			"title": "Ponuda",
 			"description": "Na svom razvojnom putu uspjela se očuvati dominacija prirode o čemu svjedoči i bogata gastronomska ponuda riječne ribe iz vlastitih bazena (šaran, som, pastrva), specijaliteti suhomesnatih domaćih proizvoda (šunka, kobasica, slanina), ali i mesnih specijaliteta hrvatske kuhinje potpomognuta raznim morskim specijalitetima.",
-			"accomodation-card-title": "Smještaj",
-			"accomodation-card-content": "14 moderno uređenih soba čeka na Vas. U ponudi imamo jednokrevetne i dvokrevetne sobe uz mogućnost dodatnih ležaja.",
-			"gastro-card-title": "Gastro",
-			"gastro-card-content": "Bogata ponuda hrvatskih specijaliteta, jela domaćeg kraja, riječnih riba, ali i morskih plodova i lignji. U posebnoj ponudi također nudimo vegeterijanska jela, te jela ispod peke ili sa ražnja, ali i pizze iz krušne peći.",
-			"recreation-card-title": "Rekreacija",
-			"recreation-card-content": "Uživajte u vožnji kanuom po rijeci ​Mrežnici, igrajući odbojku na pijesku, badminton, kupanje, a tu je i zabava za najmlađe na dječjem igralištu."
+			"accomodationCardTitle": "Smještaj",
+			"accomodationCardContent": "14 moderno uređenih soba čeka na Vas. U ponudi imamo jednokrevetne i dvokrevetne sobe uz mogućnost dodatnih ležaja.",
+			"gastroCardTitle": "Gastro",
+			"gastroCardContent": "Bogata ponuda hrvatskih specijaliteta, jela domaćeg kraja, riječnih riba, ali i morskih plodova i lignji. U posebnoj ponudi također nudimo vegeterijanska jela, te jela ispod peke ili sa ražnja, ali i pizze iz krušne peći.",
+			"recreationCardTitle": "Rekreacija",
+			"recreationCardContent": "Uživajte u vožnji kanuom po rijeci ​Mrežnici, igrajući odbojku na pijesku, badminton, kupanje, a tu je i zabava za najmlađe na dječjem igralištu."
 		},
 		"about": {
 			"title": "O nama",
-			"text-1": "Zbog svoje flore i faune omiljeno je posjetište ljubitelja raftinga, kanuinga, šetača, lovaca,ribolovaca, raznih kolekcionara ali i onih željnih mira i spokoja (pisci,slikari i dr. umjetnici).",
-			"text-2": "Nalazi se na 22. kilometru od ulaza u Karlovac prema smjeru Ogulina na senjskoj prometnici. Restoran je smješten na lijevoj obali rijeke Mrežnice i prekrasnom slapu koji je riječnim otokom podijeljen na 2 dijela. Okružen je prirodom: riječnim kanjonima, šumama bukve i graba(bogate gljivama i dr. šumskim plodovima).",
-			"text-3": "Zeleni Kut ima trdiciju dugu 48 godina (1. svibnja 1967.). Obiteljsko je nasljeđe sa ugođajem domaćeg i prirodnog ambijenta. Na svom razvojnom putu uspjela se očuvati dominacija prirode o čemu svjedoči i bogata gastronomska ponuda riječne ribe iz vlastitih bazena, specijaliteti suhomesnatih domaćih proizvoda ( šunka, kobasica, slanina ) i sl. Restoran je kapaciteta 150 mjesta zatvorenog prostora ( raspoređen u 2 prostorije pogodne za organizirane skupove, seminare i sl.) te terasa kapaciteta 100 mjesta. Od svibnja 2004. godine raspolaže sa 14 moderno uređenih soba od kojih su 2 jednokrevetne i 12 dvokrevetnih (uz mogućnost 10 pomoćnih ležajeva). Svaka soba ima vlastitu kupaonicu, kabelsku TV, telefon, mini-bar, internet liniju.",
-			"text-4": "U vlasništvu restorana nalazi se i dječje igralište, odbojkaško igralište, kupalište, iznajmljivanje kanua, boravak na riječnom otoku ( uz mogućnost kampiranja), označene biciklističke staza, šetalište uz rijeku te parkiralište. Od posebnog povijesnog značaja je hidroelektrana, izrađena 1939. g. koja još i danas radi."
+			"text1": "Zbog svoje flore i faune omiljeno je posjetište ljubitelja raftinga, kanuinga, šetača, lovaca,ribolovaca, raznih kolekcionara, ali i onih željnih mira i spokoja (pisci, slikari i drugi umjetnici).",
+			"text2": "Nalazi se na 22. kilometru od ulaza u Karlovac prema smjeru Ogulina na senjskoj prometnici. Restoran je smješten na lijevoj obali rijeke Mrežnice i prekrasnom slapu koji je riječnim otokom podijeljen na 2 dijela. Okružen je prirodom: riječnim kanjonima, šumama bukve i graba(bogate gljivama i dr. šumskim plodovima).",
+			"text3": "Zeleni Kut ima trdiciju dugu 48 godina (1. svibnja 1967.). Obiteljsko je nasljeđe sa ugođajem domaćeg i prirodnog ambijenta. Na svom razvojnom putu uspjela se očuvati dominacija prirode o čemu svjedoči i bogata gastronomska ponuda riječne ribe iz vlastitih bazena, specijaliteti suhomesnatih domaćih proizvoda ( šunka, kobasica, slanina ) i sl. Restoran je kapaciteta 150 mjesta zatvorenog prostora ( raspoređen u 2 prostorije pogodne za organizirane skupove, seminare i sl.) te terasa kapaciteta 100 mjesta. Od svibnja 2004. godine raspolaže sa 14 moderno uređenih soba od kojih su 2 jednokrevetne i 12 dvokrevetnih (uz mogućnost 10 pomoćnih ležajeva). Svaka soba ima vlastitu kupaonicu, kabelsku TV, telefon, mini-bar, internet liniju.",
+			"text4": "U vlasništvu restorana nalazi se i dječje igralište, odbojkaško igralište, kupalište, iznajmljivanje kanua, boravak na riječnom otoku ( uz mogućnost kampiranja), označene biciklističke staza, šetalište uz rijeku te parkiralište. Od posebnog povijesnog značaja je hidroelektrana, izrađena 1939. g. koja još i danas radi."
 		},
 		"contact": {
 			"title": "Kontakt",
@@ -81,10 +81,10 @@
 		}
 	},
 	"footer": {
-		"working-hours": "Radno vrijeme",
+		"workingHours": "Radno vrijeme",
 		"contact": "Kontakt",
 		"monday": "Ponedjeljak",
 		"sunday": "Nedjelja",
-		"non-working-days": "Neradno"
+		"nonWorkingDays": "Neradno"
 	}
 }

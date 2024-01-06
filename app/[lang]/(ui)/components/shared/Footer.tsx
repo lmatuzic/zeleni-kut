@@ -1,10 +1,10 @@
 import BookingIcon from '@/app/[lang]/assets/icons/booking-icon.svg';
 import TripAdvisorIcon from '@/app/[lang]/assets/icons/trip-advisor-icon.svg';
+import { getDictionary } from '@/app/dictionaries/dictionary';
+import { Locale } from '@/i18.config';
 import { FacebookIcon, Mail, MapPin, Phone } from 'lucide-react';
 import Image from 'next/image';
 import { Separator } from '../shadcn/Separator';
-import { Locale } from '@/i18.config';
-import { getDictionary } from '@/app/dictionaries/dictionary';
 
 export default async function Footer({ lang }: { lang: Locale }) {
 	const { footer } = await getDictionary(lang);
@@ -13,7 +13,7 @@ export default async function Footer({ lang }: { lang: Locale }) {
 		<div className='sticky top-[100vh] bg-zk-dark-green text-white mt-20 py-12'>
 			<div className='container flex items-baseline gap-16 p-8 flex-col md:flex-row static sm:relative'>
 				<div className='w-full'>
-					<div className='mb-4 text-2xl'>{footer['working-hours']}</div>
+					<div className='mb-4 text-2xl'>{footer.workingHours}</div>
 
 					<div className='border border-solid border-gray-600 rounded-md  p-4'>
 						<div>01.03. - 11.11.</div>
@@ -29,7 +29,7 @@ export default async function Footer({ lang }: { lang: Locale }) {
 					<div className='border border-solid border-gray-600 rounded-md mt-4 p-4'>
 						<div>12.11. - 01.03.</div>
 						<Separator className='bg-gray-600 my-2' />
-						<div className='mr-4'>{footer['non-working-days']}</div>
+						<div className='mr-4'>{footer.nonWorkingDays}</div>
 					</div>
 				</div>
 
