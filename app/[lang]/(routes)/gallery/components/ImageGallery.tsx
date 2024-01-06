@@ -22,7 +22,7 @@ export default function ImageGallery() {
 							src={image.url}
 							alt={image.fileName}
 							fill={true}
-							className='object-cover group-hover:opacity-80 transition-opacity cursor-pointer'
+							className='object-cover group-hover:opacity-80 transition-opacity cursor-pointer rounded-md'
 							sizes='(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw'
 							placeholder='blur'
 							blurDataURL={image.url}
