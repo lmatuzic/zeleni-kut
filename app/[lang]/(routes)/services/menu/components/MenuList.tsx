@@ -10,7 +10,9 @@ type MenuListProps = {
 };
 
 export default function MenuList({ locale }: MenuListProps) {
-	const { data } = useGQLQuery<MenuItemsQuery>(['menuItems', locale], MenuItemsDocument, locale);
+	const { data } = useGQLQuery<MenuItemsQuery>(['menuItems', locale], MenuItemsDocument, {
+		locales: [locale],
+	});
 
 	const appetizers = data?.menuItems.filter(
 		(menuItem) => menuItem.menuCategory?.name === 'Appetizer' || 'Predjelo'

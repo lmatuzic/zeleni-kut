@@ -13,12 +13,10 @@ type EventsDetailsProps = {
 };
 
 export default function EventsDetails({ params }: EventsDetailsProps) {
-	const { data, isLoading } = useGQLQuery<EventQuery>(
-		['event', params.id],
-		EventDocument,
-		params.lang,
-		params.id
-	);
+	const { data, isLoading } = useGQLQuery<EventQuery>(['event', params.id], EventDocument, {
+		locales: [params.lang],
+		id: params.id,
+	});
 
 	console.log(data?.event);
 
