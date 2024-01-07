@@ -19,7 +19,15 @@
 		"home": {
 			"subtitle": "Mjesto gdje sva osjetila uživaju",
 			"subSubtitle": "Kuda krenete, kamo stanete, ljepota se reda do ljepote",
-			"events": "Događaji"
+			"events": "Događaji",
+			"tradition": "Tradicija",
+			"traditionText": "48 godina obiteljskog naslijeđa s ugođajem domaćeg i prirodnog ambijenta. Tijekom svog razvoja uspjela se sačuvati dominacija prirode o čemu svjedoči bogata gastronomska ponuda riječne ribe iz vlastitih bazena i specijaliteti suhomesnatih proizvoda poput pršuta, kobasica i slanine.",
+			"nature": "Priroda",
+			"natureText": "Restoran je smješten na lijevoj obali rijeke Mrežnice i prekrasnom slapu koji je riječnim otokom podijeljen na 2 dijela. Okružen je prirodom - riječnim kanjonima, šumama bukve i graba bogate gljivama i drugim šumskim plodovima.",
+			"capacity": "Kapacitet",
+			"capacityText": "150 mjesta zatvorenog prostora raspoređen u 2 prostorije pogodne za organizirane skupove, seminare i sl., te terasa kapaciteta 100 mjesta.",
+			"recreation": "Rekreacija",
+			"recreationText": "Dječje igralište, odbojkaško igralište, kupalište, iznajmljivanje kanua, boravak na riječnom otoku (uz mogućnost kampiranja), jahanje konja, označena biciklistička staza, šetalište uz rijeku."
 		},
 		"events": {
 			"title": "Događaji"

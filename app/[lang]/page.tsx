@@ -3,9 +3,11 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getDictionary } from '../dictionaries/dictionary';
 import { Button } from './(ui)/components/shadcn/Button';
-// import ImageCarousel from './(ui)/components/shared/ImageCarousel';
 import Events from './(routes)/events/components/Events';
-import img from './assets/images/main.jpg';
+import traditionImg from './assets/images/1055.jpg';
+import capacityImg from './assets/images/capacity.jpg';
+import natureImg from './assets/images/main.jpg';
+import canueImg from './assets/images/canue.jpg';
 import { CONTACT_PAGE } from './constants/routes';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
@@ -24,21 +26,72 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 					</Button>
 				</div>
 
-				<Image src={img} alt='bridge nature' width={600} className='rounded-lg' priority />
+				<Image src={capacityImg} alt='bridge nature' width={600} className='rounded-lg' priority />
 			</div>
 
 			<div className='w-full p-8 pb-12 mt-20 bg-sectionBg rounded-xl'>
-				<h2 className='text-2xl font-bold text-center'>{page.home.events}</h2>
+				<h2 className='text-3xl text-center text-zk-green'>{page.home.events}</h2>
 
 				<div className='flex flex-col lg:flex-row items-center justify-center gap-8 mt-8'>
 					<Events locale={lang} />
 				</div>
 			</div>
 
-			{/* 
-			<div className='flex items-center justify-center w-full mt-20 pb-12'>
-				<ImageCarousel />
-			</div> */}
+			<div className='w-full p-8 mt-12'>
+				<div className='flex gap-12 items-center'>
+					<Image
+						src={traditionImg}
+						alt='tradition one'
+						width={500}
+						className='rounded-lg'
+						priority
+					/>
+
+					<div className='text-center'>
+						<h2 className='text-3xl text-zk-green mb-8'>{page.home.tradition}</h2>
+						<p className='text-lg max-w-2xl'>{page.home.traditionText}</p>
+					</div>
+				</div>
+			</div>
+
+			<div className='w-full p-8 mt-12 bg-sectionBg rounded-xl'>
+				<div className='flex gap-12 items-center'>
+					<div className='text-center'>
+						<h2 className='text-3xl text-zk-green mb-8'>{page.home.nature}</h2>
+						<p className='text-lg max-w-2xl'>{page.home.natureText}</p>
+					</div>
+
+					<Image src={natureImg} alt='tradition one' width={500} className='rounded-lg' priority />
+				</div>
+			</div>
+
+			<div className='w-full p-8 mt-12'>
+				<div className='flex gap-12 items-center'>
+					<Image
+						src={capacityImg}
+						alt='tradition one'
+						width={500}
+						className='rounded-lg'
+						priority
+					/>
+
+					<div className='text-center'>
+						<h2 className='text-3xl text-zk-green mb-8'>{page.home.capacity}</h2>
+						<p className='text-lg max-w-2xl'>{page.home.capacityText}</p>
+					</div>
+				</div>
+			</div>
+
+			<div className='w-full p-8 mt-12 bg-sectionBg rounded-xl'>
+				<div className='flex gap-12 items-center'>
+					<div className='text-center'>
+						<h2 className='text-3xl text-zk-green mb-8'>{page.home.recreation}</h2>
+						<p className='text-lg max-w-2xl'>{page.home.recreationText}</p>
+					</div>
+
+					<Image src={canueImg} alt='tradition one' width={500} className='rounded-lg' priority />
+				</div>
+			</div>
 		</div>
 	);
 }

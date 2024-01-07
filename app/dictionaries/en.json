@@ -19,7 +19,15 @@
 		"home": {
 			"subtitle": "A place where all the senses enjoy",
 			"subSubtitle": "Wherever you go, wherever you stop, beauty follows beauty",
-			"events": "Events"
+			"events": "Events",
+			"tradition": "Tradition",
+			"traditionText": "48 years of family heritage with the atmosphere of a domestic and natural environment. During its development, it managed to preserve the dominance of nature, which is evidenced by the rich gastronomic offer of river fish from its own pools, specialties of cured meat products like ham, sausage, and bacon.",
+			"nature": "Nature",
+			"natureText": "The restaurant is located on the left bank of the Mrežnica river and a beautiful waterfall, which is divided into 2 parts by a river island. It is surrounded by nature - river canyons, beech and hornbeam forests rich in mushrooms and other forest fruits.",
+			"capacity": "Capacity",
+			"capacityText": "Indoor capacity of 150 seats divided into 2 rooms suitable for organized gatherings, seminars, etc., and a terrace with a capacity of 100 seats.",
+			"recreation": "Recreation",
+			"recreationText": "Children's playground, volleyball court, swimming areas, canoe rental, stay on a river island (with the possibility of camping), horse riding, marked bicycle path, promenade along the river."
 		},
 		"events": {
 			"title": "Events"

@@ -23,16 +23,16 @@ export default async function Navigation({ lang }: { lang: Locale }) {
 				<Link href={`/${lang}/${HOME_PAGE}`}>Logo</Link>
 
 				<ul className='hidden md:flex justify-between gap-6 w-full md:w-auto items-center'>
-					<li>
+					{/* <li>
 						<Link href={`/${lang}/${ABOUT_PAGE}`}>{navigation.about}</Link>
+					</li> */}
+
+					<li>
+						<Link href={`/${lang}/${SERVICES_PAGE}`}>{navigation.services}</Link>
 					</li>
 
 					<li>
 						<Link href={`/${lang}/${EVENTS_PAGE}`}>{navigation.events}</Link>
-					</li>
-
-					<li>
-						<Link href={`/${lang}/${SERVICES_PAGE}`}>{navigation.services}</Link>
 					</li>
 
 					<li>
