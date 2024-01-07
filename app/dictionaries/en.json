@@ -81,10 +81,10 @@
 		}
 	},
 	"footer": {
-		"workingHours": "Radno vrijeme",
-		"contact": "Kontakt",
-		"monday": "Ponedjeljak",
-		"sunday": "Nedjelja",
-		"nonWorkingDays": "Neradno"
+		"workingHours": "Working hours",
+		"contact": "Contact",
+		"monday": "Monday",
+		"sunday": "Sunday",
+		"nonWorkingDays": "Non-working days"
 	}
 }

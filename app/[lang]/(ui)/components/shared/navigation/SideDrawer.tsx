@@ -1,12 +1,20 @@
 'use client';
 
-import { HOME_PAGE } from '@/app/[lang]/constants/routes';
+import {
+	ABOUT_PAGE,
+	CONTACT_PAGE,
+	EVENTS_PAGE,
+	GALLERY_PAGE,
+	HOME_PAGE,
+	SERVICES_PAGE,
+} from '@/app/[lang]/constants/routes';
 import { Locale } from '@/i18.config';
 import { Menu } from 'lucide-react';
 import Link from 'next/link';
 import { useState } from 'react';
 import { Sheet, SheetContent, SheetTrigger } from '../../shadcn/Sheet';
 import LanguageSwitch from '../LanguageSwitch';
+import ThemeToggle from '../ThemeToggle';
 
 type SideDrawerProps = {
 	lang: Locale;
@@ -18,9 +26,13 @@ type SideDrawerProps = {
 		contact: string;
 		gallery: string;
 	};
+	theme: {
+		light: string;
+		dark: string;
+	};
 };
 
-export default function SideDrawer({ lang, navigation }: SideDrawerProps) {
+export default function SideDrawer({ lang, navigation, theme }: SideDrawerProps) {
 	const [isOpened, setIsOpened] = useState(false);
 
 	const handleOpenMobileNav = () => {
@@ -40,37 +52,61 @@ export default function SideDrawer({ lang, navigation }: SideDrawerProps) {
 			<SheetContent className='pt-20 flex flex-col justify-between items-end'>
 				<ul className='flex flex-col items-end gap-4'>
 					<li>
-						<Link href={HOME_PAGE} onClick={handleCloseMobileNav} className='text-xl'>
+						<ThemeToggle theme={theme} />
+					</li>
+
+					<li>
+						<Link href={`/${lang}/${HOME_PAGE}`} onClick={handleCloseMobileNav} className='text-xl'>
 							{navigation.home}
 						</Link>
 					</li>
 
 					<li>
-						<Link href={`/${lang}/about`} className='text-xl'>
+						<Link
+							href={`/${lang}/${ABOUT_PAGE}`}
+							onClick={handleCloseMobileNav}
+							className='text-xl'
+						>
 							{navigation.about}
 						</Link>
 					</li>
 
 					<li>
-						<Link href={`/${lang}/events`} className='text-xl'>
+						<Link
+							href={`/${lang}/${EVENTS_PAGE}`}
+							onClick={handleCloseMobileNav}
+							className='text-xl'
+						>
 							{navigation.events}
 						</Link>
 					</li>
 
 					<li>
-						<Link href={`/${lang}/services`} className='text-xl'>
+						<Link
+							href={`/${lang}/${SERVICES_PAGE}`}
+							onClick={handleCloseMobileNav}
+							className='text-xl'
+						>
 							{navigation.services}
 						</Link>
 					</li>
 
 					<li>
-						<Link href={`/${lang}/gallery`} className='text-xl'>
+						<Link
+							href={`/${lang}/${GALLERY_PAGE}`}
+							onClick={handleCloseMobileNav}
+							className='text-xl'
+						>
 							{navigation.gallery}
 						</Link>
 					</li>
 
 					<li>
-						<Link href={`/${lang}/contact`} className='text-xl'>
+						<Link
+							href={`/${lang}/${CONTACT_PAGE}`}
+							onClick={handleCloseMobileNav}
+							className='text-xl'
+						>
 							{navigation.contact}
 						</Link>
 					</li>
