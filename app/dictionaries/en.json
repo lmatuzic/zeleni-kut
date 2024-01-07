@@ -27,7 +27,9 @@
 			"capacity": "Capacity",
 			"capacityText": "Indoor capacity of 150 seats divided into 2 rooms suitable for organized gatherings, seminars, etc., and a terrace with a capacity of 100 seats.",
 			"recreation": "Recreation",
-			"recreationText": "Children's playground, volleyball court, swimming areas, canoe rental, stay on a river island (with the possibility of camping), horse riding, marked bicycle path, promenade along the river."
+			"recreationText": "Children's playground, volleyball court, swimming areas, canoe rental, stay on a river island (with the possibility of camping), horse riding, marked bicycle path, promenade along the river.",
+			"rest": "Rest",
+			"restText": "After a day filled with sightseeing, savoring delectable dishes, and basking in the sun by Mrežnica river, unwind and recharge in an atmosphere designed for tranquility in one of our 14 rooms."
 		},
 		"events": {
 			"title": "Events"

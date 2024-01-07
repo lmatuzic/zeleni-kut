@@ -5,10 +5,12 @@ import { getDictionary } from '../dictionaries/dictionary';
 import { Button } from './(ui)/components/shadcn/Button';
 import Events from './(routes)/events/components/Events';
 import traditionImg from './assets/images/1055.jpg';
-import capacityImg from './assets/images/capacity.jpg';
+import mainImg from './assets/images/zk.jpg';
 import natureImg from './assets/images/main.jpg';
 import canueImg from './assets/images/canue.jpg';
-import { CONTACT_PAGE } from './constants/routes';
+import capacityImg from './assets/images/capacity.jpg';
+import roomImg from './assets/images/room1.jpg';
+import { ACCOMMODATION_PAGE, CONTACT_PAGE } from './constants/routes';
 
 export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
 	const { button, page } = await getDictionary(lang);
@@ -26,7 +28,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 					</Button>
 				</div>
 
-				<Image src={capacityImg} alt='bridge nature' width={600} className='rounded-lg' priority />
+				<Image src={mainImg} alt='bridge nature' width={600} className='rounded-lg' priority />
 			</div>
 
 			<div className='w-full p-8 pb-12 mt-20 bg-sectionBg rounded-xl'>
@@ -90,6 +92,21 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 					</div>
 
 					<Image src={canueImg} alt='tradition one' width={500} className='rounded-lg' priority />
+				</div>
+			</div>
+
+			<div className='w-full p-8 mt-12'>
+				<div className='flex gap-12 items-center'>
+					<Image src={roomImg} alt='tradition one' width={500} className='rounded-lg' priority />
+
+					<div className='text-center'>
+						<h2 className='text-3xl text-zk-green mb-8'>{page.home.rest}</h2>
+						<p className='text-lg max-w-2xl'>{page.home.restText}</p>
+
+						<Button className='mt-8 text-white cursor-pointer'>
+							<Link href={ACCOMMODATION_PAGE}>{button.seeMore}</Link>
+						</Button>
+					</div>
 				</div>
 			</div>
 		</div>

@@ -27,7 +27,9 @@
 			"capacity": "Kapacitet",
 			"capacityText": "150 mjesta zatvorenog prostora raspoređen u 2 prostorije pogodne za organizirane skupove, seminare i sl., te terasa kapaciteta 100 mjesta.",
 			"recreation": "Rekreacija",
-			"recreationText": "Dječje igralište, odbojkaško igralište, kupalište, iznajmljivanje kanua, boravak na riječnom otoku (uz mogućnost kampiranja), jahanje konja, označena biciklistička staza, šetalište uz rijeku."
+			"recreationText": "Dječje igralište, odbojkaško igralište, kupalište, iznajmljivanje kanua, boravak na riječnom otoku (uz mogućnost kampiranja), jahanje konja, označena biciklistička staza, šetalište uz rijeku.",
+			"rest": "Odmor",
+			"restText": "Nakon dana ispunjenog razgledavanjem, kušanjem izvrsnih jela i sunčanjem uz rijeku Mrežnicu, opustite se i napunite baterije u atmosferi stvorenoj za mir u jednoj od naših 14 soba."
 		},
 		"events": {
 			"title": "Događaji"
