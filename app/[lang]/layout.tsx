@@ -1,10 +1,12 @@
+import { Locale, i18n } from '@/i18.config';
 import { Quicksand } from '@next/font/google';
+import { SpeedInsights } from '@vercel/speed-insights/next';
+import { Analytics } from '@vercel/analytics/react';
 import type { Metadata } from 'next';
 import Footer from './(ui)/components/shared/Footer';
 import Navigation from './(ui)/components/shared/navigation/Navigation';
-import Providers from './providers';
 import './globals.css';
-import { Locale, i18n } from '@/i18.config';
+import Providers from './providers';
 
 export const metadata: Metadata = {
 	title: 'Zeleni kut',
@@ -32,6 +34,9 @@ export default function RootLayout({
 					<main className='container items-center justify-between my-20 md:my-28'>{children}</main>
 					<Footer lang={params.lang} />
 				</Providers>
+
+				<SpeedInsights />
+				<Analytics />
 			</body>
 		</html>
 	);
