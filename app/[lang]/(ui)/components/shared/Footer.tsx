@@ -1,10 +1,8 @@
-import BookingIcon from '@/app/[lang]/assets/icons/booking-icon.svg';
-import TripAdvisorIcon from '@/app/[lang]/assets/icons/trip-advisor-icon.svg';
 import { getDictionary } from '@/app/dictionaries/dictionary';
 import { Locale } from '@/i18.config';
-import { FacebookIcon, Mail, MapPin, Phone } from 'lucide-react';
-import Image from 'next/image';
+import { Mail, MapPin, Phone } from 'lucide-react';
 import { Separator } from '../shadcn/Separator';
+import Social from './Social';
 
 export default async function Footer({ lang }: { lang: Locale }) {
 	const { footer } = await getDictionary(lang);
@@ -13,7 +11,7 @@ export default async function Footer({ lang }: { lang: Locale }) {
 		<div className='sticky top-[100vh] border-t border-solid bg-sectionBg mt-20 py-12'>
 			<div className='container flex items-baseline gap-16 p-8 flex-col md:flex-row static sm:relative'>
 				<div className='w-full'>
-					<div className='mb-4 font-semibold text-2xl'>{footer.workingHours}</div>
+					<div className='mb-4 font-medium text-2xl'>{footer.workingHours}</div>
 
 					<div className='border border-solid border-gray-400 rounded-md  p-4'>
 						<div>01.03. - 11.11.</div>
@@ -34,7 +32,7 @@ export default async function Footer({ lang }: { lang: Locale }) {
 				</div>
 
 				<div className='w-full'>
-					<div className='mb-4 font-semibold text-2xl'>{footer.contact}</div>
+					<div className='mb-4 font-medium text-2xl'>{footer.contact}</div>
 
 					<div className='flex items-center mb-4'>
 						<Phone className='mr-2' size={16} />
@@ -54,27 +52,7 @@ export default async function Footer({ lang }: { lang: Locale }) {
 					</div>
 				</div>
 
-				<div className='flex items-center gap-4 sm:absolute bottom-6 right-6'>
-					<a href='https://www.facebook.com/zeleni.kut' target='_blank' aria-label='Facebook'>
-						<FacebookIcon size={30} />
-					</a>
-
-					<a
-						href='https://www.booking.com/hotel/hr/zeleni-kut.html'
-						target='_blank'
-						aria-label='Booking'
-					>
-						<Image src={BookingIcon} alt='booking-icon' width={30} height={30} />
-					</a>
-
-					<a
-						href='https://www.tripadvisor.co.uk/Hotel_Review-g1959799-d1093472-Reviews-Zeleni_Kut-Gornji_Zvecaj_Karlovac_County_Central_Croatia.html'
-						target='_blank'
-						aria-label='Trip Advisor'
-					>
-						<Image src={TripAdvisorIcon} alt='booking-icon' width={30} height={30} />
-					</a>
-				</div>
+				<Social />
 			</div>
 		</div>
 	);

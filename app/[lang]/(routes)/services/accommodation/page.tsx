@@ -22,10 +22,10 @@ export default async function Accommodation({ params: { lang } }: { params: { la
 
 	return (
 		<div>
-			<h1 className='mb-6 font-semibold text-2xl text-zk-green'>{page.accommodation.title}</h1>
+			<h1 className='mb-6 font-medium text-2xl text-zk-green'>{page.accommodation.title}</h1>
 			<p className='mb-8'>{page.accommodation.infoText}</p>
 
-			<Link href={`/${lang}/${CONTACT_PAGE}`}>
+			<Link href={`/${lang}${CONTACT_PAGE}`}>
 				<Button className='text-white'>{button.makeReservation}</Button>
 			</Link>
 

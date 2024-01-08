@@ -16,7 +16,7 @@ export default async function Services({ params: { lang } }: { params: { lang: L
 
 	return (
 		<div className='pb-12'>
-			<h1 className='mb-4 font-semibold text-2xl text-zk-green'>{page.services.title}</h1>
+			<h1 className='mb-4 font-medium text-2xl text-zk-green'>{page.services.title}</h1>
 
 			<div className='flex items-center'>
 				<p className='max-w-2xl mb-12'>{page.services.description}</p>
@@ -31,7 +31,7 @@ export default async function Services({ params: { lang } }: { params: { lang: L
 					</CardHeader>
 
 					<CardContent>
-						<Link href={`/${lang}/${ACCOMMODATION_PAGE}`}>
+						<Link href={`/${lang}${ACCOMMODATION_PAGE}`}>
 							<Button className='w-full text-white xs:w-fit'>{button.seeMore}</Button>
 						</Link>
 					</CardContent>
@@ -44,7 +44,7 @@ export default async function Services({ params: { lang } }: { params: { lang: L
 					</CardHeader>
 
 					<CardContent>
-						<Link href={`/${lang}/${MENU_PAGE}`}>
+						<Link href={`/${lang}${MENU_PAGE}`}>
 							<Button className='w-full text-white xs:w-fit'>{button.seeMore}</Button>
 						</Link>
 					</CardContent>
@@ -57,7 +57,7 @@ export default async function Services({ params: { lang } }: { params: { lang: L
 					</CardHeader>
 
 					<CardContent>
-						<Link href={`/${lang}/${RECREATION_PAGE}`}>
+						<Link href={`/${lang}${RECREATION_PAGE}`}>
 							<Button className='w-full text-white xs:w-fit'>{button.seeMore}</Button>
 						</Link>
 					</CardContent>

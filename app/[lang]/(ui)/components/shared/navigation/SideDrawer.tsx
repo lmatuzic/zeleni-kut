@@ -1,7 +1,6 @@
 'use client';
 
 import {
-	ABOUT_PAGE,
 	CONTACT_PAGE,
 	EVENTS_PAGE,
 	GALLERY_PAGE,
@@ -10,11 +9,11 @@ import {
 } from '@/app/[lang]/constants/routes';
 import { Locale } from '@/i18.config';
 import { Menu } from 'lucide-react';
-import Link from 'next/link';
 import { useState } from 'react';
 import { Sheet, SheetContent, SheetTrigger } from '../../shadcn/Sheet';
 import LanguageSwitch from '../LanguageSwitch';
 import ThemeToggle from '../ThemeToggle';
+import NavLink from './NavLink';
 
 type SideDrawerProps = {
 	lang: Locale;
@@ -56,59 +55,53 @@ export default function SideDrawer({ lang, navigation, theme }: SideDrawerProps)
 					</li>
 
 					<li>
-						<Link href={`/${lang}/${HOME_PAGE}`} onClick={handleCloseMobileNav} className='text-xl'>
-							{navigation.home}
-						</Link>
-					</li>
-
-					<li>
-						<Link
-							href={`/${lang}/${ABOUT_PAGE}`}
+						<NavLink
+							route={`/${lang}${HOME_PAGE}`}
 							onClick={handleCloseMobileNav}
 							className='text-xl'
 						>
-							{navigation.about}
-						</Link>
+							{navigation.home}
+						</NavLink>
 					</li>
 
 					<li>
-						<Link
-							href={`/${lang}/${EVENTS_PAGE}`}
+						<NavLink
+							route={`/${lang}${EVENTS_PAGE}`}
 							onClick={handleCloseMobileNav}
 							className='text-xl'
 						>
 							{navigation.events}
-						</Link>
+						</NavLink>
 					</li>
 
 					<li>
-						<Link
-							href={`/${lang}/${SERVICES_PAGE}`}
+						<NavLink
+							route={`/${lang}${SERVICES_PAGE}`}
 							onClick={handleCloseMobileNav}
 							className='text-xl'
 						>
 							{navigation.services}
-						</Link>
+						</NavLink>
 					</li>
 
 					<li>
-						<Link
-							href={`/${lang}/${GALLERY_PAGE}`}
+						<NavLink
+							route={`/${lang}${GALLERY_PAGE}`}
 							onClick={handleCloseMobileNav}
 							className='text-xl'
 						>
 							{navigation.gallery}
-						</Link>
+						</NavLink>
 					</li>
 
 					<li>
-						<Link
-							href={`/${lang}/${CONTACT_PAGE}`}
+						<NavLink
+							route={`/${lang}${CONTACT_PAGE}`}
 							onClick={handleCloseMobileNav}
 							className='text-xl'
 						>
 							{navigation.contact}
-						</Link>
+						</NavLink>
 					</li>
 				</ul>
 

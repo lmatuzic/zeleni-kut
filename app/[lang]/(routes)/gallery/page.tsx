@@ -7,7 +7,7 @@ export default async function GalleryPage({ params: { lang } }: { params: { lang
 
 	return (
 		<>
-			<h1 className='mb-6 font-semibold text-2xl text-zk-green'>{page.gallery.title}</h1>
+			<h1 className='mb-6 font-medium text-2xl text-zk-green'>{page.gallery.title}</h1>
 			<FetchedImageGallery />
 		</>
 	);

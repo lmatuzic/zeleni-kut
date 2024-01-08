@@ -12,7 +12,7 @@ export default async function Recreation({ params: { lang } }: { params: { lang:
 
 	return (
 		<div>
-			<h1 className='mb-6 font-semibold text-2xl text-zk-green'>{page.recreation.title}</h1>
+			<h1 className='mb-6 font-medium text-2xl text-zk-green'>{page.recreation.title}</h1>
 			<p>{page.recreation.infoText}</p>
 
 			<ImageGallery images={galleryImages} className='mt-8' />

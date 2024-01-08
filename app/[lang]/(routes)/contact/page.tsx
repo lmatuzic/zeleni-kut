@@ -10,7 +10,7 @@ export default async function Contact({ params: { lang } }: { params: { lang: Lo
 
 	return (
 		<>
-			<h1 className='mb-12 font-semibold text-2xl text-zk-green'>{page.contact.title}</h1>
+			<h1 className='mb-12 font-medium text-2xl text-zk-green'>{page.contact.title}</h1>
 			<div className='grid grid-cols-1 gap-12 pb-12 md:grid-cols-2'>
 				<div className='flex flex-col'>
 					<ContactInfo translation={page.contact} />

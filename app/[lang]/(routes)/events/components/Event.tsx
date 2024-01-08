@@ -21,11 +21,19 @@ export default function Event({ id, title, shortDescription, dateAndTime, locale
 	const originalDate = new Date(dateAndTime);
 	const formattedDate = format(originalDate, 'dd.MM.yyyy');
 
+	const time = originalDate.toLocaleTimeString('en-US', {
+		hour12: false,
+		hour: 'numeric',
+		minute: 'numeric',
+	});
+
 	return (
 		<Card className='flex flex-col justify-between max-w-sm' key={id}>
 			<CardHeader>
 				<CardTitle className='text-xl'>{title}</CardTitle>
-				<div className='text-sm'>{formattedDate}</div>
+				<div className='text-sm'>
+					{formattedDate}, {time}h
+				</div>
 			</CardHeader>
 
 			<CardContent>

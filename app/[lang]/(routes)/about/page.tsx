@@ -6,7 +6,7 @@ export default async function About({ params: { lang } }: { params: { lang: Loca
 
 	return (
 		<div>
-			<h1 className='mb-4 font-semibold text-2xl text-zk-green'>{page.about.title}</h1>
+			<h1 className='mb-4 font-medium text-2xl text-zk-green'>{page.about.title}</h1>
 			<p className='max-w-lg'>{page.about.text1}</p>
 			<br />
 			<p>{page.about.text2}</p>
