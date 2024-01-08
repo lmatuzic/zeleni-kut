@@ -4,12 +4,12 @@ import Link from 'next/link';
 import { getDictionary } from '../dictionaries/dictionary';
 import { Button } from './(ui)/components/shadcn/Button';
 import Events from './(routes)/events/components/Events';
-import traditionImg from './assets/images/1055.jpg';
-import mainImg from './assets/images/zk.jpg';
-import natureImg from './assets/images/main.jpg';
-import canueImg from './assets/images/canue.jpg';
-import capacityImg from './assets/images/capacity.jpg';
-import roomImg from './assets/images/room1.jpg';
+import traditionImg from './assets/images/homepage/1055.jpg';
+import mainImg from './assets/images/nature/zk.jpg';
+import natureImg from './assets/images/nature/main.jpg';
+import canueImg from './assets/images/recreation/canue.jpg';
+import capacityImg from './assets/images/homepage/capacity.jpg';
+import roomImg from './assets/images/rooms/room1.jpg';
 import {
 	ACCOMMODATION_PAGE,
 	CONTACT_PAGE,
@@ -36,15 +36,9 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 				<Image src={mainImg} alt='bridge nature' width={600} className='rounded-lg' priority />
 			</div>
 
-			<div className='w-full p-4 md:p-8 pb-12 mt-20 border border-solid bg-sectionBg rounded-xl'>
-				<h2 className='text-2xl font-semibold lg:text-3xl text-center'>{page.home.events}</h2>
+			<Events locale={lang} translation={page.events} />
 
-				<div className='flex flex-col lg:flex-row items-center justify-center gap-8 mt-8'>
-					<Events locale={lang} />
-				</div>
-			</div>
-
-			<div className='w-full p-4 md:p-8 mt-12 border border-solid bg-sectionBg rounded-xl'>
+			<div className='w-full p-4 md:p-8 mt-20 border border-solid bg-sectionBg rounded-xl'>
 				<div className='flex flex-col-reverse lg:flex-row gap-12 items-center'>
 					<Image
 						src={traditionImg}

@@ -14,7 +14,7 @@ import { GalleryImagesDocument, GalleryImagesQuery } from '@/app/lib/graphql-cod
 import Image from 'next/image';
 import { useState } from 'react';
 
-export default function ImageGallery() {
+export default function FetchedImageGallery() {
 	const [open, setOpen] = useState(false);
 
 	const { data, isLoading } = useGQLQuery<GalleryImagesQuery>(

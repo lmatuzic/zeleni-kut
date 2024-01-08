@@ -9,7 +9,7 @@ export default async function EventsPage({ params: { lang } }: { params: { lang:
 		<>
 			<header>
 				<h1 className='mb-4 text-2xl text-zk-green'>{page.events.title}</h1>
-				<Events locale={lang} />
+				<Events locale={lang} translation={page.events} />
 			</header>
 		</>
 	);
