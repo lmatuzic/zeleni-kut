@@ -22,8 +22,8 @@ export default function ImageGallery({ images, className }: ImageGalleryProps) {
 	return (
 		<div className={`grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 ${className}`}>
 			<>
-				{images.map((image) => (
-					<div key={image.toString()} className='overflow-hidden relative h-60 group'>
+				{images.map((image, index) => (
+					<div key={index} className='overflow-hidden relative h-60 group'>
 						<Image
 							src={image}
 							alt={image.src}

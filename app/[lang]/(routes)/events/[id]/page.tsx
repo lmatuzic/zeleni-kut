@@ -32,7 +32,7 @@ export default function EventsDetails({ params }: EventsDetailsProps) {
 
 	return (
 		<>
-			<h1 className='mb-4 text-2xl text-zk-green'>{data?.event?.title}</h1>
+			<h1 className='mb-4 font-semibold text-2xl text-zk-green'>{data?.event?.title}</h1>
 			<p>{data?.event?.description.text}</p>
 
 			<div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4 mt-12'>

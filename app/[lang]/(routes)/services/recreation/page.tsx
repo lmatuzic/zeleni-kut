@@ -8,15 +8,14 @@ import img4 from '@/app/[lang]/assets/images/recreation/volleyball.jpg';
 
 export default async function Recreation({ params: { lang } }: { params: { lang: Locale } }) {
 	const { page } = await getDictionary(lang);
-
-	const images = [img1, img2, img3, img4];
+	const galleryImages = [img1, img2, img3, img4];
 
 	return (
 		<div>
-			<h1 className='mb-6 text-2xl text-zk-green'>{page.recreation.title}</h1>
+			<h1 className='mb-6 font-semibold text-2xl text-zk-green'>{page.recreation.title}</h1>
 			<p>{page.recreation.infoText}</p>
 
-			<ImageGallery images={images} className='mt-8' />
+			<ImageGallery images={galleryImages} className='mt-8' />
 		</div>
 	);
 }

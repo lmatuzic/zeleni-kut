@@ -36,12 +36,20 @@ export default function LanguageSwitch() {
 					width={30}
 					height={30}
 					className='rounded-full mr-2'
+					priority
 				/>
 			);
 		}
 
 		return (
-			<Image src={UKIcon} alt='croatia-icon' width={30} height={30} className='rounded-full' />
+			<Image
+				src={UKIcon}
+				alt='croatia-icon'
+				width={30}
+				height={30}
+				className='rounded-full'
+				priority
+			/>
 		);
 	};
 

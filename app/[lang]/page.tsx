@@ -2,14 +2,14 @@ import { Locale } from '@/i18.config';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getDictionary } from '../dictionaries/dictionary';
-import { Button } from './(ui)/components/shadcn/Button';
 import Events from './(routes)/events/components/Events';
+import { Button } from './(ui)/components/shadcn/Button';
 import traditionImg from './assets/images/homepage/1055.jpg';
-import mainImg from './assets/images/nature/zk.jpg';
-import natureImg from './assets/images/nature/main.jpg';
-import canueImg from './assets/images/recreation/canue.jpg';
 import capacityImg from './assets/images/homepage/capacity.jpg';
-import roomImg from './assets/images/rooms/room1.jpg';
+import natureImg from './assets/images/nature/main.jpg';
+import mainImg from './assets/images/nature/zk.jpg';
+import canueImg from './assets/images/recreation/canue.jpg';
+import roomImg from './assets/images/rooms/room1.jpeg';
 import {
 	ACCOMMODATION_PAGE,
 	CONTACT_PAGE,
@@ -29,7 +29,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 					<h3>{page.home.subSubtitle}</h3>
 
 					<Button className='mt-8 text-white cursor-pointer'>
-						<Link href={CONTACT_PAGE}>{button.makeReservation}</Link>
+						<Link href={`/${lang}/${CONTACT_PAGE}`}>{button.makeReservation}</Link>
 					</Button>
 				</div>
 
@@ -56,7 +56,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 						<p className='lg:text-lg max-w-2xl'>{page.home.traditionText}</p>
 
 						<Button className='mt-8 text-white cursor-pointer'>
-							<Link href={SERVICES_PAGE}>{button.seeMore}</Link>
+							<Link href={`/${lang}/${SERVICES_PAGE}`}>{button.seeMore}</Link>
 						</Button>
 					</div>
 				</div>
@@ -106,7 +106,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 						<p className='lg:text-lg max-w-2xl'>{page.home.recreationText}</p>
 
 						<Button className='mt-8 text-white cursor-pointer'>
-							<Link href={RECREATION_PAGE}>{button.seeMore}</Link>
+							<Link href={`/${lang}/${RECREATION_PAGE}`}>{button.seeMore}</Link>
 						</Button>
 					</div>
 
@@ -126,7 +126,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 						<p className='lg:text-lg max-w-2xl'>{page.home.restText}</p>
 
 						<Button className='mt-8 text-white cursor-pointer'>
-							<Link href={ACCOMMODATION_PAGE}>{button.seeMore}</Link>
+							<Link href={`/${lang}/${ACCOMMODATION_PAGE}`}>{button.seeMore}</Link>
 						</Button>
 					</div>
 				</div>

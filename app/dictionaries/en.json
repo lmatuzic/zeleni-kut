@@ -92,6 +92,13 @@
 		"recreation": {
 			"title": "Recreation",
 			"infoText": "Enjoy canoeing on the ​Mrežnica river, playing beach volleyball, badminton, swimming, and there is also fun for the youngest at the children's playground."
+		},
+		"gallery": {
+			"title": "Gallery"
+		},
+		"accommodation": {
+			"title": "Accomodation",
+			"infoText": "From may 2004. we have 14 modern rooms. We can offer 12 double or twin rooms (6 with river view) and 2 single rooms (both with the river view) with possibility for extra bed in double or twin rooms. Every room have its own bathroom, satellite Tv, mini-bar and free internet access, air condition and river side rooms have balconies over the river."
 		}
 	},
 	"footer": {

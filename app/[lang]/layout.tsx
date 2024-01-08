@@ -1,7 +1,7 @@
 import { Locale, i18n } from '@/i18.config';
 import { Quicksand } from '@next/font/google';
-import { SpeedInsights } from '@vercel/speed-insights/next';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
 import Footer from './(ui)/components/shared/Footer';
 import Navigation from './(ui)/components/shared/navigation/Navigation';
@@ -26,6 +26,19 @@ export default function RootLayout({
 	children: React.ReactNode;
 	params: { lang: Locale };
 }) {
+	const runVercelAnalytics = () => {
+		if (process.env.NODE_ENV === 'development') {
+			return;
+		}
+
+		return (
+			<>
+				<SpeedInsights />
+				<Analytics />
+			</>
+		);
+	};
+
 	return (
 		<html lang={params.lang} suppressHydrationWarning>
 			<body className={`${quicksand.className} min-h-screen`}>
@@ -35,8 +48,7 @@ export default function RootLayout({
 					<Footer lang={params.lang} />
 				</Providers>
 
-				<SpeedInsights />
-				<Analytics />
+				{runVercelAnalytics()}
 			</body>
 		</html>
 	);

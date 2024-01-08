@@ -92,6 +92,13 @@
 		"recreation": {
 			"title": "Rekreacija",
 			"infoText": "Uživajte u vožnji kanuom po rijeci ​Mrežnici, igrajući odbojku na pijesku, badminton, kupanje, a tu je i zabava za najmlađe na dječjem igralištu."
+		},
+		"gallery": {
+			"title": "Galerija"
+		},
+		"accommodation": {
+			"title": "Smještaj",
+			"infoText": "Od svibnja 2004. godine imamo 14 moderno opremljenih soba. U ponudi imamo 12 dvokrevetnih ili dvokrevetnih soba (6 s pogledom na rijeku) i 2 jednokrevetne sobe (obje s pogledom na rijeku) s mogućnošću pomoćnog ležaja u dvokrevetnim ili dvokrevetnim sobama. Svaka soba ima vlastitu kupaonicu, satelitsku TV, mini-bar i besplatan pristup internetu, klima uređaj, a sobe okrenute prema rijeci imaju balkone s pogledom na rijeku."
 		}
 	},
 	"footer": {
