@@ -223,7 +223,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 
 						<ReCAPTCHA
 							sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
-							className='scale-77 xs:scale-100 origin-left'
+							className='scale-77 xs:scale-100 origin-left rounded-xl'
 						/>
 
 						<Button type='submit' className='text-white'>
