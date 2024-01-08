@@ -11,11 +11,12 @@ type NavLogoProps = {
 
 export default function NavLogo({ lang, className }: NavLogoProps) {
 	return (
-		<Link href={`/${lang}${HOME_PAGE}`} className='hidden sm:flex'>
+		<Link href={`/${lang}${HOME_PAGE}`}>
 			<Image
 				src={darkLogo}
 				alt='Picture of the author'
-				className={`dark:invert ${className ? className : ''}`}
+				className={`dark:invert w-11 md:w-14 ${className ? className : ''}`}
+				priority
 			/>
 		</Link>
 	);
