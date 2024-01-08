@@ -29,7 +29,7 @@ export default function RootLayout({
 			<body className={`${quicksand.className} min-h-screen`}>
 				<Providers>
 					<Navigation lang={params.lang} />
-					<main className='container items-center justify-between my-8'>{children}</main>
+					<main className='container items-center justify-between my-20 md:my-28'>{children}</main>
 					<Footer lang={params.lang} />
 				</Providers>
 			</body>

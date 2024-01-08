@@ -45,7 +45,7 @@ export default function SideDrawer({ lang, navigation, theme }: SideDrawerProps)
 
 	return (
 		<Sheet open={isOpened} onOpenChange={setIsOpened}>
-			<SheetTrigger onClick={handleOpenMobileNav} className='flex md:hidden'>
+			<SheetTrigger onClick={handleOpenMobileNav} className='block md:hidden'>
 				<Menu />
 			</SheetTrigger>
 

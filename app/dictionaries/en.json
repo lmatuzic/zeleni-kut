@@ -88,6 +88,10 @@
 				"singleBed": "Single bed",
 				"reserve": "Make a reservation"
 			}
+		},
+		"recreation": {
+			"title": "Recreation",
+			"infoText": "Enjoy canoeing on the ​Mrežnica river, playing beach volleyball, badminton, swimming, and there is also fun for the youngest at the children's playground."
 		}
 	},
 	"footer": {

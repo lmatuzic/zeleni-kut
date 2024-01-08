@@ -1,7 +1,7 @@
 {
 	"navigation": {
 		"home": " Početna",
-		"events": "Događaji",
+		"events": "Događanja",
 		"about": "O nama",
 		"services": "Ponuda",
 		"contact": "Kontakt",
@@ -19,7 +19,7 @@
 		"home": {
 			"subtitle": "Mjesto gdje sva osjetila uživaju",
 			"subSubtitle": "Kuda krenete, kamo stanete, ljepota se reda do ljepote",
-			"events": "Događaji",
+			"events": "Događanja",
 			"tradition": "Tradicija",
 			"traditionText": "48 godina obiteljskog naslijeđa s ugođajem domaćeg i prirodnog ambijenta. Tijekom svog razvoja uspjela se sačuvati dominacija prirode o čemu svjedoči bogata gastronomska ponuda riječne ribe iz vlastitih bazena i specijaliteti suhomesnatih proizvoda poput pršuta, kobasica i slanine.",
 			"nature": "Priroda",
@@ -32,7 +32,7 @@
 			"restText": "Nakon dana ispunjenog razgledavanjem, kušanjem izvrsnih jela i sunčanjem uz rijeku Mrežnicu, opustite se i napunite baterije u atmosferi stvorenoj za mir u jednoj od naših 14 soba."
 		},
 		"events": {
-			"title": "Događaji"
+			"title": "Događanja"
 		},
 		"services": {
 			"title": "Ponuda",
@@ -88,6 +88,10 @@
 				"singleBed": "Jednokrevetna soba",
 				"reserve": "Rezerviraj"
 			}
+		},
+		"recreation": {
+			"title": "Rekreacija",
+			"infoText": "Uživajte u vožnji kanuom po rijeci ​Mrežnici, igrajući odbojku na pijesku, badminton, kupanje, a tu je i zabava za najmlađe na dječjem igralištu."
 		}
 	},
 	"footer": {

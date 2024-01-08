@@ -37,9 +37,10 @@ export const theme = {
 			background: 'hsl(var(--background))',
 			foreground: 'hsl(var(--foreground))',
 			'zk-green': '#669933',
-			'zk-dark-green': '#0f2b2f',
+			'zk-dark-green': '#284C00',
 			'purple-primary': '#663399',
 			'light-gray': '#f3f4f4',
+			cream: '#afa69e',
 			sectionBg: {
 				DEFAULT: 'var(--section-bg)',
 			},

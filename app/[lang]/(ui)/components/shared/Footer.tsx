@@ -10,10 +10,10 @@ export default async function Footer({ lang }: { lang: Locale }) {
 	const { footer } = await getDictionary(lang);
 
 	return (
-		<div className='sticky top-[100vh] bg-zk-dark-green text-white mt-20 py-12'>
+		<div className='sticky top-[100vh] border-t border-solid bg-sectionBg mt-20 py-12'>
 			<div className='container flex items-baseline gap-16 p-8 flex-col md:flex-row static sm:relative'>
 				<div className='w-full'>
-					<div className='mb-4 text-2xl'>{footer.workingHours}</div>
+					<div className='mb-4 font-semibold text-2xl'>{footer.workingHours}</div>
 
 					<div className='border border-solid border-gray-600 rounded-md  p-4'>
 						<div>01.03. - 11.11.</div>
@@ -34,7 +34,7 @@ export default async function Footer({ lang }: { lang: Locale }) {
 				</div>
 
 				<div className='w-full'>
-					<div className='mb-4 text-2xl'>{footer.contact}</div>
+					<div className='mb-4 font-semibold text-2xl'>{footer.contact}</div>
 
 					<div className='flex items-center mb-4'>
 						<Phone className='mr-2' size={16} />

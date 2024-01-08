@@ -16,7 +16,7 @@ export default async function Navigation({ lang }: { lang: Locale }) {
 	const { navigation, theme } = await getDictionary(lang);
 
 	return (
-		<nav className='w-full'>
+		<nav className='w-full fixed top-0 z-50 bg-background border-b border-solid'>
 			<div className='container flex items-center justify-between py-4'>
 				{/* <NavLogo /> */}
 				<Link href={`/${lang}/${HOME_PAGE}`}>Logo</Link>
