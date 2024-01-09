@@ -10,17 +10,13 @@ import {
 import { Dialog, DialogContent } from '@/app/[lang]/(ui)/components/shadcn/Dialog';
 import LoadingSpinner from '@/app/[lang]/(ui)/components/shared/LoadingSpinner';
 import useGQLQuery from '@/app/[lang]/hooks/useGQLQuery';
-import { GalleryImagesDocument, GalleryImagesQuery } from '@/app/lib/graphql-codegen/graphql';
+import { GalleryDocument, GalleryQuery } from '@/app/lib/graphql-codegen/graphql';
 import Image from 'next/image';
 import { useState } from 'react';
 
 export default function FetchedImageGallery() {
 	const [open, setOpen] = useState(false);
-
-	const { data, isLoading } = useGQLQuery<GalleryImagesQuery>(
-		['galleryImages'],
-		GalleryImagesDocument
-	);
+	const { data, isLoading } = useGQLQuery<GalleryQuery>(['galleries'], GalleryDocument);
 
 	return (
 		<div className='grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4'>
@@ -28,7 +24,7 @@ export default function FetchedImageGallery() {
 				<LoadingSpinner />
 			) : (
 				<>
-					{data?.assets.map((image) => (
+					{data?.galleries[0].images.map((image) => (
 						<div key={image.url} className='overflow-hidden relative h-60 group'>
 							<Image
 								src={image.url}
@@ -49,7 +45,7 @@ export default function FetchedImageGallery() {
 						<DialogContent className='p-0 border-none'>
 							<Carousel>
 								<CarouselContent>
-									{data?.assets.map((pic) => (
+									{data?.galleries[0].images.map((pic) => (
 										<CarouselItem key={pic.url}>
 											<div className='overflow-hidden relative h-96 md:h-[40rem]'>
 												<Image

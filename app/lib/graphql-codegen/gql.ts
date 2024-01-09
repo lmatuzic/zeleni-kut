@@ -13,11 +13,16 @@ import { TypedDocumentNode as DocumentNode } from '@graphql-typed-document-node/
  * Therefore it is highly recommended to use the babel or swc plugin for production.
  */
 const documents = {
-    "\n\tquery Event($locales: [Locale!]!, $id: ID!) {\n\t\tevent(locales: $locales, where: { id: $id }) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t\tpictures {\n\t\t\t\turl\n\t\t\t\tfileName\n\t\t\t}\n\t\t}\n\t}\n": types.EventDocument,
-    "\n\tquery Events($locales: [Locale!]!) {\n\t\tevents(locales: $locales) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t}\n\t}\n": types.EventsDocument,
-    "\n\tquery GalleryImages {\n\t\tassets(first: 40) {\n\t\t\turl\n\t\t\tfileName\n\t\t}\n\t}\n": types.GalleryImagesDocument,
-    "\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n": types.MenuCategoriesDocument,
-    "\n\tquery menuItems($locales: [Locale!]!) {\n\t\tmenuItems(locales: $locales) {\n\t\t\tname\n\t\t\tdescription\n\t\t\tprice\n\t\t\tlocale\n\t\t\tmenuCategory {\n\t\t\t\tname\n\t\t\t\tlocale\n\t\t\t}\n\t\t}\n\t}\n": types.MenuItemsDocument,
+	'\n\tquery Event($locales: [Locale!]!, $id: ID!) {\n\t\tevent(locales: $locales, where: { id: $id }) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t\tpictures {\n\t\t\t\turl\n\t\t\t\tfileName\n\t\t\t}\n\t\t}\n\t}\n':
+		types.EventDocument,
+	'\n\tquery Events($locales: [Locale!]!) {\n\t\tevents(locales: $locales) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t}\n\t}\n':
+		types.EventsDocument,
+	'\n\tquery Gallery {\n\t\tgalleries {\n\t\t\timages(first: 100) {\n\t\t\t\tfileName\n\t\t\t\turl\n\t\t\t}\n\t\t}\n\t}\n':
+		types.GalleryDocument,
+	'\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n':
+		types.MenuCategoriesDocument,
+	'\n\tquery menuItems($locales: [Locale!]!) {\n\t\tmenuItems(locales: $locales) {\n\t\t\tname\n\t\t\tdescription\n\t\t\tprice\n\t\t\tlocale\n\t\t\tmenuCategory {\n\t\t\t\tname\n\t\t\t\tlocale\n\t\t\t}\n\t\t}\n\t}\n':
+		types.MenuItemsDocument,
 };
 
 /**
@@ -37,26 +42,37 @@ export function graphql(source: string): unknown;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n\tquery Event($locales: [Locale!]!, $id: ID!) {\n\t\tevent(locales: $locales, where: { id: $id }) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t\tpictures {\n\t\t\t\turl\n\t\t\t\tfileName\n\t\t\t}\n\t\t}\n\t}\n"): (typeof documents)["\n\tquery Event($locales: [Locale!]!, $id: ID!) {\n\t\tevent(locales: $locales, where: { id: $id }) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t\tpictures {\n\t\t\t\turl\n\t\t\t\tfileName\n\t\t\t}\n\t\t}\n\t}\n"];
+export function graphql(
+	source: '\n\tquery Event($locales: [Locale!]!, $id: ID!) {\n\t\tevent(locales: $locales, where: { id: $id }) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t\tpictures {\n\t\t\t\turl\n\t\t\t\tfileName\n\t\t\t}\n\t\t}\n\t}\n'
+): (typeof documents)['\n\tquery Event($locales: [Locale!]!, $id: ID!) {\n\t\tevent(locales: $locales, where: { id: $id }) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t\tpictures {\n\t\t\t\turl\n\t\t\t\tfileName\n\t\t\t}\n\t\t}\n\t}\n'];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n\tquery Events($locales: [Locale!]!) {\n\t\tevents(locales: $locales) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t}\n\t}\n"): (typeof documents)["\n\tquery Events($locales: [Locale!]!) {\n\t\tevents(locales: $locales) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t}\n\t}\n"];
+export function graphql(
+	source: '\n\tquery Events($locales: [Locale!]!) {\n\t\tevents(locales: $locales) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t}\n\t}\n'
+): (typeof documents)['\n\tquery Events($locales: [Locale!]!) {\n\t\tevents(locales: $locales) {\n\t\t\tid\n\t\t\ttitle\n\t\t\tshortDescription\n\t\t\tdescription {\n\t\t\t\thtml\n\t\t\t\ttext\n\t\t\t}\n\t\t\tisDisplayed\n\t\t\tdateAndTime\n\t\t\tlocale\n\t\t}\n\t}\n'];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n\tquery GalleryImages {\n\t\tassets(first: 40) {\n\t\t\turl\n\t\t\tfileName\n\t\t}\n\t}\n"): (typeof documents)["\n\tquery GalleryImages {\n\t\tassets(first: 40) {\n\t\t\turl\n\t\t\tfileName\n\t\t}\n\t}\n"];
+export function graphql(
+	source: '\n\tquery Gallery {\n\t\tgalleries {\n\t\t\timages(first: 100) {\n\t\t\t\tfileName\n\t\t\t\turl\n\t\t\t}\n\t\t}\n\t}\n'
+): (typeof documents)['\n\tquery Gallery {\n\t\tgalleries {\n\t\t\timages(first: 100) {\n\t\t\t\tfileName\n\t\t\t\turl\n\t\t\t}\n\t\t}\n\t}\n'];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n"): (typeof documents)["\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n"];
+export function graphql(
+	source: '\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n'
+): (typeof documents)['\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n'];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "\n\tquery menuItems($locales: [Locale!]!) {\n\t\tmenuItems(locales: $locales) {\n\t\t\tname\n\t\t\tdescription\n\t\t\tprice\n\t\t\tlocale\n\t\t\tmenuCategory {\n\t\t\t\tname\n\t\t\t\tlocale\n\t\t\t}\n\t\t}\n\t}\n"): (typeof documents)["\n\tquery menuItems($locales: [Locale!]!) {\n\t\tmenuItems(locales: $locales) {\n\t\t\tname\n\t\t\tdescription\n\t\t\tprice\n\t\t\tlocale\n\t\t\tmenuCategory {\n\t\t\t\tname\n\t\t\t\tlocale\n\t\t\t}\n\t\t}\n\t}\n"];
+export function graphql(
+	source: '\n\tquery menuItems($locales: [Locale!]!) {\n\t\tmenuItems(locales: $locales) {\n\t\t\tname\n\t\t\tdescription\n\t\t\tprice\n\t\t\tlocale\n\t\t\tmenuCategory {\n\t\t\t\tname\n\t\t\t\tlocale\n\t\t\t}\n\t\t}\n\t}\n'
+): (typeof documents)['\n\tquery menuItems($locales: [Locale!]!) {\n\t\tmenuItems(locales: $locales) {\n\t\t\tname\n\t\t\tdescription\n\t\t\tprice\n\t\t\tlocale\n\t\t\tmenuCategory {\n\t\t\t\tname\n\t\t\t\tlocale\n\t\t\t}\n\t\t}\n\t}\n'];
 
 export function graphql(source: string) {
-  return (documents as any)[source] ?? {};
+	return (documents as any)[source] ?? {};
 }
 
-export type DocumentType<TDocumentNode extends DocumentNode<any, any>> = TDocumentNode extends DocumentNode<  infer TType,  any>  ? TType  : never;
+export type DocumentType<TDocumentNode extends DocumentNode<any, any>> =
+	TDocumentNode extends DocumentNode<infer TType, any> ? TType : never;

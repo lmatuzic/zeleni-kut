@@ -21,7 +21,7 @@ export default function ContactInfo({ translation }: ContactInfoProps) {
 			<div className='mb-8'>+385 (0) 47 866 100 </div>
 
 			<div className='mb-1 text-zk-green font-medium'>{translation.mobilePhone} (1)</div>
-			<div className='mb-8'>+385 (0) 98 911 4115</div>
+			<div className='mb-8'>+385 99 5446 599</div>
 
 			<div className='mb-1 text-zk-green font-medium'>{translation.mobilePhone} (2)</div>
 			<div className='mb-8'>+385 (0) 98 976 56 00</div>
