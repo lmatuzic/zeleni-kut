@@ -63,7 +63,34 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 	});
 
 	const onSubmit = (values: z.infer<typeof roomReservationFormSchema>) => {
-		sendReservationEmail();
+		const {
+			firstName,
+			lastName,
+			email,
+			numberOfPeople,
+			phone,
+			typeOfRoom,
+			numberOfNights,
+			checkInDate,
+			checkOutDate,
+			message,
+		} = values;
+
+		sendReservationEmail({
+			formValues: roomReservationFormSchema.parse({
+				firstName,
+				lastName,
+				email,
+				numberOfPeople,
+				phone,
+				typeOfRoom,
+				numberOfNights,
+				checkInDate,
+				checkOutDate,
+				message,
+			}),
+			emailSubject: 'Rezervacija sobe',
+		});
 		console.log(values);
 	};
 
