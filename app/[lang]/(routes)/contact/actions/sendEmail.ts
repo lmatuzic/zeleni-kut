@@ -16,7 +16,7 @@ export const sendReservationEmail = <T extends z.ZodObject<any, any, any>>({
 	emailSubject,
 }: ReservationEmailProps<T>) => {
 	resend.emails.send({
-		from: formValues.email,
+		from: 'Zeleni Kut Website <zeleni-kut.eu>',
 		to: ['luka.matuzic1@gmail.com'],
 		subject: emailSubject,
 		html: '',
