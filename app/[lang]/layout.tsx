@@ -7,6 +7,7 @@ import Footer from './(ui)/components/shared/Footer';
 import Navigation from './(ui)/components/shared/navigation/Navigation';
 import './globals.css';
 import Providers from './providers';
+import { Toaster } from './(ui)/components/shadcn/Toaster';
 
 export const metadata: Metadata = {
 	title: 'Zeleni kut',
@@ -48,6 +49,7 @@ export default function RootLayout({
 					<Footer lang={params.lang} />
 				</Providers>
 
+				<Toaster />
 				{runVercelAnalytics()}
 			</body>
 		</html>

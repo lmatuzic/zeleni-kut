@@ -11,15 +11,20 @@ type ReservationEmailProps<T extends z.ZodObject<any, any, any>> = {
 	emailSubject: string;
 };
 
-export const sendReservationEmail = <T extends z.ZodObject<any, any, any>>({
+export const sendReservationEmail = async <T extends z.ZodObject<any, any, any>>({
 	formValues,
 	emailSubject,
 }: ReservationEmailProps<T>) => {
-	resend.emails.send({
-		from: 'Zeleni Kut Website <zeleni-kut.eu>',
-		to: ['luka.matuzic1@gmail.com'],
-		subject: emailSubject,
-		html: '',
-		react: EmailTemplate({ formValues, emailSubject }),
-	});
+	try {
+		await resend.emails.send({
+			from: `${formValues.firstName} ${formValues.lastName} <zeleni-kut@zeleni-kut.eu>`,
+			to: ['luka.matuzic1@gmail.com'],
+			subject: emailSubject,
+			reply_to: formValues.email,
+			react: EmailTemplate({ formValues, emailSubject }),
+		});
+	} catch (error) {
+		console.log(error);
+		throw new Error();
+	}
 };

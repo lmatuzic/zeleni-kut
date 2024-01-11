@@ -70,7 +70,10 @@
 				"date": "Datum",
 				"message": "Poruka",
 				"pickDate": "Odaberi datum",
-				"reserve": "Rezerviraj"
+				"reserve": "Rezerviraj",
+				"reservationTitle": "Rezervacija stola",
+				"reservationSent": "Rezervacija stola uspješno poslana!",
+				"reservationFailed": "Rezervacija stola nije uspjela. Pokušajte ponovno ili nas kontaktirajte putem e-pošte ili telefona."
 			},
 			"roomReservationForm": {
 				"firstName": "Ime",
@@ -86,7 +89,10 @@
 				"doubleBed": "Soba s bračnim krevetom",
 				"twoBeds": "Dvokrevetna soba",
 				"singleBed": "Jednokrevetna soba",
-				"reserve": "Rezerviraj"
+				"reservationTitle": "Rezervacija sobe",
+				"reserve": "Rezerviraj",
+				"reservationSent": "Rezervacija sobe uspješno poslana!",
+				"reservationFailed": "Rezervacija sobe nije uspjela. Pokušajte ponovno ili nas kontaktirajte putem e-pošte ili telefona."
 			}
 		},
 		"recreation": {
@@ -98,7 +104,7 @@
 		},
 		"accommodation": {
 			"title": "Smještaj",
-			"infoText": "Od svibnja 2004. godine imamo 14 moderno opremljenih soba. U ponudi imamo 12 dvokrevetnih ili dvokrevetnih soba (6 s pogledom na rijeku) i 2 jednokrevetne sobe (obje s pogledom na rijeku) s mogućnošću pomoćnog ležaja u dvokrevetnim ili dvokrevetnim sobama. Svaka soba ima vlastitu kupaonicu, satelitsku TV, mini-bar i besplatan pristup internetu, klima uređaj, a sobe okrenute prema rijeci imaju balkone s pogledom na rijeku."
+			"infoText": "Od svibnja 2004. godine imamo 14 moderno opremljenih soba. U ponudi imamo 12 dvokrevetnih ili dvokrevetnih soba (6 s pogledom na rijeku) i 2 jednokrevetne sobe (obje s pogledom na rijeku) s mogućnošću pomoćnog ležaja u sobama s bračnim krevetom ili dvokrevetnim sobama. Svaka soba ima vlastitu kupaonicu, satelitsku TV, mini-bar i besplatan pristup internetu, klima uređaj, a sobe okrenute prema rijeci imaju balkone s pogledom na rijeku."
 		}
 	},
 	"footer": {

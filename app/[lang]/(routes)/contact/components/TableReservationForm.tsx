@@ -19,6 +19,7 @@ import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { sendReservationEmail } from '../actions/sendEmail';
 import { format } from 'date-fns';
+import { useToast } from '@/app/[lang]/hooks/useToast';
 
 type TableReservationFormProps = {
 	translation: {
@@ -31,10 +32,15 @@ type TableReservationFormProps = {
 		message: string;
 		pickDate: string;
 		reserve: string;
+		reservationSent: string;
+		reservationFailed: string;
+		reservationTitle: string;
 	};
 };
 
 export default function TableReservationForm({ translation }: TableReservationFormProps) {
+	const { toast } = useToast();
+
 	const form = useForm<z.infer<typeof tableReservationFormSchema>>({
 		resolver: zodResolver(tableReservationFormSchema),
 		defaultValues: {
@@ -48,23 +54,31 @@ export default function TableReservationForm({ translation }: TableReservationFo
 		},
 	});
 
-	const onSubmit = (values: z.infer<typeof tableReservationFormSchema>) => {
+	const onSubmit = async (values: z.infer<typeof tableReservationFormSchema>) => {
 		const { firstName, lastName, email, numberOfPeople, phone, reservationDate, message } = values;
 
-		sendReservationEmail({
-			formValues: tableReservationFormSchema.parse({
-				firstName,
-				lastName,
-				email,
-				numberOfPeople,
-				phone,
-				reservationDate,
-				message,
-			}),
-			emailSubject: 'Rezervacija stola',
-		});
+		try {
+			await sendReservationEmail({
+				formValues: tableReservationFormSchema.parse({
+					firstName,
+					lastName,
+					email,
+					numberOfPeople,
+					phone,
+					reservationDate,
+					message,
+				}),
+				emailSubject: translation.reservationTitle,
+			});
 
-		console.log(values);
+			toast({
+				title: translation.reservationSent,
+			});
+		} catch {
+			toast({
+				title: translation.reservationFailed,
+			});
+		}
 	};
 
 	return (

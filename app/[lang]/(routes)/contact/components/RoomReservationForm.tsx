@@ -25,6 +25,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { sendReservationEmail } from '../actions/sendEmail';
+import { useToast } from '@/app/[lang]/hooks/useToast';
 
 type RoomReservationFormProps = {
 	translation: {
@@ -42,10 +43,15 @@ type RoomReservationFormProps = {
 		twoBeds: string;
 		singleBed: string;
 		reserve: string;
+		reservationSent: string;
+		reservationFailed: string;
+		reservationTitle: string;
 	};
 };
 
 export default function RoomReservationForm({ translation }: RoomReservationFormProps) {
+	const { toast } = useToast();
+
 	const form = useForm<z.infer<typeof roomReservationFormSchema>>({
 		resolver: zodResolver(roomReservationFormSchema),
 		defaultValues: {
@@ -62,7 +68,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 		},
 	});
 
-	const onSubmit = (values: z.infer<typeof roomReservationFormSchema>) => {
+	const onSubmit = async (values: z.infer<typeof roomReservationFormSchema>) => {
 		const {
 			firstName,
 			lastName,
@@ -76,22 +82,31 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 			message,
 		} = values;
 
-		sendReservationEmail({
-			formValues: roomReservationFormSchema.parse({
-				firstName,
-				lastName,
-				email,
-				numberOfPeople,
-				phone,
-				typeOfRoom,
-				numberOfNights,
-				checkInDate,
-				checkOutDate,
-				message,
-			}),
-			emailSubject: 'Rezervacija sobe',
-		});
-		console.log(values);
+		try {
+			await sendReservationEmail({
+				formValues: roomReservationFormSchema.parse({
+					firstName,
+					lastName,
+					email,
+					numberOfPeople,
+					phone,
+					typeOfRoom,
+					numberOfNights,
+					checkInDate,
+					checkOutDate,
+					message,
+				}),
+				emailSubject: translation.reservationTitle,
+			});
+
+			toast({
+				title: translation.reservationFailed,
+			});
+		} catch {
+			toast({
+				title: translation.reservationFailed,
+			});
+		}
 	};
 
 	return (

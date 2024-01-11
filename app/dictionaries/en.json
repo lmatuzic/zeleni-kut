@@ -70,7 +70,10 @@
 				"date": "Date",
 				"message": "Message",
 				"pickDate": "Pick a date",
-				"reserve": "Make a reservation"
+				"reserve": "Make a reservation",
+				"reservationTitle": "Table reservation",
+				"reservationSent": "Table reservation submitted successfully!",
+				"reservationFailed": "Table reservation failed. Please try again or contact us via email or phone."
 			},
 			"roomReservationForm": {
 				"firstName": "Name",
@@ -86,7 +89,10 @@
 				"doubleBed": "Double room",
 				"twoBeds": "Two beds",
 				"singleBed": "Single bed",
-				"reserve": "Make a reservation"
+				"reserve": "Make a reservation",
+				"reservationTitle": "Room reservation",
+				"reservationSent": "Room reservation submitted successfully!",
+				"reservationFailed": "Room reservation failed. Please try again or contact us via email or phone."
 			}
 		},
 		"recreation": {
