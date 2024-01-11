@@ -1,14 +1,25 @@
 'use server';
 
+import { EmailTemplate } from '@/app/[lang]/components/EmailTemplate';
 import { Resend } from 'resend';
+import * as z from 'zod';
 
-const resend = new Resend(process.env.NEXT_PUBLIC_RESEND_API_KEY);
+const resend = new Resend(process.env.RESEND_API_KEY);
 
-export const sendReservationEmail = () => {
+type ReservationEmailProps<T extends z.ZodObject<any, any, any>> = {
+	formValues: z.infer<T>;
+	emailSubject: string;
+};
+
+export const sendReservationEmail = <T extends z.ZodObject<any, any, any>>({
+	formValues,
+	emailSubject,
+}: ReservationEmailProps<T>) => {
 	resend.emails.send({
-		from: 'Matuzzo localhost',
-		to: 'luka.matuzic1@gmail.com',
-		subject: 'Rezervacija',
-		html: '<div><p>Congrats on sending your <strong>first email</strong>!</p><div>',
+		from: formValues.email,
+		to: ['luka.matuzic1@gmail.com'],
+		subject: emailSubject,
+		html: '',
+		react: EmailTemplate({ formValues, emailSubject }),
 	});
 };

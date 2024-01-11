@@ -18,6 +18,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { sendReservationEmail } from '../actions/sendEmail';
+import { format } from 'date-fns';
 
 type TableReservationFormProps = {
 	translation: {
@@ -42,13 +43,27 @@ export default function TableReservationForm({ translation }: TableReservationFo
 			email: '',
 			numberOfPeople: 1,
 			phone: '',
-			reservationDate: new Date(),
+			reservationDate: format(new Date(), 'dd.MM.yyy'),
 			message: '',
 		},
 	});
 
 	const onSubmit = (values: z.infer<typeof tableReservationFormSchema>) => {
-		sendReservationEmail();
+		const { firstName, lastName, email, numberOfPeople, phone, reservationDate, message } = values;
+
+		sendReservationEmail({
+			formValues: tableReservationFormSchema.parse({
+				firstName,
+				lastName,
+				email,
+				numberOfPeople,
+				phone,
+				reservationDate,
+				message,
+			}),
+			emailSubject: 'Rezervacija stola',
+		});
+
 		console.log(values);
 	};
 
@@ -158,7 +173,7 @@ export default function TableReservationForm({ translation }: TableReservationFo
 									<FormLabel>{translation.message}</FormLabel>
 
 									<FormControl>
-										<Textarea rows={7} />
+										<Textarea rows={7} {...field} />
 									</FormControl>
 								</FormItem>
 							)}
