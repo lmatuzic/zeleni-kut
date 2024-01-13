@@ -12,14 +12,15 @@ import {
 import { Input } from '@/app/[lang]/(ui)/components/shadcn/Input';
 import { Textarea } from '@/app/[lang]/(ui)/components/shadcn/Textarea';
 import { DatePicker } from '@/app/[lang]/(ui)/components/shared/DatePicker';
+import { useToast } from '@/app/[lang]/hooks/useToast';
 import { tableReservationFormSchema } from '@/app/[lang]/lib/zod/schemas/tableReservationFormSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { sendReservationEmail } from '../actions/sendEmail';
-import { format } from 'date-fns';
-import { useToast } from '@/app/[lang]/hooks/useToast';
+
+type FormKey = 'reservationDate';
 
 type TableReservationFormProps = {
 	translation: {
@@ -49,16 +50,22 @@ export default function TableReservationForm({ translation }: TableReservationFo
 			email: '',
 			numberOfPeople: 1,
 			phone: '',
-			reservationDate: format(new Date(), 'dd.MM.yyy'),
+			reservationDate: new Date(),
 			message: '',
 		},
 	});
 
+	const handleSelectChange = (key: FormKey, option: any) => {
+		form.setValue(key, option);
+		form.clearErrors(key);
+	};
+
 	const onSubmit = async (values: z.infer<typeof tableReservationFormSchema>) => {
-		const { firstName, lastName, email, numberOfPeople, phone, reservationDate, message } = values;
+		const { firstName, lastName, email, numberOfPeople, reservationDate, phone, message } = values;
 
 		try {
 			await sendReservationEmail({
+				emailSubject: translation.reservationTitle,
 				formValues: tableReservationFormSchema.parse({
 					firstName,
 					lastName,
@@ -68,7 +75,6 @@ export default function TableReservationForm({ translation }: TableReservationFo
 					reservationDate,
 					message,
 				}),
-				emailSubject: translation.reservationTitle,
 			});
 
 			toast({
@@ -172,7 +178,11 @@ export default function TableReservationForm({ translation }: TableReservationFo
 
 									<FormControl>
 										<div className='w-full'>
-											<DatePicker translation={translation} />
+											<DatePicker
+												date={field.value}
+												handleSetDate={(e) => handleSelectChange('reservationDate', e)}
+												translation={translation}
+											/>
 										</div>
 									</FormControl>
 								</FormItem>

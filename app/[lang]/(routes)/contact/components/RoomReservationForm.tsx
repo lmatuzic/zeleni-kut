@@ -19,13 +19,15 @@ import {
 } from '@/app/[lang]/(ui)/components/shadcn/Select';
 import { Textarea } from '@/app/[lang]/(ui)/components/shadcn/Textarea';
 import { DatePicker } from '@/app/[lang]/(ui)/components/shared/DatePicker';
+import { useToast } from '@/app/[lang]/hooks/useToast';
 import { roomReservationFormSchema } from '@/app/[lang]/lib/zod/schemas/roomReservationFormSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { sendReservationEmail } from '../actions/sendEmail';
-import { useToast } from '@/app/[lang]/hooks/useToast';
+
+type FormKey = 'checkInDate' | 'checkOutDate';
 
 type RoomReservationFormProps = {
 	translation: {
@@ -68,6 +70,11 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 		},
 	});
 
+	const handleSelectChange = (key: FormKey, option: any) => {
+		form.setValue(key, option);
+		form.clearErrors(key);
+	};
+
 	const onSubmit = async (values: z.infer<typeof roomReservationFormSchema>) => {
 		const {
 			firstName,
@@ -84,6 +91,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 
 		try {
 			await sendReservationEmail({
+				emailSubject: translation.reservationTitle,
 				formValues: roomReservationFormSchema.parse({
 					firstName,
 					lastName,
@@ -96,11 +104,10 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 					checkOutDate,
 					message,
 				}),
-				emailSubject: translation.reservationTitle,
 			});
 
 			toast({
-				title: translation.reservationFailed,
+				title: translation.reservationSent,
 			});
 		} catch {
 			toast({
@@ -226,7 +233,11 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 
 									<FormControl>
 										<div className='w-full'>
-											<DatePicker translation={translation} />
+											<DatePicker
+												date={field.value}
+												handleSetDate={(e) => handleSelectChange('checkInDate', e)}
+												translation={translation}
+											/>
 										</div>
 									</FormControl>
 								</FormItem>
@@ -242,7 +253,11 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 
 									<FormControl>
 										<div className='w-full'>
-											<DatePicker translation={translation} />
+											<DatePicker
+												date={field.value}
+												handleSetDate={(e) => handleSelectChange('checkOutDate', e)}
+												translation={translation}
+											/>
 										</div>
 									</FormControl>
 								</FormItem>

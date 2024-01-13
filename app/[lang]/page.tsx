@@ -22,7 +22,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 
 	return (
 		<div className='relative flex flex-col items-start w-full'>
-			<div className='flex items-center w-full flex-col justify-center lg:flex-row gap-12'>
+			<div className='flex items-center w-full flex-col justify-center lg:flex-row gap-12 lg:mt-8'>
 				<div className='flex flex-col items-center lg:items-start text-center'>
 					<h1 className='mb-4 font-medium text-6xl lg:text-7xl text-zk-green'>Zeleni kut</h1>
 					<h2 className='text-xl'>{page.home.subtitle}</h2>

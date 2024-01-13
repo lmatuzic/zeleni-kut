@@ -12,8 +12,8 @@ type ReservationEmailProps<T extends z.ZodObject<any, any, any>> = {
 };
 
 export const sendReservationEmail = async <T extends z.ZodObject<any, any, any>>({
-	formValues,
 	emailSubject,
+	formValues,
 }: ReservationEmailProps<T>) => {
 	try {
 		await resend.emails.send({
@@ -23,8 +23,7 @@ export const sendReservationEmail = async <T extends z.ZodObject<any, any, any>>
 			reply_to: formValues.email,
 			react: EmailTemplate({ formValues, emailSubject }),
 		});
-	} catch (error) {
-		console.log(error);
+	} catch {
 		throw new Error();
 	}
 };
