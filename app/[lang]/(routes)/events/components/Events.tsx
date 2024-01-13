@@ -15,7 +15,7 @@ type EventsProps = {
 
 export default function Events({ locale, translation }: EventsProps) {
 	const { data, isLoading } = useGQLQuery<EventsQuery>(['events', locale], EventsDocument, {
-		locales: ['en', 'hr'],
+		locales: [locale],
 	});
 
 	return (
@@ -24,10 +24,12 @@ export default function Events({ locale, translation }: EventsProps) {
 				<LoadingSpinner />
 			) : (
 				<>
-					<div className='w-full p-4 md:p-8 pb-12 mt-20 border border-solid bg-sectionBg rounded-xl'>
-						<h2 className='text-2xl font-medium lg:text-3xl text-center'>{translation.title}</h2>
+					<div className='w-full p-4 lg:p-8 border border-solid bg-sectionBg rounded-xl'>
+						{/* <h2 className='text-2xl font-medium lg:text-3xl mb-6 text-center'>
+							{translation.title}
+						</h2> */}
 
-						<div className='flex flex-col lg:flex-row items-center justify-center gap-8 mt-8'>
+						<div className='flex flex-col lg:flex-row items-center gap-8'>
 							{data?.events.map((event) => (
 								<Event
 									key={event.id}
