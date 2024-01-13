@@ -19,10 +19,14 @@ export default function PdfMenu({ locale, translation }: PdfMenuProps) {
 	});
 
 	return (
-		<Button asChild className='p-6'>
-			<Link href={`${data?.assets[0].url}`} download className='text-white'>
-				{translation.lookAtMenu}
-			</Link>
-		</Button>
+		<>
+			{data && data.assets ? (
+				<Button asChild className='p-6'>
+					<Link href={`${data?.assets[0].url}`} download className='text-white'>
+						{translation.lookAtMenu}
+					</Link>
+				</Button>
+			) : null}
+		</>
 	);
 }
