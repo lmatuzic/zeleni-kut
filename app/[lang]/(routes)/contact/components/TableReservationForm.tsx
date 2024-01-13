@@ -84,6 +84,8 @@ export default function TableReservationForm({ translation }: TableReservationFo
 			toast({
 				title: translation.reservationFailed,
 			});
+		} finally {
+			form.reset();
 		}
 	};
 

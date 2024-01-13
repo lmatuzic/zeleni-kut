@@ -39,8 +39,8 @@ export default async function Services({ params: { lang } }: { params: { lang: L
 
 				<Card className='flex flex-col justify-between'>
 					<CardHeader>
-						<CardTitle className='mb-2 text-xl'>{page.services.gastroCardTitle}</CardTitle>
-						<CardDescription>{page.services['gastroCardContent']}</CardDescription>
+						<CardTitle className='mb-2 text-xl'>{page.services.restaurantCardTitle}</CardTitle>
+						<CardDescription>{page.services.restaurantCardContent}</CardDescription>
 					</CardHeader>
 
 					<CardContent>

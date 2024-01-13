@@ -19,6 +19,8 @@ const documents = {
 		types.EventsDocument,
 	'\n\tquery Gallery {\n\t\tgalleries {\n\t\t\timages(first: 100) {\n\t\t\t\tfileName\n\t\t\t\turl\n\t\t\t}\n\t\t}\n\t}\n':
 		types.GalleryDocument,
+	'\n\tquery Assets {\n\t\tassets(where: { mimeType: "application/pdf" }) {\n\t\t\tid\n\t\t\tfileName\n\t\t\turl\n\t\t}\n\t}\n':
+		types.AssetsDocument,
 	'\n\tquery MenuCategories {\n\t\tmenuCategories {\n\t\t\tname\n\t\t}\n\t}\n':
 		types.MenuCategoriesDocument,
 	'\n\tquery menuItems($locales: [Locale!]!) {\n\t\tmenuItems(locales: $locales) {\n\t\t\tname\n\t\t\tdescription\n\t\t\tprice\n\t\t\tlocale\n\t\t\tmenuCategory {\n\t\t\t\tname\n\t\t\t\tlocale\n\t\t\t}\n\t\t}\n\t}\n':
@@ -57,6 +59,12 @@ export function graphql(
 export function graphql(
 	source: '\n\tquery Gallery {\n\t\tgalleries {\n\t\t\timages(first: 100) {\n\t\t\t\tfileName\n\t\t\t\turl\n\t\t\t}\n\t\t}\n\t}\n'
 ): (typeof documents)['\n\tquery Gallery {\n\t\tgalleries {\n\t\t\timages(first: 100) {\n\t\t\t\tfileName\n\t\t\t\turl\n\t\t\t}\n\t\t}\n\t}\n'];
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(
+	source: '\n\tquery Assets {\n\t\tassets(where: { mimeType: "application/pdf" }) {\n\t\t\tid\n\t\t\tfileName\n\t\t\turl\n\t\t}\n\t}\n'
+): (typeof documents)['\n\tquery Assets {\n\t\tassets(where: { mimeType: "application/pdf" }) {\n\t\t\tid\n\t\t\tfileName\n\t\t\turl\n\t\t}\n\t}\n'];
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */

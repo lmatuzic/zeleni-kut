@@ -5908,6 +5908,13 @@ export type GalleryQuery = {
 	}>;
 };
 
+export type AssetsQueryVariables = Exact<{ [key: string]: never }>;
+
+export type AssetsQuery = {
+	__typename?: 'Query';
+	assets: Array<{ __typename?: 'Asset'; id: string; fileName: string; url: string }>;
+};
+
 export type MenuCategoriesQueryVariables = Exact<{ [key: string]: never }>;
 
 export type MenuCategoriesQuery = {
@@ -6134,6 +6141,49 @@ export const GalleryDocument = {
 		},
 	],
 } as unknown as DocumentNode<GalleryQuery, GalleryQueryVariables>;
+export const AssetsDocument = {
+	kind: 'Document',
+	definitions: [
+		{
+			kind: 'OperationDefinition',
+			operation: 'query',
+			name: { kind: 'Name', value: 'Assets' },
+			selectionSet: {
+				kind: 'SelectionSet',
+				selections: [
+					{
+						kind: 'Field',
+						name: { kind: 'Name', value: 'assets' },
+						arguments: [
+							{
+								kind: 'Argument',
+								name: { kind: 'Name', value: 'where' },
+								value: {
+									kind: 'ObjectValue',
+									fields: [
+										{
+											kind: 'ObjectField',
+											name: { kind: 'Name', value: 'mimeType' },
+											value: { kind: 'StringValue', value: 'application/pdf', block: false },
+										},
+									],
+								},
+							},
+						],
+						selectionSet: {
+							kind: 'SelectionSet',
+							selections: [
+								{ kind: 'Field', name: { kind: 'Name', value: 'id' } },
+								{ kind: 'Field', name: { kind: 'Name', value: 'fileName' } },
+								{ kind: 'Field', name: { kind: 'Name', value: 'url' } },
+							],
+						},
+					},
+				],
+			},
+		},
+	],
+} as unknown as DocumentNode<AssetsQuery, AssetsQueryVariables>;
 export const MenuCategoriesDocument = {
 	kind: 'Document',
 	definitions: [

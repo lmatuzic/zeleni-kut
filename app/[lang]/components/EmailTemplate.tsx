@@ -38,11 +38,7 @@ export const EmailTemplate = <T extends z.ZodObject<any, any, any>>({
 						<Row className='mb-4'>
 							<Column>
 								<span className='font-semibold m-0'>Korisnik</span>
-
-								<div className='m-0'>
-									{formValues.firstName}
-									{formValues.lastName}
-								</div>
+								<div className='m-0'>{`${formValues.firstName} ${formValues.lastName}`}</div>
 							</Column>
 						</Row>
 

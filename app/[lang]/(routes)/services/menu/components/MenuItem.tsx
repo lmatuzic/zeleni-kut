@@ -12,7 +12,7 @@ export default function MenuItem({ name, description, price }: MenuItem) {
 				<div className='text-sm'>{description}</div>
 			</div>
 
-			<span className='mt-2 md:mt-0 whitespace-nowrap'>{price} kn</span>
+			<span className='mt-2 md:mt-0 whitespace-nowrap'>{price} €</span>
 		</div>
 	);
 }

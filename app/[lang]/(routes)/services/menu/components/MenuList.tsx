@@ -7,25 +7,31 @@ import MenuItem from './MenuItem';
 
 type MenuListProps = {
 	locale: Locale;
+	translation: {
+		appetizers: string;
+		mainCourses: string;
+	};
 };
 
-export default function MenuList({ locale }: MenuListProps) {
+export default function MenuList({ locale, translation }: MenuListProps) {
 	const { data } = useGQLQuery<MenuItemsQuery>(['menuItems', locale], MenuItemsDocument, {
 		locales: [locale],
 	});
 
 	const appetizers = data?.menuItems.filter(
-		(menuItem) => menuItem.menuCategory?.name === 'Appetizer' || 'Predjelo'
+		(menuItem) => menuItem.menuCategory?.name == 'Appetizer' || 'Predjelo'
 	);
 
 	const mainCourses = data?.menuItems.filter(
-		(menuItem) => menuItem.menuCategory?.name === 'Main courses' || 'Glavna jela'
+		(menuItem) => menuItem.menuCategory?.name == 'Main courses' || 'Glavna jela'
 	);
+
+	console.log(appetizers?.map((item) => item.menuCategory?.name));
 
 	return (
 		<>
 			<div className='p-4 mt-4 border rounded-md gap-y-8 gap-x-16'>
-				<h2 className='text-lg font-bold'>Appetizers</h2>
+				<h2 className='text-lg font-bold'>{translation.appetizers}</h2>
 
 				{appetizers?.map((appetizer) => (
 					<MenuItem
@@ -38,7 +44,7 @@ export default function MenuList({ locale }: MenuListProps) {
 			</div>
 
 			<div className='p-4 mt-4 border rounded-md gap-y-8 gap-x-16'>
-				<h2 className='text-lg font-bold'>Main courses</h2>
+				<h2 className='text-lg font-bold'>{translation.mainCourses}</h2>
 
 				{mainCourses?.map((mainCourse) => (
 					<MenuItem

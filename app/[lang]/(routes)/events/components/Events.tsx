@@ -15,7 +15,7 @@ type EventsProps = {
 
 export default function Events({ locale, translation }: EventsProps) {
 	const { data, isLoading } = useGQLQuery<EventsQuery>(['events', locale], EventsDocument, {
-		locales: [locale],
+		locales: ['en', 'hr'],
 	});
 
 	return (

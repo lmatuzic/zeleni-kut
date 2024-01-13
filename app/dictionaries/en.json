@@ -18,7 +18,7 @@
 	"page": {
 		"home": {
 			"subtitle": "A place where all the senses enjoy",
-			"subSubtitle": "Wherever you go, wherever you stop, beauty follows beauty",
+			"subSubtitle": "Wherever you go, wherever you stop - beauty follows beauty",
 			"events": "Events",
 			"tradition": "Tradition",
 			"traditionText": "48 years of family heritage with the atmosphere of a domestic and natural environment. During its development, it managed to preserve the dominance of nature, which is evidenced by the rich gastronomic offer of river fish from its own pools, specialties of cured meat products like ham, sausage, and bacon.",
@@ -39,8 +39,8 @@
 			"description": "During its development, it managed to preserve the dominance of nature, which is evidenced by the rich gastronomic offer of river fish from its own pools (carp, catfish, trout), specialties of cured meat products (ham, sausage, bacon), but also meat specialties of Croatian cuisine supported by various seafood specialties.",
 			"accomodationCardTitle": "Accomodation",
 			"accomodationCardContent": "14 modern rooms are waiting for you. We offer single and double rooms with the possibility of additional beds.",
-			"gastroCardTitle": "Gastro",
-			"gastroCardContent": "A wide range of Croatian specialties, local dishes, river fish, but also seafood and squid. In a special offer, we also offer vegetarian dishes, and dishes under the oven or from the spit, as well as pizzas from the bread oven.",
+			"restaurantCardTitle": "Restaurant",
+			"restaurantCardContent": "A wide range of Croatian specialties, local dishes, river fish, but also seafood and squid. In a special offer, we also offer vegetarian dishes, and dishes under the oven or from the spit, as well as pizzas from the bread oven.",
 			"recreationCardTitle": "Recreation",
 			"recreationCardContent": "Enjoy canoeing on the ​Mrežnica river, playing beach volleyball, badminton, swimming, and there is also fun for the youngest at the children's playground."
 		},
@@ -50,6 +50,13 @@
 			"text2": "It is located at the 22nd kilometer from the entrance to Karlovac in the direction of Ogulin on the Senj road. The restaurant is located on the left bank of the Mrežnica river and a beautiful waterfall, which is divided into 2 parts by a river island. It is surrounded by nature: river canyons, beech and hornbeam forests (rich in mushrooms and other forest fruits).",
 			"text3": "Zeleni Kut has a tradition of 48 years (May 1, 1967). It is a family heritage with the atmosphere of a domestic and natural environment. During its development, it managed to preserve the dominance of nature, which is evidenced by the rich gastronomic offer of river fish from its own pools, specialties of cured meat products (ham, sausage, bacon), etc. The restaurant has a capacity of 150 closed spaces (divided into 2 rooms suitable for organized gatherings, seminars, etc.) and a terrace with a capacity of 100 seats. Since May 2004, it has had 14 modern rooms, of which 2 are single and 12 are double (with the possibility of 10 extra beds). Each room has its own bathroom, cable TV, telephone, mini-bar, internet line.",
 			"text4": "The restaurant also has a children's playground, volleyball court, swimming pool, canoe rental, stay on a river island (with the possibility of camping), marked bicycle paths, a promenade along the river and a parking lot. Of special historical importance is the hydroelectric power plant, built in 1939, which is still working today."
+		},
+		"menu": {
+			"title": "Menu",
+			"appetizers": "Appetizers",
+			"mainCourses": "Main courses",
+			"lookAtMenu": "Look at the menu",
+			"infoText": "Zeleni Kut has a tradition of 48 years (May 1, 1967). It is a family heritage with the atmosphere of a domestic and natural environment. On its development path, it managed to preserve the dominance of nature, which is evidenced by the rich gastronomic offer of river fish from its own pools, specialties of cured meat products such as ham, sausage and bacon. In a special offer, we also offer vegetarian dishes, and dishes under the oven or from the spit, as well as pizzas from the bread oven. The restaurant has a capacity of 200 closed spaces arranged in 3 rooms suitable for organized gatherings, seminars and similar events. Also, in the outer part there is a beautiful terrace with a capacity of 100 seats."
 		},
 		"contact": {
 			"title": "Contact",

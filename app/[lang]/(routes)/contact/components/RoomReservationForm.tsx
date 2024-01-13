@@ -113,6 +113,8 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 			toast({
 				title: translation.reservationFailed,
 			});
+		} finally {
+			form.reset();
 		}
 	};
 
