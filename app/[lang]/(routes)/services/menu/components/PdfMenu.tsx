@@ -20,9 +20,9 @@ export default function PdfMenu({ locale, translation }: PdfMenuProps) {
 
 	return (
 		<>
-			{data && data.assets ? (
+			{data && data.assets && data.assets[0] ? (
 				<Button asChild className='p-6'>
-					<Link href={`${data?.assets[0].url}`} download className='text-white'>
+					<Link href={data.assets[0].url} download className='text-white'>
 						{translation.lookAtMenu}
 					</Link>
 				</Button>
