@@ -51,8 +51,8 @@
 			"text3": "Zeleni Kut has a tradition of 48 years (May 1, 1967). It is a family heritage with the atmosphere of a domestic and natural environment. During its development, it managed to preserve the dominance of nature, which is evidenced by the rich gastronomic offer of river fish from its own pools, specialties of cured meat products (ham, sausage, bacon), etc. The restaurant has a capacity of 150 closed spaces (divided into 2 rooms suitable for organized gatherings, seminars, etc.) and a terrace with a capacity of 100 seats. Since May 2004, it has had 14 modern rooms, of which 2 are single and 12 are double (with the possibility of 10 extra beds). Each room has its own bathroom, cable TV, telephone, mini-bar, internet line.",
 			"text4": "The restaurant also has a children's playground, volleyball court, swimming pool, canoe rental, stay on a river island (with the possibility of camping), marked bicycle paths, a promenade along the river and a parking lot. Of special historical importance is the hydroelectric power plant, built in 1939, which is still working today."
 		},
-		"menu": {
-			"title": "Menu",
+		"restaurant": {
+			"title": "Restaurant",
 			"appetizers": "Appetizers",
 			"mainCourses": "Main courses",
 			"lookAtMenu": "Look at the menu",
@@ -75,6 +75,7 @@
 				"phone": "Phone",
 				"numberOfPeople": "Number of people",
 				"date": "Date",
+				"time": "Time",
 				"message": "Message",
 				"pickDate": "Pick a date",
 				"reserve": "Make a reservation",

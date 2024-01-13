@@ -12,7 +12,7 @@ export const GALLERY_PAGE = '/gallery';
 export const CONTACT_PAGE = '/contact';
 export const SERVICES_PAGE = '/services';
 export const ACCOMMODATION_PAGE = '/services/accommodation';
-export const MENU_PAGE = '/services/menu';
+export const RESTAURANT_PAGE = '/services/restaurant';
 export const RECREATION_PAGE = '/services/recreation';
 
 export const routes: Route[] = [

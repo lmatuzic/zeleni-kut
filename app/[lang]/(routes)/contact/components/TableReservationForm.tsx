@@ -30,6 +30,7 @@ type TableReservationFormProps = {
 		phone: string;
 		numberOfPeople: string;
 		date: string;
+		time: string;
 		message: string;
 		pickDate: string;
 		reserve: string;
@@ -51,6 +52,7 @@ export default function TableReservationForm({ translation }: TableReservationFo
 			numberOfPeople: 1,
 			phone: '',
 			reservationDate: new Date(),
+			time: '',
 			message: '',
 		},
 	});
@@ -61,7 +63,8 @@ export default function TableReservationForm({ translation }: TableReservationFo
 	};
 
 	const onSubmit = async (values: z.infer<typeof tableReservationFormSchema>) => {
-		const { firstName, lastName, email, numberOfPeople, reservationDate, phone, message } = values;
+		const { firstName, lastName, email, numberOfPeople, reservationDate, time, phone, message } =
+			values;
 
 		try {
 			await sendReservationEmail({
@@ -73,6 +76,7 @@ export default function TableReservationForm({ translation }: TableReservationFo
 					numberOfPeople,
 					phone,
 					reservationDate,
+					time,
 					message,
 				}),
 			});
@@ -82,6 +86,8 @@ export default function TableReservationForm({ translation }: TableReservationFo
 			});
 		} catch {
 			toast({
+				variant: 'destructive',
+				duration: 10000,
 				title: translation.reservationFailed,
 			});
 		} finally {
@@ -186,6 +192,29 @@ export default function TableReservationForm({ translation }: TableReservationFo
 												translation={translation}
 											/>
 										</div>
+									</FormControl>
+								</FormItem>
+							)}
+						/>
+
+						<FormField
+							control={form.control}
+							name='time'
+							render={({ field }) => (
+								<FormItem>
+									<FormLabel>{translation.time}</FormLabel>
+
+									<FormControl>
+										<Input
+											type='time'
+											step='00:00'
+											id='24h'
+											min='10:00'
+											max='21:00'
+											required
+											placeholder={translation.time}
+											{...field}
+										/>
 									</FormControl>
 								</FormItem>
 							)}

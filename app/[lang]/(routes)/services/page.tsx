@@ -6,7 +6,11 @@ import {
 	CardHeader,
 	CardTitle,
 } from '@/app/[lang]/(ui)/components/shadcn/Card';
-import { ACCOMMODATION_PAGE, MENU_PAGE, RECREATION_PAGE } from '@/app/[lang]/constants/routes';
+import {
+	ACCOMMODATION_PAGE,
+	RESTAURANT_PAGE,
+	RECREATION_PAGE,
+} from '@/app/[lang]/constants/routes';
 import { getDictionary } from '@/app/dictionaries/dictionary';
 import type { Locale } from '@/i18.config';
 import Link from 'next/link';
@@ -44,7 +48,7 @@ export default async function Services({ params: { lang } }: { params: { lang: L
 					</CardHeader>
 
 					<CardContent>
-						<Link href={`/${lang}${MENU_PAGE}`}>
+						<Link href={`/${lang}${RESTAURANT_PAGE}`}>
 							<Button className='w-full text-white xs:w-fit'>{button.seeMore}</Button>
 						</Link>
 					</CardContent>

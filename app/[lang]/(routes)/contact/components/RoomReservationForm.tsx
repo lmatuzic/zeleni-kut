@@ -111,6 +111,8 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 			});
 		} catch {
 			toast({
+				variant: 'destructive',
+				duration: 10000,
 				title: translation.reservationFailed,
 			});
 		} finally {
@@ -274,7 +276,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 									<FormLabel>{translation.message}</FormLabel>
 
 									<FormControl>
-										<Textarea rows={7} />
+										<Textarea rows={7} {...field} />
 									</FormControl>
 								</FormItem>
 							)}

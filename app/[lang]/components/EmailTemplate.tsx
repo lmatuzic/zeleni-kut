@@ -63,15 +63,6 @@ export const EmailTemplate = <T extends z.ZodObject<any, any, any>>({
 							</Column>
 						</Row>
 
-						{formValues.reservationDate ? (
-							<Row className='mb-4'>
-								<Column>
-									<span className='font-semibold m-0'>Datum</span>
-									<div className='m-0'>{format(formValues.reservationDate, 'dd.MM.yyy')}</div>
-								</Column>
-							</Row>
-						) : null}
-
 						{formValues.typeOfRoom ? (
 							<Row className='mb-4'>
 								<Column>
@@ -86,6 +77,24 @@ export const EmailTemplate = <T extends z.ZodObject<any, any, any>>({
 								<Column>
 									<span className='font-semibold m-0'>Broj noćenja</span>
 									<div className='m-0'>{formValues.numberOfNights}</div>
+								</Column>
+							</Row>
+						) : null}
+
+						{formValues.reservationDate ? (
+							<Row className='mb-4'>
+								<Column>
+									<span className='font-semibold m-0'>Datum</span>
+									<div className='m-0'>{format(formValues.reservationDate, 'dd.MM.yyy')}</div>
+								</Column>
+							</Row>
+						) : null}
+
+						{formValues.time ? (
+							<Row className='mb-4'>
+								<Column>
+									<span className='font-semibold m-0'>Vrijeme</span>
+									<div className='m-0'>{formValues.time}</div>
 								</Column>
 							</Row>
 						) : null}
