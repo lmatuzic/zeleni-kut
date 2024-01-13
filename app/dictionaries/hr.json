@@ -81,7 +81,8 @@
 				"reserve": "Rezerviraj",
 				"reservationTitle": "Rezervacija stola",
 				"reservationSent": "Rezervacija stola uspješno poslana!",
-				"reservationFailed": "Rezervacija stola nije uspjela. Pokušajte ponovno ili nas kontaktirajte putem e-pošte ili telefona."
+				"reservationFailed": "Rezervacija stola nije uspjela. Pokušajte ponovno ili nas kontaktirajte putem e-pošte ili telefona.",
+				"recaptchaWarning": "Morate riješiti reCAPTCHA izazov!"
 			},
 			"roomReservationForm": {
 				"firstName": "Ime",
@@ -100,7 +101,8 @@
 				"reservationTitle": "Rezervacija sobe",
 				"reserve": "Rezerviraj",
 				"reservationSent": "Rezervacija sobe uspješno poslana!",
-				"reservationFailed": "Rezervacija sobe nije uspjela. Pokušajte ponovno ili nas kontaktirajte putem e-pošte ili telefona."
+				"reservationFailed": "Rezervacija sobe nije uspjela. Pokušajte ponovno ili nas kontaktirajte putem e-pošte ili telefona.",
+				"recaptchaWarning": "Morate riješiti reCAPTCHA izazov!"
 			}
 		},
 		"recreation": {

@@ -26,6 +26,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { sendReservationEmail } from '../actions/sendEmail';
+import { useRef } from 'react';
 
 type FormKey = 'checkInDate' | 'checkOutDate';
 
@@ -48,10 +49,12 @@ type RoomReservationFormProps = {
 		reservationSent: string;
 		reservationFailed: string;
 		reservationTitle: string;
+		recaptchaWarning: string;
 	};
 };
 
 export default function RoomReservationForm({ translation }: RoomReservationFormProps) {
+	const recaptchaRef = useRef<ReCAPTCHA | null>(null);
 	const { toast } = useToast();
 
 	const form = useForm<z.infer<typeof roomReservationFormSchema>>({
@@ -88,6 +91,18 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 			checkOutDate,
 			message,
 		} = values;
+
+		const token = recaptchaRef.current?.getValue();
+
+		if (!token) {
+			toast({
+				variant: 'destructive',
+				duration: 5000,
+				title: translation.recaptchaWarning,
+			});
+
+			return;
+		}
 
 		try {
 			await sendReservationEmail({

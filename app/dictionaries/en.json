@@ -81,7 +81,8 @@
 				"reserve": "Make a reservation",
 				"reservationTitle": "Table reservation",
 				"reservationSent": "Table reservation submitted successfully!",
-				"reservationFailed": "Table reservation failed. Please try again or contact us via email or phone."
+				"reservationFailed": "Table reservation failed. Please try again or contact us via email or phone.",
+				"recaptchaWarning": "You have to resolve reCAPTCHA challenge!"
 			},
 			"roomReservationForm": {
 				"firstName": "Name",
@@ -100,7 +101,8 @@
 				"reserve": "Make a reservation",
 				"reservationTitle": "Room reservation",
 				"reservationSent": "Room reservation submitted successfully!",
-				"reservationFailed": "Room reservation failed. Please try again or contact us via email or phone."
+				"reservationFailed": "Room reservation failed. Please try again or contact us via email or phone.",
+				"recaptchaWarning": "You have to resolve reCAPTCHA challenge!"
 			}
 		},
 		"recreation": {

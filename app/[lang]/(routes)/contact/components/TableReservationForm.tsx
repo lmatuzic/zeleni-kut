@@ -19,6 +19,7 @@ import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';
 import * as z from 'zod';
 import { sendReservationEmail } from '../actions/sendEmail';
+import { useRef } from 'react';
 
 type FormKey = 'reservationDate';
 
@@ -37,10 +38,12 @@ type TableReservationFormProps = {
 		reservationSent: string;
 		reservationFailed: string;
 		reservationTitle: string;
+		recaptchaWarning: string;
 	};
 };
 
 export default function TableReservationForm({ translation }: TableReservationFormProps) {
+	const recaptchaRef = useRef<ReCAPTCHA | null>(null);
 	const { toast } = useToast();
 
 	const form = useForm<z.infer<typeof tableReservationFormSchema>>({
@@ -65,6 +68,18 @@ export default function TableReservationForm({ translation }: TableReservationFo
 	const onSubmit = async (values: z.infer<typeof tableReservationFormSchema>) => {
 		const { firstName, lastName, email, numberOfPeople, reservationDate, time, phone, message } =
 			values;
+
+		const token = recaptchaRef.current?.getValue();
+
+		if (!token) {
+			toast({
+				variant: 'destructive',
+				duration: 5000,
+				title: translation.recaptchaWarning,
+			});
+
+			return;
+		}
 
 		try {
 			await sendReservationEmail({
@@ -238,6 +253,7 @@ export default function TableReservationForm({ translation }: TableReservationFo
 							<ReCAPTCHA
 								sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
 								className='scale-77 xs:scale-100 origin-left'
+								ref={recaptchaRef}
 							/>
 						</div>
 
