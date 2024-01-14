@@ -226,7 +226,6 @@ export default function TableReservationForm({ translation }: TableReservationFo
 											id='24h'
 											min='10:00'
 											max='21:00'
-											required
 											placeholder={translation.time}
 											{...field}
 										/>
