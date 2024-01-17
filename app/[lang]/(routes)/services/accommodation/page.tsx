@@ -1,9 +1,8 @@
 import { Button } from '@/app/[lang]/(ui)/components/shadcn/Button';
 import { CONTACT_PAGE } from '@/app/[lang]/constants/routes';
-import Link from 'next/link';
-import { Locale } from '@/i18.config';
 import { getDictionary } from '@/app/dictionaries/dictionary';
-import ImageGallery from '@/app/[lang]/(ui)/components/shared/ImageGallery';
+import { Locale } from '@/i18.config';
+import Link from 'next/link';
 
 import room1 from '@/app/[lang]/assets/images/rooms/room1.jpeg';
 import room2 from '@/app/[lang]/assets/images/rooms/room2.jpeg';
@@ -14,10 +13,10 @@ import room6 from '@/app/[lang]/assets/images/rooms/room6.jpeg';
 import room7 from '@/app/[lang]/assets/images/rooms/room7.jpeg';
 import room8 from '@/app/[lang]/assets/images/rooms/room8.jpeg';
 import room9 from '@/app/[lang]/assets/images/rooms/room9.jpeg';
+import Gallery from '@/app/[lang]/components/Gallery';
 
 export default async function Accommodation({ params: { lang } }: { params: { lang: Locale } }) {
 	const { page, button } = await getDictionary(lang);
-
 	const galleryImages = [room1, room2, room3, room4, room5, room6, room7, room8, room9];
 
 	return (
@@ -29,7 +28,7 @@ export default async function Accommodation({ params: { lang } }: { params: { la
 				<Button className='text-white'>{button.makeReservation}</Button>
 			</Link>
 
-			<ImageGallery images={galleryImages} className='mt-10' />
+			<Gallery images={galleryImages} className='mt-10' />
 		</div>
 	);
 }

@@ -20,7 +20,7 @@ export default async function Footer({ lang }: { lang: Locale }) {
 							<span className='mr-6'>
 								{footer.monday} - {footer.sunday}
 							</span>
-							<span>08:00 - 23:00</span>
+							<span>07:00 - 22:00</span>
 						</div>
 					</div>
 

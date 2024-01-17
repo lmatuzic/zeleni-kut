@@ -1,6 +1,7 @@
-import ImageGallery from '@/app/[lang]/(ui)/components/shared/ImageGallery';
+import Gallery from '@/app/[lang]/components/Gallery';
 import { getDictionary } from '@/app/dictionaries/dictionary';
 import { Locale } from '@/i18.config';
+
 import img1 from '@/app/[lang]/assets/images/recreation/beach.jpg';
 import img2 from '@/app/[lang]/assets/images/recreation/canue.jpg';
 import img3 from '@/app/[lang]/assets/images/recreation/fishing.jpg';
@@ -15,7 +16,7 @@ export default async function Recreation({ params: { lang } }: { params: { lang:
 			<h1 className='mb-6 font-medium text-2xl text-zk-green'>{page.recreation.title}</h1>
 			<p>{page.recreation.infoText}</p>
 
-			<ImageGallery images={galleryImages} className='mt-8' />
+			<Gallery images={galleryImages} className='mt-10' />
 		</div>
 	);
 }

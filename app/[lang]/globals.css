@@ -79,3 +79,7 @@
 		@apply bg-background text-foreground;
 	}
 }
+
+.yarl__slide_image {
+	border-radius: 6px;
+}
