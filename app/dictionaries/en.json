@@ -55,7 +55,8 @@
 			"title": "Restaurant",
 			"appetizers": "Appetizers",
 			"mainCourses": "Main courses",
-			"lookAtMenu": "Look at the menu",
+			"foodMenu": "Food menu",
+			"drinksMenu": "Drinks Menu",
 			"infoText": "Zeleni Kut has a tradition of 48 years (May 1, 1967). It is a family heritage with the atmosphere of a domestic and natural environment. On its development path, it managed to preserve the dominance of nature, which is evidenced by the rich gastronomic offer of river fish from its own pools, specialties of cured meat products such as ham, sausage and bacon. In a special offer, we also offer vegetarian dishes, and dishes under the oven or from the spit, as well as pizzas from the bread oven. The restaurant has a capacity of 200 closed spaces arranged in 3 rooms suitable for organized gatherings, seminars and similar events. Also, in the outer part there is a beautiful terrace with a capacity of 100 seats."
 		},
 		"contact": {
@@ -114,7 +115,8 @@
 		},
 		"accommodation": {
 			"title": "Accomodation",
-			"infoText": "From may 2004. we have 14 modern rooms. We can offer 12 double or twin rooms (6 with river view) and 2 single rooms (both with the river view) with possibility for extra bed in double or twin rooms. Every room have its own bathroom, satellite Tv, mini-bar and free internet access, air condition and river side rooms have balconies over the river."
+			"infoText": "From may 2004. we have 14 modern rooms. We can offer 12 double or twin rooms (6 with river view) and 2 single rooms (both with the river view) with possibility for extra bed in double or twin rooms. Every room have its own bathroom, satellite Tv, mini-bar and free internet access, air condition and river side rooms have balconies over the river.",
+			"priceList": "Accommodation price list"
 		}
 	},
 	"footer": {

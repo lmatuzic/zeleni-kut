@@ -8,15 +8,24 @@ export default async function Restaurant({ params: { lang } }: { params: { lang:
 
 	return (
 		<div>
-			<h1 className='mb-8 text-2xl font-medium text-zk-green'>{page.restaurant.title}</h1>
+			<h1 className='mb-4 text-2xl font-medium text-zk-green'>{page.restaurant.title}</h1>
 			<p className='mb-8 max-w-3xl'>{page.restaurant.infoText}</p>
 
-			<PDFView
-				queryKey={'assets'}
-				queryDocument={PdfsDocument}
-				buttonTextTranslation={page.restaurant.lookAtMenu}
-				fileName={`jelovnik-2023.pdf`}
-			/>
+			<div className='flex gap-4 items-center'>
+				<PDFView
+					queryKey={'food'}
+					queryDocument={PdfsDocument}
+					buttonTextTranslation={page.restaurant.foodMenu}
+					fileName={`jelovnik-2023.pdf`}
+				/>
+
+				<PDFView
+					queryKey={'drinks'}
+					queryDocument={PdfsDocument}
+					buttonTextTranslation={page.restaurant.drinksMenu}
+					fileName={`pice-2023.pdf`}
+				/>
+			</div>
 		</div>
 	);
 }

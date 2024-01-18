@@ -14,6 +14,8 @@ import room7 from '@/app/[lang]/assets/images/rooms/room7.jpeg';
 import room8 from '@/app/[lang]/assets/images/rooms/room8.jpeg';
 import room9 from '@/app/[lang]/assets/images/rooms/room9.jpeg';
 import Gallery from '@/app/[lang]/components/shared/Gallery';
+import PDFView from '@/app/[lang]/components/shared/PDFView';
+import { PdfsDocument } from '@/app/lib/graphql-codegen/graphql';
 
 export default async function Accommodation({ params: { lang } }: { params: { lang: Locale } }) {
 	const { page, button } = await getDictionary(lang);
@@ -21,12 +23,21 @@ export default async function Accommodation({ params: { lang } }: { params: { la
 
 	return (
 		<div>
-			<h1 className='mb-6 font-medium text-2xl text-zk-green'>{page.accommodation.title}</h1>
+			<h1 className='mb-4 font-medium text-2xl text-zk-green'>{page.accommodation.title}</h1>
 			<p className='mb-8'>{page.accommodation.infoText}</p>
 
-			<Link href={`/${lang}${CONTACT_PAGE}`}>
-				<Button className='text-white'>{button.makeReservation}</Button>
-			</Link>
+			<div className='flex flex-col gap-6 items-start'>
+				<PDFView
+					queryKey={'accommodation'}
+					queryDocument={PdfsDocument}
+					buttonTextTranslation={page.accommodation.priceList}
+					fileName={`sobe-2023.pdf`}
+				/>
+
+				<Link href={`/${lang}${CONTACT_PAGE}`}>
+					<Button className='text-white'>{button.makeReservation}</Button>
+				</Link>
+			</div>
 
 			<Gallery images={galleryImages} className='mt-10' />
 		</div>

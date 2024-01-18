@@ -55,7 +55,8 @@
 			"title": "Restoran",
 			"appetizers": "Predjela",
 			"mainCourses": "Glavna jela",
-			"lookAtMenu": "Pogledaj jelovnik",
+			"foodMenu": "Jelovnik",
+			"drinksMenu": "Cjenik pića",
 			"infoText": "Zeleni Kut ima tradiciju dugu 48 godina (1. svibnja 1967.g.). Obiteljsko je nasljeđe sa ugođajem domaćeg i prirodnog ambijenta. Na svom razvojnom putu uspjela se očuvati dominacija prirode o čemu svjedoči i bogata gastronomska ponuda riječne ribe iz vlastitih bazena, specijaliteti suhomesnatih domaćih proizvoda poput šunke, kobasice i slanine. U posebnoj ponudi također nudimo vegeterijanska jela, te jela ispod peke ili sa ražnja, ali i pizze iz krušne peći. Restoran je kapaciteta 200 mjesta zatvorenog prostora raspoređenog u 3 prostorije pogodne za organizirane skupove, seminare i slične manifestacije. Također, u vanjskom dijelu nalazi se prekrasna terasa kapaciteta 100 mjesta."
 		},
 		"contact": {
@@ -114,7 +115,8 @@
 		},
 		"accommodation": {
 			"title": "Smještaj",
-			"infoText": "Od svibnja 2004. godine imamo 14 moderno opremljenih soba. U ponudi imamo 12 dvokrevetnih ili dvokrevetnih soba (6 s pogledom na rijeku) i 2 jednokrevetne sobe (obje s pogledom na rijeku) s mogućnošću pomoćnog ležaja u sobama s bračnim krevetom ili dvokrevetnim sobama. Svaka soba ima vlastitu kupaonicu, satelitsku TV, mini-bar i besplatan pristup internetu, klima uređaj, a sobe okrenute prema rijeci imaju balkone s pogledom na rijeku."
+			"infoText": "Od svibnja 2004. godine imamo 14 moderno opremljenih soba. U ponudi imamo 12 dvokrevetnih ili dvokrevetnih soba (6 s pogledom na rijeku) i 2 jednokrevetne sobe (obje s pogledom na rijeku) s mogućnošću pomoćnog ležaja u sobama s bračnim krevetom ili dvokrevetnim sobama. Svaka soba ima vlastitu kupaonicu, satelitsku TV, mini-bar i besplatan pristup internetu, klima uređaj, a sobe okrenute prema rijeci imaju balkone s pogledom na rijeku.",
+			"priceList": "Cjenik smještaja"
 		}
 	},
 	"footer": {
