@@ -94,6 +94,9 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 
 		const token = recaptchaRef.current?.getValue();
 
+		console.log(recaptchaRef.current);
+		console.log(token);
+
 		if (!token) {
 			toast({
 				variant: 'destructive',
@@ -299,6 +302,7 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 
 						<ReCAPTCHA
 							sitekey={`${process.env.NEXT_PUBLIC_RECAPTCHA_SITE_KEY}`}
+							ref={recaptchaRef}
 							className='scale-77 xs:scale-100 origin-left rounded-xl'
 						/>
 

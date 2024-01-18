@@ -71,6 +71,9 @@ export default function TableReservationForm({ translation }: TableReservationFo
 
 		const token = recaptchaRef.current?.getValue();
 
+		console.log(recaptchaRef.current);
+		console.log(token);
+
 		if (!token) {
 			toast({
 				variant: 'destructive',
