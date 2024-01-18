@@ -94,9 +94,6 @@ export default function RoomReservationForm({ translation }: RoomReservationForm
 
 		const token = recaptchaRef.current?.getValue();
 
-		console.log(recaptchaRef.current);
-		console.log(token);
-
 		if (!token) {
 			toast({
 				variant: 'destructive',
