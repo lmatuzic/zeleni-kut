@@ -1,19 +1,19 @@
 'use client';
 
-import { Button } from '@/app/[lang]/(ui)/components/shadcn/Button';
-import { Card, CardContent } from '@/app/[lang]/(ui)/components/shadcn/Card';
+import { Button } from '@/app/[lang]/components/shadcn/Button';
+import { Card, CardContent } from '@/app/[lang]/components/shadcn/Card';
 import {
 	Form,
 	FormControl,
 	FormField,
 	FormItem,
 	FormLabel,
-} from '@/app/[lang]/(ui)/components/shadcn/Form';
-import { Input } from '@/app/[lang]/(ui)/components/shadcn/Input';
-import { Textarea } from '@/app/[lang]/(ui)/components/shadcn/Textarea';
-import { DatePicker } from '@/app/[lang]/(ui)/components/shared/DatePicker';
+} from '@/app/[lang]/components/shadcn/Form';
+import { Input } from '@/app/[lang]/components/shadcn/Input';
+import { Textarea } from '@/app/[lang]/components/shadcn/Textarea';
+import { DatePicker } from '@/app/[lang]/components/shared/DatePicker';
 import { useToast } from '@/app/[lang]/hooks/useToast';
-import { tableReservationFormSchema } from '@/app/[lang]/lib/zod/schemas/tableReservationFormSchema';
+import { tableReservationFormSchema } from '@/app/lib/zod/schemas/tableReservationFormSchema';
 import { zodResolver } from '@hookform/resolvers/zod';
 import ReCAPTCHA from 'react-google-recaptcha';
 import { useForm } from 'react-hook-form';

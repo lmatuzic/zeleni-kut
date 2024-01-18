@@ -1,6 +1,6 @@
 import { getDictionary } from '@/app/dictionaries/dictionary';
 import { Locale } from '@/i18.config';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../(ui)/components/shadcn/Tabs';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/shadcn/Tabs';
 import ContactInfo from './components/ContactInfo';
 import RoomReservationForm from './components/RoomReservationForm';
 import TableReservationForm from './components/TableReservationForm';

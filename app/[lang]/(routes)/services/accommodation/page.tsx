@@ -1,4 +1,4 @@
-import { Button } from '@/app/[lang]/(ui)/components/shadcn/Button';
+import { Button } from '@/app/[lang]/components/shadcn/Button';
 import { CONTACT_PAGE } from '@/app/[lang]/constants/routes';
 import { getDictionary } from '@/app/dictionaries/dictionary';
 import { Locale } from '@/i18.config';
@@ -13,7 +13,7 @@ import room6 from '@/app/[lang]/assets/images/rooms/room6.jpeg';
 import room7 from '@/app/[lang]/assets/images/rooms/room7.jpeg';
 import room8 from '@/app/[lang]/assets/images/rooms/room8.jpeg';
 import room9 from '@/app/[lang]/assets/images/rooms/room9.jpeg';
-import Gallery from '@/app/[lang]/components/Gallery';
+import Gallery from '@/app/[lang]/components/shared/Gallery';
 
 export default async function Accommodation({ params: { lang } }: { params: { lang: Locale } }) {
 	const { page, button } = await getDictionary(lang);

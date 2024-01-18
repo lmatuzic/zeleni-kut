@@ -1,11 +1,11 @@
-import { Button } from '@/app/[lang]/(ui)/components/shadcn/Button';
+import { Button } from '@/app/[lang]/components/shadcn/Button';
 import {
 	Card,
 	CardContent,
 	CardDescription,
 	CardHeader,
 	CardTitle,
-} from '@/app/[lang]/(ui)/components/shadcn/Card';
+} from '@/app/[lang]/components/shadcn/Card';
 import { format } from 'date-fns';
 import Link from 'next/link';
 

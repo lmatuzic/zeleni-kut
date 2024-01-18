@@ -1,4 +1,4 @@
-import Gallery from '@/app/[lang]/components/Gallery';
+import Gallery from '@/app/[lang]/components/shared/Gallery';
 import { getDictionary } from '@/app/dictionaries/dictionary';
 import { Locale } from '@/i18.config';
 

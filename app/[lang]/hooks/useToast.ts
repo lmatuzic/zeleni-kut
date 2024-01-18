@@ -1,5 +1,5 @@
 // Inspired by react-hot-toast library
-import type { ToastActionElement, ToastProps } from '@/app/[lang]/(ui)/components/shadcn/Toast';
+import type { ToastActionElement, ToastProps } from '@/app/[lang]/components/shadcn/Toast';
 import * as React from 'react';
 
 const TOAST_LIMIT = 1;

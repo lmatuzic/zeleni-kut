@@ -1,16 +1,22 @@
+import PDFView from '@/app/[lang]/components/shared/PDFView';
 import { getDictionary } from '@/app/dictionaries/dictionary';
+import { PdfsDocument } from '@/app/lib/graphql-codegen/graphql';
 import { Locale } from '@/i18.config';
-import PdfMenu from './components/PdfMenu';
 
-export default async function Menu({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function Restaurant({ params: { lang } }: { params: { lang: Locale } }) {
 	const { page } = await getDictionary(lang);
 
 	return (
 		<div>
 			<h1 className='mb-8 text-2xl font-medium text-zk-green'>{page.restaurant.title}</h1>
 			<p className='mb-8 max-w-3xl'>{page.restaurant.infoText}</p>
-			<PdfMenu locale={lang} translation={page.restaurant} />
-			{/* <MenuList locale={lang} translation={page.menu} /> */}
+
+			<PDFView
+				queryKey={'assets'}
+				queryDocument={PdfsDocument}
+				buttonTextTranslation={page.restaurant.lookAtMenu}
+				fileName={`jelovnik-2023.pdf`}
+			/>
 		</div>
 	);
 }

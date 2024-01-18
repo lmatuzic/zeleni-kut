@@ -6,8 +6,8 @@ import {
 	SelectItem,
 	SelectTrigger,
 	SelectValue,
-} from '@/app/[lang]/(ui)/components/shadcn/Select';
-import { TabsTrigger } from '@/app/[lang]/(ui)/components/shadcn/Tabs';
+} from '@/app/[lang]/components/shadcn/Select';
+import { TabsTrigger } from '@/app/[lang]/components/shadcn/Tabs';
 
 type MenuCategory = {
 	name: string;

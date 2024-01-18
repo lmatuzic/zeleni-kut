@@ -3,11 +3,11 @@ import { Quicksand } from '@next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
-import Footer from './(ui)/components/shared/Footer';
-import Navigation from './(ui)/components/shared/navigation/Navigation';
+import Footer from './components/shared/Footer';
+import Navigation from './components/shared/navigation/Navigation';
 import './globals.css';
 import Providers from './providers';
-import { Toaster } from './(ui)/components/shadcn/Toaster';
+import { Toaster } from './components/shadcn/Toaster';
 
 export const metadata: Metadata = {
 	title: 'Zeleni kut',

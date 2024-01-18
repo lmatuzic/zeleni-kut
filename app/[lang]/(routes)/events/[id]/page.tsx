@@ -6,9 +6,9 @@ import {
 	CarouselItem,
 	CarouselNext,
 	CarouselPrevious,
-} from '@/app/[lang]/(ui)/components/shadcn/Carousel';
-import { Dialog, DialogContent } from '@/app/[lang]/(ui)/components/shadcn/Dialog';
-import LoadingSpinner from '@/app/[lang]/(ui)/components/shared/LoadingSpinner';
+} from '@/app/[lang]/components/shadcn/Carousel';
+import { Dialog, DialogContent } from '@/app/[lang]/components/shadcn/Dialog';
+import LoadingSpinner from '@/app/[lang]/components/shared/LoadingSpinner';
 import useGQLQuery from '@/app/[lang]/hooks/useGQLQuery';
 import { EventDocument, EventQuery } from '@/app/lib/graphql-codegen/graphql';
 import { Locale } from '@/i18.config';

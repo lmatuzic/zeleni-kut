@@ -4,7 +4,7 @@ import Event from '@/app/[lang]/(routes)/events/components/Event';
 import useGQLQuery from '@/app/[lang]/hooks/useGQLQuery';
 import { EventsDocument, EventsQuery } from '@/app/lib/graphql-codegen/graphql';
 import { Locale } from '@/i18.config';
-import LoadingSpinner from '../../../(ui)/components/shared/LoadingSpinner';
+import LoadingSpinner from '../../../components/shared/LoadingSpinner';
 
 type EventsProps = {
 	locale: Locale;

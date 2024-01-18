@@ -1,6 +1,6 @@
 'use client';
 
-import { cn } from '@/app/[lang]/lib/shadcn/utils';
+import { cn } from '@/app/lib/shadcn/utils';
 import { CalendarIcon } from '@radix-ui/react-icons';
 import { format } from 'date-fns';
 // import { useState } from 'react';

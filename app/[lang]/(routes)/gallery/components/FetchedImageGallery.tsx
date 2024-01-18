@@ -1,7 +1,7 @@
 'use client';
 
-import LoadingSpinner from '@/app/[lang]/(ui)/components/shared/LoadingSpinner';
-import Gallery from '@/app/[lang]/components/Gallery';
+import LoadingSpinner from '@/app/[lang]/components/shared/LoadingSpinner';
+import Gallery from '@/app/[lang]/components/shared/Gallery';
 import useGQLQuery from '@/app/[lang]/hooks/useGQLQuery';
 import { GalleryDocument, GalleryQuery } from '@/app/lib/graphql-codegen/graphql';
 

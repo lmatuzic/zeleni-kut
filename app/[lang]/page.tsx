@@ -3,7 +3,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { getDictionary } from '../dictionaries/dictionary';
 // import Events from './(routes)/events/components/Events';
-import { Button } from './(ui)/components/shadcn/Button';
+import { Button } from './components/shadcn/Button';
 import traditionImg from './assets/images/homepage/1055.jpg';
 import capacityImg from './assets/images/homepage/capacity.jpg';
 import natureImg from './assets/images/nature/main.jpg';
