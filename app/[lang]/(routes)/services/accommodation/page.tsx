@@ -31,7 +31,7 @@ export default async function Accommodation({ params: { lang } }: { params: { la
 					queryKey={'accommodation'}
 					queryDocument={PdfsDocument}
 					buttonTextTranslation={page.accommodation.priceList}
-					fileName={`sobe-2023.pdf`}
+					fileName={`sobe.pdf`}
 				/>
 
 				<Link href={`/${lang}${CONTACT_PAGE}`}>

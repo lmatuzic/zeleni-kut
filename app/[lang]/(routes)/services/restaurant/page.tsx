@@ -17,14 +17,14 @@ export default async function Restaurant({ params: { lang } }: { params: { lang:
 					queryKey={'food'}
 					queryDocument={PdfsDocument}
 					buttonTextTranslation={page.restaurant.foodMenu}
-					fileName={`jelovnik-2023.pdf`}
+					fileName={`jelovnik.pdf`}
 				/>
 
 				<PDFView
 					queryKey={'drinks'}
 					queryDocument={PdfsDocument}
 					buttonTextTranslation={page.restaurant.drinksMenu}
-					fileName={`pice-2023.pdf`}
+					fileName={`pica.pdf`}
 				/>
 			</div>
 
