@@ -22,7 +22,7 @@ export default function EventsDetails({ params }: EventsDetailsProps) {
 
 	return (
 		<>
-			<ReactMarkdown className={'mb-12'}>{data?.event?.description.markdown}</ReactMarkdown>
+			<ReactMarkdown>{data?.event?.description.markdown}</ReactMarkdown>
 			{isLoading ? <LoadingSpinner /> : <Gallery images={data?.event?.pictures} />}
 		</>
 	);
