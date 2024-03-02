@@ -14,13 +14,30 @@ export default async function Footer({ lang }: { lang: Locale }) {
 					<div className='mb-4 font-medium text-2xl'>{footer.workingHours}</div>
 
 					<div className='border border-solid border-gray-400 rounded-md  p-4'>
-						<div>01.03. - 11.11.</div>
+						<div>02.03. - 28.03.</div>
+
 						<Separator className='bg-gray-400 my-2' />
+
 						<div className='flex sm:items-center justify-between sm:flex-row flex-col items-start'>
 							<span className='mr-6'>
 								{footer.monday} - {footer.sunday}
 							</span>
-							<span>07:00 - 22:00</span>
+
+							<span>09:00 - 21:00</span>
+						</div>
+					</div>
+
+					<div className='border border-solid border-gray-400 rounded-md mt-4 p-4'>
+						<div>29.03. - 01.11.</div>
+
+						<Separator className='bg-gray-400 my-2' />
+
+						<div className='flex sm:items-center justify-between sm:flex-row flex-col items-start'>
+							<span className='mr-6'>
+								{footer.monday} - {footer.sunday}
+							</span>
+
+							<span>07:00 - 23:00</span>
 						</div>
 					</div>
 
