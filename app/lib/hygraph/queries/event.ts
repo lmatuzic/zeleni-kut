@@ -9,6 +9,7 @@ export const event = gql`
 			description {
 				html
 				text
+				markdown
 			}
 			isDisplayed
 			dateAndTime
