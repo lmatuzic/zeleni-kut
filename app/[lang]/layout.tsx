@@ -1,5 +1,5 @@
 import { Locale, i18n } from '@/i18.config';
-import { Quicksand } from '@next/font/google';
+import { Comfortaa } from '@next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
@@ -14,7 +14,7 @@ export const metadata: Metadata = {
 	description: 'Restoran Zeleni kut - Obitelj Puškarić - Mjesto gdje sva osjetila uživaju.',
 };
 
-export const quicksand = Quicksand({ subsets: ['latin'] });
+const comfortaa = Comfortaa({ subsets: ['latin'] });
 
 export async function generateStaticParams() {
 	return i18n.locales.map((locale) => ({ lang: locale }));
@@ -41,8 +41,8 @@ export default function RootLayout({
 	};
 
 	return (
-		<html lang={params.lang} suppressHydrationWarning>
-			<body className={`${quicksand.className} min-h-screen`}>
+		<html lang={params.lang} className={comfortaa.className} suppressHydrationWarning>
+			<body className={`min-h-screen`}>
 				<Providers>
 					<Navigation lang={params.lang} />
 					<main className='container items-center justify-between mt-24 md:mt-32'>{children}</main>
