@@ -20,6 +20,11 @@ function getLocale(request: NextRequest): string | undefined {
 export function middleware(request: NextRequest) {
 	const pathname = request.nextUrl.pathname;
 
+	// Exclude specific paths from redirection, like robots.txt
+	if (pathname === '/robots.txt' || pathname === '/sitemap.xml') {
+		return NextResponse.next();
+	}
+
 	const pathnameIsMissingLocale = i18n.locales.every(
 		(locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
 	);
