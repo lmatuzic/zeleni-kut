@@ -5,6 +5,7 @@
 	"scripts": {
 		"dev": "next dev",
 		"build": "next build",
+		"postbuild": "next-sitemap",
 		"start": "next start",
 		"lint": "next lint",
 		"generate": "graphql-codegen --config codegen.ts",
@@ -42,6 +43,7 @@
 		"negotiator": "^0.6.3",
 		"next": "^14.0.0",
 		"next-mdx-remote": "^4.4.1",
+		"next-sitemap": "^4.2.3",
 		"next-themes": "^0.2.1",
 		"prettier": "^3.0.3",
 		"react": "^18.2.0",
