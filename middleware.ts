@@ -18,28 +18,29 @@ function getLocale(request: NextRequest): string | undefined {
 }
 
 export function middleware(request: NextRequest) {
-	const pathname = request.nextUrl.pathname;
+	const { pathname } = request.nextUrl;
 
-	// Exclude specific paths from redirection, like robots.txt
+	// exclude specific paths from redirection, like robots.txt
 	if (pathname === '/robots.txt' || pathname === '/sitemap.xml') {
 		return NextResponse.next();
 	}
 
-	const pathnameIsMissingLocale = i18n.locales.every(
-		(locale) => !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+	const pathnameHasLocale = i18n.locales.some(
+		(locale) => pathname.startsWith(`/${locale}/`) || pathname === `/${locale}`
 	);
 
-	// Redirect if there is no locale
-	if (pathnameIsMissingLocale) {
-		const locale = getLocale(request);
-
-		return NextResponse.redirect(
-			new URL(`/${locale}${pathname.startsWith('/') ? '' : '/'}${pathname}`, request.url)
-		);
+	if (pathnameHasLocale) {
+		return;
 	}
+
+	// redirect if there is no locale
+	const locale = getLocale(request);
+	request.nextUrl.pathname = `/${locale}${pathname}`;
+
+	return NextResponse.redirect(request.nextUrl);
 }
 
 export const config = {
-	// Matcher ignoring `/_next/` and `/api/`
-	matcher: ['/((?!api|_next/static|_next/image|favicon.ico).*)'],
+	// Match only internationalized pathnames
+	matcher: ['/', '/(hr|en)/:path*'],
 };
