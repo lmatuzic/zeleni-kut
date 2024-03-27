@@ -4942,12 +4942,7 @@ export type EventQuery = {
 		isDisplayed?: boolean | null;
 		dateAndTime: any;
 		locale: Locale;
-		description: {
-			__typename?: 'EventDescriptionRichText';
-			html: string;
-			text: string;
-			markdown: string;
-		};
+		description: { __typename?: 'EventDescriptionRichText'; json: any };
 		pictures: Array<{ __typename?: 'Asset'; url: string; fileName: string }>;
 	} | null;
 };
@@ -5068,11 +5063,7 @@ export const EventDocument = {
 									name: { kind: 'Name', value: 'description' },
 									selectionSet: {
 										kind: 'SelectionSet',
-										selections: [
-											{ kind: 'Field', name: { kind: 'Name', value: 'html' } },
-											{ kind: 'Field', name: { kind: 'Name', value: 'text' } },
-											{ kind: 'Field', name: { kind: 'Name', value: 'markdown' } },
-										],
+										selections: [{ kind: 'Field', name: { kind: 'Name', value: 'json' } }],
 									},
 								},
 								{ kind: 'Field', name: { kind: 'Name', value: 'isDisplayed' } },

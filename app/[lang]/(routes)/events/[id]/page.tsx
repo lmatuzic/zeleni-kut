@@ -5,7 +5,7 @@ import LoadingSpinner from '@/app/[lang]/components/shared/LoadingSpinner';
 import useGQLQuery from '@/app/[lang]/hooks/useGQLQuery';
 import { EventDocument, EventQuery } from '@/app/lib/graphql-codegen/graphql';
 import { Locale } from '@/i18.config';
-import ReactMarkdown from 'react-markdown';
+import { RichText } from '@graphcms/rich-text-react-renderer';
 
 type EventsDetailsProps = {
 	params: {
@@ -22,8 +22,14 @@ export default function EventsDetails({ params }: EventsDetailsProps) {
 
 	return (
 		<>
-			<ReactMarkdown>{data?.event?.description.markdown}</ReactMarkdown>
-			{isLoading ? <LoadingSpinner /> : <Gallery images={data?.event?.pictures} />}
+			{isLoading ? (
+				<LoadingSpinner />
+			) : (
+				<div className='event border p-8 rounded'>
+					<RichText content={data?.event?.description.json} />
+					<Gallery images={data?.event?.pictures} className='mt-12' />
+				</div>
+			)}
 		</>
 	);
 }

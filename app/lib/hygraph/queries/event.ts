@@ -7,9 +7,7 @@ export const event = gql`
 			title
 			shortDescription
 			description {
-				html
-				text
-				markdown
+				json
 			}
 			isDisplayed
 			dateAndTime
