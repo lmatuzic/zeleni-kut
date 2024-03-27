@@ -106,3 +106,9 @@
 		margin-bottom: 1.5rem;
 	}
 }
+
+.horizontal-line {
+	margin: 4rem 0;
+	border-top: 1px solid hsl(var(--border));
+	height: 1px;
+}
