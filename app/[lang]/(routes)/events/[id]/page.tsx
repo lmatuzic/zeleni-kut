@@ -25,7 +25,7 @@ export default function EventsDetails({ params }: EventsDetailsProps) {
 			{isLoading ? (
 				<LoadingSpinner />
 			) : (
-				<div className='event border p-8 rounded'>
+				<div className='event border p-4 sm:p-8 rounded'>
 					<RichText content={data?.event?.description.json} />
 					<Gallery images={data?.event?.pictures} className='mt-12' />
 				</div>
