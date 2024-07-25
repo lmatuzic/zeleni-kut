@@ -8,7 +8,7 @@ type ContactInfoProps = {
 	};
 };
 
-export default function ContactInfo({ translation }: ContactInfoProps) {
+export default function ContactInfo({ translation }: Readonly<ContactInfoProps>) {
 	return (
 		<div>
 			<div className='mb-1 text-zk-green font-medium'>{translation.address}</div>

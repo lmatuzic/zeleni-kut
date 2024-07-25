@@ -123,7 +123,9 @@
 		"workingHours": "Radno vrijeme",
 		"contact": "Kontakt",
 		"monday": "Ponedjeljak",
+		"tuesday": "Utorak",
 		"sunday": "Nedjelja, praznici i državni blagdani",
-		"nonWorkingDays": "Neradno"
+		"nonWorkingDays": "Neradno",
+		"closed": "Zatvoreno"
 	}
 }

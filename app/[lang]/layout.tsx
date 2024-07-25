@@ -12,6 +12,15 @@ import { Toaster } from './components/shadcn/Toaster';
 export const metadata: Metadata = {
 	title: 'Zeleni kut',
 	description: 'Restoran Zeleni kut - Obitelj Puškarić - Mjesto gdje sva osjetila uživaju.',
+	icons: {
+		icon: [
+			{
+				type: 'image/svg+xml',
+				url: '/images/zeleni-kut-favicon.svg',
+				href: '/images/zeleni-kut-favicon.svg',
+			},
+		],
+	},
 };
 
 const comfortaa = Comfortaa({ subsets: ['latin'] });
@@ -23,10 +32,10 @@ export async function generateStaticParams() {
 export default function RootLayout({
 	children,
 	params,
-}: {
+}: Readonly<{
 	children: React.ReactNode;
 	params: { lang: Locale };
-}) {
+}>) {
 	const runVercelAnalytics = () => {
 		if (process.env.NODE_ENV === 'development') {
 			return;

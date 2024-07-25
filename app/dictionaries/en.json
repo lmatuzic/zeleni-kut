@@ -123,7 +123,9 @@
 		"workingHours": "Working hours",
 		"contact": "Contact",
 		"monday": "Monday",
+		"tuesday": "Tuesday",
 		"sunday": "Sunday, holidays and public holidays",
-		"nonWorkingDays": "Non-working days"
+		"nonWorkingDays": "Non-working days",
+		"closed": "Closed"
 	}
 }

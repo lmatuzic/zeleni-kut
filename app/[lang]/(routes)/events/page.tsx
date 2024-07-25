@@ -2,7 +2,9 @@ import { Locale } from '@/i18.config';
 import Events from './components/Events';
 import { getDictionary } from '@/app/dictionaries/dictionary';
 
-export default async function EventsPage({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function EventsPage({
+	params: { lang },
+}: Readonly<{ params: { lang: Locale } }>) {
 	const { page } = await getDictionary(lang);
 
 	return (

@@ -2,7 +2,6 @@ import { Locale } from '@/i18.config';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getDictionary } from '../dictionaries/dictionary';
-// import Events from './(routes)/events/components/Events';
 import { Button } from './components/shadcn/Button';
 import traditionImg from './assets/images/homepage/1055.jpg';
 import capacityImg from './assets/images/homepage/capacity.jpg';
@@ -17,7 +16,7 @@ import {
 	SERVICES_PAGE,
 } from './constants/routes';
 
-export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function Home({ params: { lang } }: Readonly<{ params: { lang: Locale } }>) {
 	const { button, page } = await getDictionary(lang);
 
 	return (
