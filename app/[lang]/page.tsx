@@ -35,8 +35,6 @@ export default async function Home({ params: { lang } }: Readonly<{ params: { la
 				<Image src={mainImg} alt='bridge nature' width={600} className='rounded-lg' priority />
 			</div>
 
-			{/* <Events locale={lang} translation={page.events} /> */}
-
 			<div className='w-full p-4 md:p-8 mt-20 border border-solid bg-sectionBg rounded-xl'>
 				<div className='flex flex-col-reverse lg:flex-row gap-12 items-center'>
 					<Image

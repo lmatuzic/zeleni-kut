@@ -52,7 +52,7 @@ export default async function Footer({ lang }: Readonly<{ lang: Locale }>) {
 					<div className='border border-solid border-gray-400 rounded-md mt-4 p-4'>
 						<div>12.11. - 01.03.</div>
 						<Separator className='bg-gray-400 my-2' />
-						<div className='mr-4'>{footer.nonWorkingDays}</div>
+						<div className='mr-4'>{footer.closed}</div>
 					</div>
 				</div>
 
