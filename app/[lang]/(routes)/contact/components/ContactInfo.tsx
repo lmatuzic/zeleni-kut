@@ -27,7 +27,7 @@ export default function ContactInfo({ translation }: Readonly<ContactInfoProps>)
 			<div className='mb-8'>+385 (0) 98 976 56 00</div>
 
 			<div className='mb-1 text-zk-green font-medium'>{translation.email}</div>
-			<div className='mb-8'>info@zeleni-kut.com</div>
+			<a href='mailto:info@zeleni-kut.com'>info@zeleni-kut.com</a>
 		</div>
 	);
 }
