@@ -1,5 +1,3 @@
-import { Locale } from '@/i18.config';
-
 export type Route = {
 	path: string;
 	name: string;

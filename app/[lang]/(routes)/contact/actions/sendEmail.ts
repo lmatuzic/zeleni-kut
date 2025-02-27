@@ -18,7 +18,7 @@ export const sendReservationEmail = async <T extends z.ZodObject<any, any, any>>
 	try {
 		await resend.emails.send({
 			from: `Zeleni Kut Website <zeleni-kut@zeleni-kut.com>`,
-			to: ['luka.matuzic1@gmail.com'],
+			to: ['luka.matuzic1@gmail.com', 'info@zeleni-kut.com'],
 			subject: emailSubject,
 			reply_to: formValues.email,
 			react: EmailTemplate({ formValues, emailSubject }),

@@ -1,7 +1,7 @@
 import { CodegenConfig } from '@graphql-codegen/cli';
 
 const config: CodegenConfig = {
-	schema: `https://api-eu-central-1-shared-euc1-02.hygraph.com/v2/clc6b0m3n18b201uldropgzhq/master`,
+	schema: `${process.env.NEXT_PUBLIC_HYGRAPH_CONTENT_API}`,
 	documents: ['app/**/*.{ts, tsx, js, jsx}'],
 	ignoreNoDocuments: true,
 	generates: {

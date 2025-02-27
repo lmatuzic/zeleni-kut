@@ -11,7 +11,7 @@ type NavLinkProps = {
 	onClick?: () => void;
 };
 
-export default function NavLink({ route, children, className, onClick }: NavLinkProps) {
+export default function NavLink({ route, children, className = '', onClick }: NavLinkProps) {
 	const currentPath = usePathname();
 
 	return (
@@ -20,7 +20,7 @@ export default function NavLink({ route, children, className, onClick }: NavLink
 			onClick={onClick}
 			className={`${
 				route === currentPath ? 'text-zk-green' : 'hover:text-zk-green transition-colors'
-			} ${className} font-medium`}
+			} font-medium ${className}`}
 		>
 			{children}
 		</Link>

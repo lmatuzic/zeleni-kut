@@ -12,7 +12,7 @@ type GalleryProps = {
 	className?: string;
 };
 
-const Gallery = ({ images, className }: GalleryProps) => {
+const Gallery = ({ images, className = '' }: GalleryProps) => {
 	const [open, setOpen] = useState(false);
 	const [index, setIndex] = useState(-1);
 

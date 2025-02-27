@@ -83,3 +83,36 @@
 .yarl__slide_image {
 	border-radius: 6px;
 }
+
+.event {
+	p {
+		margin-bottom: 0.75rem;
+	}
+
+	ul {
+		margin-bottom: 2rem;
+
+		li {
+			list-style-type: disc;
+			margin: 0.25rem 0 0.25rem 2rem;
+
+			@media screen and (max-width: 768px) {
+				margin: 0.25rem 0 0.25rem 1.25rem;
+			}
+		}
+	}
+
+	h1,
+	h2,
+	h3,
+	h4,
+	h5 {
+		margin-bottom: 1.5rem;
+	}
+}
+
+.horizontal-line {
+	margin: 4rem 0;
+	border-top: 1px solid hsl(var(--border));
+	height: 1px;
+}

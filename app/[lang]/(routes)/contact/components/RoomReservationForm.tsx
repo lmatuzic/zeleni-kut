@@ -53,7 +53,7 @@ type RoomReservationFormProps = {
 	};
 };
 
-export default function RoomReservationForm({ translation }: RoomReservationFormProps) {
+export default function RoomReservationForm({ translation }: Readonly<RoomReservationFormProps>) {
 	const recaptchaRef = useRef<ReCAPTCHA | null>(null);
 	const { toast } = useToast();
 

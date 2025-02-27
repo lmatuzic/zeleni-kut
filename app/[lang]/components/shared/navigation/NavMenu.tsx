@@ -27,7 +27,7 @@ type NavMenuProps = {
 	};
 };
 
-export default function NavMenu({ lang, translation, theme }: NavMenuProps) {
+export default function NavMenu({ lang, translation, theme }: Readonly<NavMenuProps>) {
 	return (
 		<ul className='hidden md:flex justify-between gap-6 w-full md:w-auto items-center'>
 			<li>

@@ -5,7 +5,7 @@ import LoadingSpinner from '@/app/[lang]/components/shared/LoadingSpinner';
 import useGQLQuery from '@/app/[lang]/hooks/useGQLQuery';
 import { EventDocument, EventQuery } from '@/app/lib/graphql-codegen/graphql';
 import { Locale } from '@/i18.config';
-import { useState } from 'react';
+import { RichText } from '@graphcms/rich-text-react-renderer';
 
 type EventsDetailsProps = {
 	params: {
@@ -15,8 +15,6 @@ type EventsDetailsProps = {
 };
 
 export default function EventsDetails({ params }: EventsDetailsProps) {
-	const [open, setOpen] = useState(false);
-
 	const { data, isLoading } = useGQLQuery<EventQuery>(['event', params.id], EventDocument, {
 		locales: [params.lang],
 		id: params.id,
@@ -24,10 +22,14 @@ export default function EventsDetails({ params }: EventsDetailsProps) {
 
 	return (
 		<>
-			<h1 className='mb-4 font-medium text-2xl text-zk-green'>{data?.event?.title}</h1>
-			<p className='mb-12'>{data?.event?.description.text}</p>
-
-			{isLoading ? <LoadingSpinner /> : <Gallery images={data?.event?.pictures} />}
+			{isLoading ? (
+				<LoadingSpinner />
+			) : (
+				<div className='event border p-4 sm:p-8 rounded'>
+					<RichText content={data?.event?.description.json} />
+					<Gallery images={data?.event?.pictures} className='mt-12' />
+				</div>
+			)}
 		</>
 	);
 }

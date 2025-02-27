@@ -2,7 +2,6 @@ import { Locale } from '@/i18.config';
 import Image from 'next/image';
 import Link from 'next/link';
 import { getDictionary } from '../dictionaries/dictionary';
-// import Events from './(routes)/events/components/Events';
 import { Button } from './components/shadcn/Button';
 import traditionImg from './assets/images/homepage/1055.jpg';
 import capacityImg from './assets/images/homepage/capacity.jpg';
@@ -17,7 +16,7 @@ import {
 	SERVICES_PAGE,
 } from './constants/routes';
 
-export default async function Home({ params: { lang } }: { params: { lang: Locale } }) {
+export default async function Home({ params: { lang } }: Readonly<{ params: { lang: Locale } }>) {
 	const { button, page } = await getDictionary(lang);
 
 	return (
@@ -53,7 +52,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 							{page.home.tradition}
 						</h2>
 
-						<p className='lg:text-lg max-w-2xl'>{page.home.traditionText}</p>
+						<p>{page.home.traditionText}</p>
 
 						<Button className='mt-8 text-white cursor-pointer'>
 							<Link href={`/${lang}${SERVICES_PAGE}`}>{button.seeMore}</Link>
@@ -69,7 +68,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 							{page.home.nature}
 						</h2>
 
-						<p className='lg:text-lg max-w-2xl'>{page.home.natureText}</p>
+						<p>{page.home.natureText}</p>
 					</div>
 
 					<Image src={natureImg} alt='tradition one' width={500} className='rounded-lg' priority />
@@ -91,7 +90,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 							{page.home.capacity}
 						</h2>
 
-						<p className='lg:text-lg max-w-2xl'>{page.home.capacityText}</p>
+						<p>{page.home.capacityText}</p>
 					</div>
 				</div>
 			</div>
@@ -103,7 +102,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 							{page.home.recreation}
 						</h2>
 
-						<p className='lg:text-lg max-w-2xl'>{page.home.recreationText}</p>
+						<p>{page.home.recreationText}</p>
 
 						<Button className='mt-8 text-white cursor-pointer'>
 							<Link href={`/${lang}${RECREATION_PAGE}`}>{button.seeMore}</Link>
@@ -123,7 +122,7 @@ export default async function Home({ params: { lang } }: { params: { lang: Local
 							{page.home.rest}
 						</h2>
 
-						<p className='lg:text-lg max-w-2xl'>{page.home.restText}</p>
+						<p>{page.home.restText}</p>
 
 						<Button className='mt-8 text-white cursor-pointer'>
 							<Link href={`/${lang}${ACCOMMODATION_PAGE}`}>{button.seeMore}</Link>

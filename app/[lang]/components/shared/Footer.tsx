@@ -4,7 +4,7 @@ import { Mail, MapPin, Phone } from 'lucide-react';
 import { Separator } from '../shadcn/Separator';
 import Social from './Social';
 
-export default async function Footer({ lang }: { lang: Locale }) {
+export default async function Footer({ lang }: Readonly<{ lang: Locale }>) {
 	const { footer } = await getDictionary(lang);
 
 	return (
@@ -13,7 +13,15 @@ export default async function Footer({ lang }: { lang: Locale }) {
 				<div className='w-full'>
 					<div className='mb-4 font-medium text-2xl'>{footer.workingHours}</div>
 
-					<div className='border border-solid border-gray-400 rounded-md  p-4'>
+					<div className='border border-solid border-gray-400 rounded-md p-4 mb-4'>
+						<div className='flex sm:items-center justify-between sm:flex-row flex-col items-start'>
+							<span className='mr-6'>
+								{footer.tuesday} - {footer.closed}
+							</span>
+						</div>
+					</div>
+
+					<div className='border border-solid border-gray-400 rounded-md p-4'>
 						<div>02.03. - 28.03.</div>
 
 						<Separator className='bg-gray-400 my-2' />

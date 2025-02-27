@@ -42,7 +42,7 @@ type TableReservationFormProps = {
 	};
 };
 
-export default function TableReservationForm({ translation }: TableReservationFormProps) {
+export default function TableReservationForm({ translation }: Readonly<TableReservationFormProps>) {
 	const recaptchaRef = useRef<ReCAPTCHA | null>(null);
 	const { toast } = useToast();
 
