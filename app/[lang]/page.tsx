@@ -16,10 +16,16 @@ import {
 	SERVICES_PAGE,
 } from './constants/routes';
 
-export default async function Home({ params: { lang } }: Readonly<{ params: { lang: Locale } }>) {
-	const { button, page } = await getDictionary(lang);
+export default async function Home(props: Readonly<{ params: { lang: Locale } }>) {
+    const params = await props.params;
 
-	return (
+    const {
+        lang
+    } = params;
+
+    const { button, page } = await getDictionary(lang);
+
+    return (
 		<div className='relative flex flex-col items-start w-full'>
 			<div className='flex items-center w-full flex-col justify-center lg:flex-row gap-12 lg:mt-8'>
 				<div className='flex flex-col items-center lg:items-start text-center'>

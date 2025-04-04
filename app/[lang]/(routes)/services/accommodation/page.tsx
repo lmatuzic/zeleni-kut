@@ -17,11 +17,17 @@ import Gallery from '@/app/[lang]/components/shared/Gallery';
 import PDFView from '@/app/[lang]/components/shared/PDFView';
 import { PdfsDocument } from '@/app/lib/graphql-codegen/graphql';
 
-export default async function Accommodation({ params: { lang } }: { params: { lang: Locale } }) {
-	const { page, button } = await getDictionary(lang);
-	const galleryImages = [room1, room2, room3, room4, room5, room6, room7, room8, room9];
+export default async function Accommodation(props: { params: Promise<{ lang: Locale }> }) {
+    const params = await props.params;
 
-	return (
+    const {
+        lang
+    } = params;
+
+    const { page, button } = await getDictionary(lang);
+    const galleryImages = [room1, room2, room3, room4, room5, room6, room7, room8, room9];
+
+    return (
 		<div>
 			<h1 className='mb-4 font-medium text-2xl text-zk-green'>{page.accommodation.title}</h1>
 			<p className='mb-8'>{page.accommodation.infoText}</p>

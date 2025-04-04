@@ -15,8 +15,8 @@ export const metadata: Metadata = {
 		icon: [
 			{
 				type: 'image/svg+xml',
-				url: '/images/zeleni-kut-favicon.svg',
-				href: '/images/zeleni-kut-favicon.svg',
+				url: '.././icon.svg',
+				href: '.././icon.svg',
 			},
 		],
 	},
@@ -28,13 +28,16 @@ export async function generateStaticParams() {
 	return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default function RootLayout({
-	children,
-	params,
-}: Readonly<{
-	children: React.ReactNode;
-	params: { lang: Locale };
-}>) {
+export default async function RootLayout(
+	props: Readonly<{
+		children: React.ReactNode;
+		params: { lang: Locale };
+	}>
+) {
+	const params = await props.params;
+
+	const { children } = props;
+
 	const runVercelAnalytics = () => {
 		if (process.env.NODE_ENV === 'development') {
 			return;

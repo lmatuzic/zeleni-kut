@@ -2,12 +2,16 @@ import { Locale } from '@/i18.config';
 import Events from './components/Events';
 import { getDictionary } from '@/app/dictionaries/dictionary';
 
-export default async function EventsPage({
-	params: { lang },
-}: Readonly<{ params: { lang: Locale } }>) {
-	const { page } = await getDictionary(lang);
+export default async function EventsPage(props: Readonly<{ params: { lang: Locale } }>) {
+    const params = await props.params;
 
-	return (
+    const {
+        lang
+    } = params;
+
+    const { page } = await getDictionary(lang);
+
+    return (
 		<>
 			<header>
 				<h1 className='font-medium text-2xl mb-6 text-zk-green'>{page.events.title}</h1>

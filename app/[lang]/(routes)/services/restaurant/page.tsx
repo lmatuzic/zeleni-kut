@@ -4,10 +4,16 @@ import { PdfsDocument } from '@/app/lib/graphql-codegen/graphql';
 import { Locale } from '@/i18.config';
 import FetchedImageGallery from './components/FetchedImageGallery';
 
-export default async function Restaurant({ params: { lang } }: { params: { lang: Locale } }) {
-	const { page } = await getDictionary(lang);
+export default async function Restaurant(props: { params: Promise<{ lang: Locale }> }) {
+    const params = await props.params;
 
-	return (
+    const {
+        lang
+    } = params;
+
+    const { page } = await getDictionary(lang);
+
+    return (
 		<div>
 			<h1 className='mb-4 text-2xl font-medium text-zk-green'>{page.restaurant.title}</h1>
 			<p className='mb-8 max-w-3xl'>{page.restaurant.infoText}</p>

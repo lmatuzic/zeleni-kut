@@ -7,10 +7,16 @@ import { getDictionary } from '@/app/dictionaries/dictionary';
 import type { Locale } from '@/i18.config';
 import ServiceCard from './components/ServiceCard';
 
-export default async function Services({ params: { lang } }: { params: { lang: Locale } }) {
-	const { page, button } = await getDictionary(lang);
+export default async function Services(props: { params: Promise<{ lang: Locale }> }) {
+    const params = await props.params;
 
-	return (
+    const {
+        lang
+    } = params;
+
+    const { page, button } = await getDictionary(lang);
+
+    return (
 		<div className='pb-12'>
 			<h1 className='mb-4 font-medium text-2xl text-zk-green'>{page.services.title}</h1>
 			<p className='max-w-2xl mb-12'>{page.services.description}</p>

@@ -1,4 +1,5 @@
-'use client';
+'use client';;
+import { use } from "react";
 
 import Gallery from '@/app/[lang]/components/shared/Gallery';
 import LoadingSpinner from '@/app/[lang]/components/shared/LoadingSpinner';
@@ -8,19 +9,20 @@ import { Locale } from '@/i18.config';
 import { RichText } from '@graphcms/rich-text-react-renderer';
 
 type EventsDetailsProps = {
-	params: {
+	params: Promise<{
 		lang: Locale;
 		id: string;
-	};
+	}>;
 };
 
-export default function EventsDetails({ params }: EventsDetailsProps) {
-	const { data, isLoading } = useGQLQuery<EventQuery>(['event', params.id], EventDocument, {
+export default function EventsDetails(props: EventsDetailsProps) {
+    const params = use(props.params);
+    const { data, isLoading } = useGQLQuery<EventQuery>(['event', params.id], EventDocument, {
 		locales: [params.lang],
 		id: params.id,
 	});
 
-	return (
+    return (
 		<>
 			{isLoading ? (
 				<LoadingSpinner />

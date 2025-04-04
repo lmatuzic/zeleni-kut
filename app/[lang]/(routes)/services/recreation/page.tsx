@@ -7,11 +7,17 @@ import img2 from '@/app/[lang]/assets/images/recreation/canue.jpg';
 import img3 from '@/app/[lang]/assets/images/recreation/fishing.jpg';
 import img4 from '@/app/[lang]/assets/images/recreation/volleyball.jpg';
 
-export default async function Recreation({ params: { lang } }: { params: { lang: Locale } }) {
-	const { page } = await getDictionary(lang);
-	const galleryImages = [img1, img2, img3, img4];
+export default async function Recreation(props: { params: Promise<{ lang: Locale }> }) {
+    const params = await props.params;
 
-	return (
+    const {
+        lang
+    } = params;
+
+    const { page } = await getDictionary(lang);
+    const galleryImages = [img1, img2, img3, img4];
+
+    return (
 		<div>
 			<h1 className='mb-4 font-medium text-2xl text-zk-green'>{page.recreation.title}</h1>
 			<p>{page.recreation.infoText}</p>
