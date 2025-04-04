@@ -1,5 +1,5 @@
 import { Locale, i18n } from '@/i18.config';
-import { Comfortaa } from '@next/font/google';
+import { Comfortaa } from 'next/font/google';
 import { Analytics } from '@vercel/analytics/react';
 import { SpeedInsights } from '@vercel/speed-insights/next';
 import type { Metadata } from 'next';
