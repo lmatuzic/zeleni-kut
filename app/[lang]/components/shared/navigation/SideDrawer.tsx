@@ -10,7 +10,13 @@ import {
 import { Locale } from '@/i18.config';
 import { Menu } from 'lucide-react';
 import { useState } from 'react';
-import { Sheet, SheetContent, SheetTrigger } from '../../shadcn/Sheet';
+import {
+	Sheet,
+	SheetContent,
+	SheetDescription,
+	SheetTitle,
+	SheetTrigger,
+} from '../../shadcn/Sheet';
 import LanguageSwitch from '../LanguageSwitch';
 import ThemeToggle from '../ThemeToggle';
 import NavLink from './NavLink';
@@ -49,6 +55,9 @@ export default function SideDrawer({ lang, navigation, theme }: SideDrawerProps)
 			</SheetTrigger>
 
 			<SheetContent className='pt-20 flex flex-col justify-between items-end'>
+				<SheetTitle className='hidden'>Menu</SheetTitle>
+				<SheetDescription className='hidden'>Side drawer</SheetDescription>
+
 				<ul className='flex flex-col items-end gap-4'>
 					<li>
 						<ThemeToggle theme={theme} />
