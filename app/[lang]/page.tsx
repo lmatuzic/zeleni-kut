@@ -15,17 +15,14 @@ import {
 	RECREATION_PAGE,
 	SERVICES_PAGE,
 } from './constants/routes';
+import { PageProps } from '@/.next/types/app/[lang]/page';
 
-export default async function Home(props: Readonly<{ params: { lang: Locale } }>) {
-    const params = await props.params;
+export default async function Home(props: PageProps) {
+	const params = await props.params;
+	const lang = params.lang as Locale;
+	const { page, button } = await getDictionary(lang);
 
-    const {
-        lang
-    } = params;
-
-    const { button, page } = await getDictionary(lang);
-
-    return (
+	return (
 		<div className='relative flex flex-col items-start w-full'>
 			<div className='flex items-center w-full flex-col justify-center lg:flex-row gap-12 lg:mt-8'>
 				<div className='flex flex-col items-center lg:items-start text-center'>
