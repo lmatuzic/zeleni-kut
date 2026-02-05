@@ -23,13 +23,12 @@ export async function generateStaticParams() {
 	return i18n.locales.map((locale) => ({ lang: locale }));
 }
 
-export default async function RootLayout(
-	props: Readonly<{
-		children: React.ReactNode;
-		params: { lang: Locale };
-	}>
-) {
+export default async function RootLayout(props: {
+	children: React.ReactNode;
+	params: Promise<{ lang: string }>;
+}) {
 	const params = await props.params;
+	const lang = params.lang as Locale;
 
 	const { children } = props;
 
@@ -47,12 +46,12 @@ export default async function RootLayout(
 	};
 
 	return (
-		<html lang={params.lang} className={comfortaa.className} suppressHydrationWarning>
+		<html lang={lang} className={comfortaa.className} suppressHydrationWarning>
 			<body className={`min-h-screen`}>
 				<Providers>
-					<Navigation lang={params.lang} />
+					<Navigation lang={lang} />
 					<main className='container items-center justify-between mt-24 md:mt-32'>{children}</main>
-					<Footer lang={params.lang} />
+					<Footer lang={lang} />
 				</Providers>
 
 				{runVercelAnalytics()}

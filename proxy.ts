@@ -17,7 +17,7 @@ function getLocale(request: NextRequest): string | undefined {
 	return locale;
 }
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
 	const { pathname } = request.nextUrl;
 
 	// exclude specific paths from redirection, like robots.txt

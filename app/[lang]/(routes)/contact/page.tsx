@@ -2,16 +2,12 @@ import { getDictionary } from '@/app/dictionaries/dictionary';
 import { Locale } from '@/i18.config';
 import ContactInfo from './components/ContactInfo';
 
-export default async function Contact(props: { params: Promise<{ lang: Locale }> }) {
-    const params = await props.params;
+export default async function Contact(props: PageProps<'/[lang]/contact'>) {
+	const params = await props.params;
+	const { lang } = params;
+	const { page } = await getDictionary(lang as Locale);
 
-    const {
-        lang
-    } = params;
-
-    const { page } = await getDictionary(lang);
-
-    return (
+	return (
 		<>
 			<h1 className='mb-12 font-medium text-2xl text-zk-green'>{page.contact.title}</h1>
 			<div className='grid grid-cols-1 gap-12 pb-12 md:grid-cols-2'>

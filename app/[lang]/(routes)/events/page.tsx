@@ -1,9 +1,8 @@
 import { Locale } from '@/i18.config';
 import Events from './components/Events';
 import { getDictionary } from '@/app/dictionaries/dictionary';
-import { PageProps } from '@/.next/types/app/[lang]/page';
 
-export default async function EventsPage(props: PageProps) {
+export default async function EventsPage(props: PageProps<'/[lang]/events'>) {
 	const params = await props.params;
 	const lang = params.lang as Locale;
 	const { page } = await getDictionary(lang);

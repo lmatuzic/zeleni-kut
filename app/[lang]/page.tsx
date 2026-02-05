@@ -15,10 +15,9 @@ import {
 	RECREATION_PAGE,
 	SERVICES_PAGE,
 } from './constants/routes';
-import { PageProps } from '@/.next/types/app/[lang]/page';
 import logo from '@/app/logo.png';
 
-export default async function Home(props: PageProps) {
+export default async function Home(props: PageProps<'/[lang]'>) {
 	const params = await props.params;
 	const lang = params.lang as Locale;
 	const { page, button } = await getDictionary(lang);
