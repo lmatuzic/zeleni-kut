@@ -16,6 +16,7 @@ import {
 	SERVICES_PAGE,
 } from './constants/routes';
 import { PageProps } from '@/.next/types/app/[lang]/page';
+import logo from '@/app/logo.png';
 
 export default async function Home(props: PageProps) {
 	const params = await props.params;
@@ -25,9 +26,18 @@ export default async function Home(props: PageProps) {
 	return (
 		<div className='relative flex flex-col items-start w-full'>
 			<div className='flex items-center w-full flex-col justify-center lg:flex-row gap-12 lg:mt-8'>
-				<div className='flex flex-col items-center lg:items-start text-center'>
-					<h1 className='mb-4 font-medium text-6xl lg:text-7xl text-zk-green'>Zeleni kut</h1>
-					<h2 className='text-xl'>{page.home.subtitle}</h2>
+				<div className='flex flex-col items-center text-center'>
+					<Image
+						src={logo}
+						alt={'logo'}
+						className='min-w-[200px] max-w-[300px] md:max-w-[400px] lg:max-w-full'
+					/>
+
+					<h1 className='mb-4 font-medium text-6xl lg:text-7xl text-zk-green sr-only'>
+						Zeleni kut
+					</h1>
+
+					<h2 className='text-xl text-center'>{page.home.subtitle}</h2>
 					<h3>{page.home.subSubtitle}</h3>
 
 					<Button className='mt-8 text-white cursor-pointer'>
@@ -35,7 +45,7 @@ export default async function Home(props: PageProps) {
 					</Button>
 				</div>
 
-				<Image src={mainImg} alt='bridge nature' width={600} className='rounded-lg' priority />
+				<Image src={mainImg} alt='bridge nature' width={750} className='rounded-lg' priority />
 			</div>
 
 			<div className='w-full p-4 md:p-8 mt-20 border border-solid bg-sectionBg rounded-xl'>

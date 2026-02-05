@@ -31,7 +31,7 @@ export default function LanguageSwitch() {
 								alt={locale === 'hr' ? 'croatian language' : 'english language'}
 								width={30}
 								height={30}
-								className='rounded-full mr-2'
+								className='rounded-full mr-2 last:mr-0 last:ml-2'
 								priority
 							/>
 						</Link>

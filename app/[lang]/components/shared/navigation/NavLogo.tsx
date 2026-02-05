@@ -1,6 +1,6 @@
 import { HOME_PAGE } from '@/app/[lang]/constants/routes';
 import { Locale } from '@/i18.config';
-import darkLogo from '@/public/images/zeleni-kut-logo-dark.svg';
+import darkLogo from '@/app/logo.png';
 import Image from 'next/image';
 import Link from 'next/link';
 
@@ -15,7 +15,7 @@ export default function NavLogo({ lang, className }: Readonly<NavLogoProps>) {
 			<Image
 				src={darkLogo}
 				alt='Picture of the author'
-				className={`dark:invert w-11 md:w-14 ${className ?? ''}`}
+				className={`dark:invert-[25%] min-w-[200px] max-w-[500px] ${className ?? ''}`}
 				priority
 			/>
 		</Link>

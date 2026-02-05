@@ -12,13 +12,8 @@ export const metadata: Metadata = {
 	title: 'Zeleni kut',
 	description: 'Restoran Zeleni kut - Obitelj Puškarić - Mjesto gdje sva osjetila uživaju.',
 	icons: {
-		icon: [
-			{
-				type: 'image/svg+xml',
-				url: '.././icon.svg',
-				href: '.././icon.svg',
-			},
-		],
+		icon: '/logo.png',
+		apple: '/apple-touch-icon.png',
 	},
 };
 

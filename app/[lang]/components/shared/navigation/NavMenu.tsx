@@ -31,6 +31,10 @@ export default function NavMenu({ lang, translation, theme }: Readonly<NavMenuPr
 	return (
 		<ul className='hidden md:flex justify-between gap-6 w-full md:w-auto items-center'>
 			<li>
+				<NavLink route={`/${lang}`}>{translation.home}</NavLink>
+			</li>
+
+			<li>
 				<NavLink route={`/${lang}${SERVICES_PAGE}`}>{translation.services}</NavLink>
 			</li>
 

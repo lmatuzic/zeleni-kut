@@ -9,7 +9,7 @@ import {
 } from '@/app/[lang]/constants/routes';
 import { Locale } from '@/i18.config';
 import { Menu } from 'lucide-react';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import {
 	Sheet,
 	SheetContent,
@@ -39,6 +39,11 @@ type SideDrawerProps = {
 
 export default function SideDrawer({ lang, navigation, theme }: SideDrawerProps) {
 	const [isOpened, setIsOpened] = useState(false);
+	const [isMounted, setIsMounted] = useState(false);
+
+	useEffect(() => {
+		setIsMounted(true);
+	}, []);
 
 	const handleOpenMobileNav = () => {
 		setIsOpened(true);
@@ -47,6 +52,10 @@ export default function SideDrawer({ lang, navigation, theme }: SideDrawerProps)
 	const handleCloseMobileNav = () => {
 		setIsOpened(false);
 	};
+
+	if (!isMounted) {
+		return null;
+	}
 
 	return (
 		<Sheet open={isOpened} onOpenChange={setIsOpened}>

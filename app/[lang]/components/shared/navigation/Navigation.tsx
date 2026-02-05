@@ -9,8 +9,8 @@ export default async function Navigation({ lang }: { lang: Locale }) {
 
 	return (
 		<nav className='w-full fixed top-0 z-50 bg-background border-b border-solid'>
-			<div className='container flex items-center justify-between'>
-				<NavLogo lang={lang} />
+			<div className='container flex items-center justify-end py-6'>
+				{/* <NavLogo lang={lang} /> */}
 				<NavMenu lang={lang} theme={theme} translation={navigation} />
 				<MobileNavigation lang={lang} />
 			</div>

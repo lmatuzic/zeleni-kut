@@ -16,41 +16,23 @@ export default async function Footer({ lang }: Readonly<{ lang: Locale }>) {
 					<div className='border border-solid border-gray-400 rounded-md p-4 mb-4'>
 						<div className='flex sm:items-center justify-between sm:flex-row flex-col items-start'>
 							<span className='mr-6'>
-								{footer.tuesday} - {footer.closed}
-							</span>
-						</div>
-					</div>
-
-					<div className='border border-solid border-gray-400 rounded-md p-4'>
-						<div>02.03. - 28.03.</div>
-
-						<Separator className='bg-gray-400 my-2' />
-
-						<div className='flex sm:items-center justify-between sm:flex-row flex-col items-start'>
-							<span className='mr-6'>
-								{footer.monday} - {footer.sunday}
+								{footer.monday}, {footer.wednesday} - {footer.sunday}
 							</span>
 
 							<span>09:00 - 21:00</span>
 						</div>
 					</div>
 
-					<div className='border border-solid border-gray-400 rounded-md mt-4 p-4'>
-						<div>29.03. - 01.11.</div>
-
-						<Separator className='bg-gray-400 my-2' />
-
+					<div className='border border-solid border-gray-400 rounded-md p-4 mb-4'>
 						<div className='flex sm:items-center justify-between sm:flex-row flex-col items-start'>
 							<span className='mr-6'>
-								{footer.monday} - {footer.sunday}
+								{footer.tuesday} - {footer.closed}
 							</span>
-
-							<span>07:00 - 23:00</span>
 						</div>
 					</div>
 
 					<div className='border border-solid border-gray-400 rounded-md mt-4 p-4'>
-						<div>12.11. - 01.03.</div>
+						<div>15.11. - 05.03.</div>
 						<Separator className='bg-gray-400 my-2' />
 						<div className='mr-4'>{footer.closed}</div>
 					</div>
